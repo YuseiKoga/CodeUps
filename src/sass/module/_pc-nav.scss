@@ -1,0 +1,68 @@
+@use "global" as *;
+
+.pc-nav {
+  display: none;
+  @include mq("md") {
+    display: block;
+    height: inherit;
+  }
+}
+
+.pc-nav__items {
+  display: flex;
+  align-items: center;
+  height: inherit;
+}
+
+.pc-nav__item {
+  height: inherit;
+}
+
+.pc-nav__item a {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-inline: rem(20);
+  height: inherit;
+}
+.pc-nav__item:first-child a {
+  padding-left: 0;
+}
+.pc-nav__item:last-child a {
+  padding-right: 0;
+}
+.pc-nav__item a::after {
+  content: "";
+  position: absolute;
+  bottom: rem(20);
+  transform: scale(0, 1);
+  transform-origin: center top;
+  width: calc(100% - rem(40));
+  height: rem(2);
+  border-radius: 3px;
+  background-color: $white;
+  transition: 0.3s;
+}
+.pc-nav__item a:hover::after {
+  transform: scale(1, 1);
+}
+.pc-nav__item:first-child a::after {
+  width: calc(100% - rem(20));
+}
+
+.pc-nav__item span {
+  color: $white;
+}
+.pc-nav__item span:nth-of-type(1) {
+  font-family: $second-font-family;
+  font-size: rem(18);
+  line-height: 1;
+}
+.pc-nav__item span:nth-of-type(2) {
+  margin-top: rem(4);
+  font-size: rem(10);
+  font-weight: $regular;
+  line-height: calc(15 / 10);
+}

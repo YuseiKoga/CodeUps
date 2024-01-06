@@ -1,0 +1,92 @@
+@use "global" as *;
+
+.campaign__inner {
+  @include mq("md") {
+    position: relative;
+  }
+}
+
+.campaign__swiper {
+  margin-top: rem(28);
+  margin-right: calc(50% - 50vw);
+  padding-bottom: rem(40);
+  @include mq("md") {
+    margin-top: rem(40);
+    padding-bottom: rem(80);
+  }
+}
+
+.campaign__swiper .swiper-slide {
+  width: max-content;
+}
+
+.campaign__card {
+  margin-right: rem(24);
+  @include mq("md") {
+    margin-right: rem(40);
+  }
+}
+
+.campaign__swiper-button {
+  @include mq("md") {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 25px;
+  }
+}
+
+.campaign__next-button,
+.campaign__prev-button {
+  @include mq("md") {
+    width: rem(80);
+    height: rem(80);
+  }
+}
+
+.campaign__next-button {
+  @include mq("md") {
+    margin-left: rem(80);
+  }
+}
+
+.campaign__next-button::after,
+.campaign__prev-button::after {
+  @include mq("md") {
+    content: "";
+    margin: auto;
+    width: inherit;
+    height: inherit;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.campaign__next-button::after {
+  @include mq("md") {
+    background-image: url(../images/top/icon-next.svg);
+  }
+}
+
+.campaign__prev-button::after {
+  @include mq("md") {
+    background-image: url(../images/top/icon-prev.svg);
+  }
+}
+
+.campaign__button {
+  text-align: center;
+}
+
+.swiper-button-next,
+.swiper-rtl .swiper-button-prev {
+  right: initial;
+  left: initial;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  position: initial;
+  top: initial;
+  margin-top: initial;
+}
