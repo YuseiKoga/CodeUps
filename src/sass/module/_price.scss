@@ -21,6 +21,7 @@
 }
 
 .price__img {
+  position: relative;
   aspect-ratio: 345 / 227;
   @include mq("md") {
     margin-left: auto;

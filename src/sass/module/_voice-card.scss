@@ -88,6 +88,7 @@
 }
 
 .voice-card__img {
+  position: relative;
   margin-top: rem(9);
   margin-left: auto;
   flex: 0 0 calc(150 / 313 * 100%);
