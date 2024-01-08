@@ -70,13 +70,24 @@ jQuery(function ($) {
       crossFade: true,
     },
     autoplay: {
-      delay: 4000,
+      delay: 11000,
       disableOnInteraction: false,
     },
   };
-
   // mvSwiperの初期化
   const mvSwiper = new Swiper(".js-mv-swiper", mvSwiperOptions);
+
+  setTimeout(function () {
+    mvSwiper.params.autoplay.delay = 4000;
+    mvSwiper.autoplay.start();
+  }, 11000);
+
+  $(".js-mv-img").each(function () {
+    var $element = $(this);
+    setTimeout(function () {
+      $element.addClass("is-animation");
+    }, 7000);
+  });
 
   // キャンペーンSwiperのオプション
   const campaignSwiperOptions = {

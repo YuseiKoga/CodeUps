@@ -61,10 +61,10 @@
   object-fit: cover;
 }
 
-.mv__swiper .swiper-slide-active .mv__img,
-.mv__swiper .swiper-slide-duplicate-active .mv__img,
-.mv__swiper .swiper-slide-prev .mv__img {
-  animation: scale 8s linear 0s normal both;
+.mv__swiper .swiper-slide-active .mv__img.is-animation,
+.mv__swiper .swiper-slide-duplicate-active .mv__img.is-animation,
+.mv__swiper .swiper-slide-prev .mv__img.is-animation {
+  animation: scale 8s linear normal both;
 }
 
 @keyframes scale {

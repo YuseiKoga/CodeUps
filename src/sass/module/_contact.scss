@@ -69,7 +69,7 @@
   margin-top: rem(4);
 }
 
-.contact__img {
+.contact__map {
   margin: rem(15) auto 0;
   width: rem(295);
   aspect-ratio: 295 / 160;
@@ -80,7 +80,7 @@
   }
 }
 
-.contact__img img {
+.contact__img iframe {
   width: 100%;
   height: 100%;
   object-fit: cover;
