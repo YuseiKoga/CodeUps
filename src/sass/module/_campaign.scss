@@ -42,7 +42,12 @@
   @include mq("md") {
     width: rem(80);
     height: rem(80);
+    transition: transform 0.2s;
   }
+}
+.campaign__next-button:hover,
+.campaign__prev-button:hover {
+  transform: scale(1.1);
 }
 
 .campaign__next-button {

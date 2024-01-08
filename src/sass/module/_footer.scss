@@ -25,6 +25,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: opacity .3s;
+}
+
+.footer__logo a:hover {
+  opacity: $opacity;
 }
 .footer__logo img {
   width: 100%;
@@ -55,6 +60,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: opacity .3s;
+}
+.footer__sns-item a:hover {
+  opacity: $opacity;
 }
 .footer__sns-item img {
   width: 100%;
@@ -118,6 +127,10 @@
   font-weight: $bold;
   line-height: calc(18 / 16);
   color: $white;
+  transition: opacity .3s;
+}
+.footer__nav-item a:hover {
+  opacity: $opacity;
 }
 
 .footer__sub-item {

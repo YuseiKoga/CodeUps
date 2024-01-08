@@ -2,6 +2,8 @@
 
 .sp-nav {
   display: flex;
+  padding: rem(104) rem(15) rem(104);
+  height: calc(100% + 1px);
 }
 
 .sp-nav__wrap {

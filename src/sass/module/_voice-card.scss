@@ -11,9 +11,14 @@
 .voice-card a {
   display: block;
   padding: rem(15) rem(16) rem(24);
+  transition: opacity .3s;
   @include mq("md") {
     padding: rem(24);
   }
+}
+
+.voice-card a:hover {
+  opacity: $opacity;
 }
 
 .voice-card__head {

@@ -3,7 +3,7 @@
 .mv {
   position: relative;
   height: 100vh;
-  z-index: 1;
+  z-index: 10;
 }
 
 .mv__inner {
@@ -18,7 +18,7 @@
   width: 100%;
   color: $white;
   text-align: center;
-  z-index: 2;
+  z-index: 20;
 }
 
 .mv__main-title {

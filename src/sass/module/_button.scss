@@ -24,7 +24,7 @@
   width: calc(100% + rem(2));
   height: calc(100% + rem(2));
   border: 1px solid $c-main;
-  z-index: 1;
+  z-index: 10;
 }
 
 .button__content::after {
@@ -39,7 +39,7 @@
   transform-origin: left;
   background-color: $white;
   transition: transform 0.2s cubic-bezier(0.45, 0, 0.55, 1);
-  z-index: 2;
+  z-index: 20;
 }
 
 .button:hover .button__content {
@@ -58,7 +58,7 @@
   font-weight: $regular;
   line-height: calc(22 / 14);
   transition: 0.3s;
-  z-index: 3;
+  z-index: 30;
 }
 
 .button__content svg {
@@ -69,5 +69,5 @@
   height: rem(8);
   stroke: currentColor;
   transition: 0.3s;
-  z-index: 3;
+  z-index: 30;
 }

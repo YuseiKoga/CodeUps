@@ -12,10 +12,16 @@
 .blog-card a {
   display: block;
   padding: rem(16) rem(16) rem(24);
+  transition: opacity .3s;
+}
+
+.blog-card a:hover {
+  opacity: $opacity;
 }
 
 .blog-card__img {
   aspect-ratio: 301 / 201;
+  overflow: hidden;
 }
 
 .blog-card__img img {

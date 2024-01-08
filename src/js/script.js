@@ -3,70 +3,62 @@ jQuery(function ($) {
   const headerHeight = $(".js-header").height();
   $("html").css("scroll-padding-top", headerHeight + "px");
 
-  // ドロワーメニューの操作関連の処理
-  const setupDrawerMenu = function () {
-    const hamburgerButton = $(".js-hamburger");
-    const drawerLinks = $(".js-drawer a[href]");
-    const drawer = $(".js-drawer");
-    const headerLogoLink = $(".header__logo a");
+  // ページトップに戻るボタン
+  $(function () {
+    const pageTop = $(".js-page-top");
+    const mv = $(".js-mv");
+    const showPosFactor = 1 / 3;
+    pageTop.hide();
 
-    // ハンバーガーボタンがクリックされたときの処理
-    hamburgerButton.click(toggleDrawer);
+    // ページトップボタンがクリックされた時の処理
+    pageTop.on("click", function () {
+      $("body,html").animate({ scrollTop: 0 }, 500);
+      return false;
+    });
 
-    // ドロワー内のリンクやロゴがクリックされたときの処理
-    drawerLinks.add(headerLogoLink).on("click", closeDrawerAndEnableScroll);
+    $(window).on("scroll", function () {
+      const mvHeight = mv.height();
+      const showPos = mvHeight * showPosFactor;
 
-    // ウィンドウがリサイズされたときの処理
-    $(window).on("resize", handleWindowResize);
-
-    // ドロワーの開閉とスクロールの制御
-    function toggleDrawer() {
-      const isOpen = hamburgerButton.toggleClass("is-open").hasClass("is-open");
-      isOpen ? openDrawer() : closeDrawerAndEnableScroll();
-    }
-
-    // ドロワーを開く処理
-    function openDrawer() {
-      drawer.addClass("is-open");
-      disableScroll();
-    }
-
-    // ドロワーを閉じる処理
-    function closeDrawer() {
-      drawer.removeClass("is-open");
-    }
-
-    // ドロワーを閉じてスクロールを有効にする処理
-    function closeDrawerAndEnableScroll() {
-      closeDrawer();
-      enableScroll();
-    }
-
-    // ウィンドウリサイズ時の処理
-    function handleWindowResize() {
-      if (window.matchMedia("(min-width: 768px)").matches) {
-        closeDrawerAndEnableScroll();
+      if ($(this).scrollTop() > showPos) {
+        pageTop.fadeIn();
+      } else {
+        pageTop.fadeOut();
       }
-    }
+    });
+  });
 
-    // スクロールを無効にする処理
-    function disableScroll() {
-      setScrollProperties("hidden", "100%");
-    }
+  // ハンバーガーアイコンとドロワーメニュー
+  $(function () {
+    const $hamburger = $(".js-hamburger");
+    const $drawerLinks = $(".js-drawer a[href], .js-header a[href]");
 
-    // スクロールを有効にする処理
-    function enableScroll() {
-      setScrollProperties("auto", "auto");
-    }
+    // ハンバーガーアイコンがクリックされた時の処理
+    $hamburger.click(function () {
+      const $this = $(this);
+      $this.toggleClass("is-open");
+      $this.hasClass("is-open") ? toggleDrawer(true) : toggleDrawer(false);
+    });
 
-    // スクロールプロパティを設定する共通処理
-    function setScrollProperties(overflow, height) {
-      $("body, html").css({
-        overflow,
-        height,
-      });
+    // リンクがクリックされた時の処理
+    $drawerLinks.on("click", function () {
+      toggleDrawer(false);
+    });
+
+    // ウィンドウのリサイズ時の処理
+    $(window).on("resize", function () {
+      if (window.matchMedia("(min-width:768px)").matches) {
+        toggleDrawer(false);
+      }
+    });
+
+    // ドロワーメニューの開閉
+    function toggleDrawer(open) {
+      const $drawer = $(".js-drawer");
+      $drawer.toggleClass("is-open", open);
+      $hamburger.toggleClass("is-open", open);
     }
-  };
+  });
 
   // mvSwiperのオプション
   const mvSwiperOptions = {
@@ -125,9 +117,7 @@ jQuery(function ($) {
   }
   // 画像をスクロールに応じてフェードインさせる
   function fadeInImagesOnScroll() {
-    // フェードインのオフセット
     const fadeOffset = 100;
-    // ウィンドウの高さを取得
     const windowHeight = $(window).height();
 
     $(".js-image").each(function () {
@@ -156,7 +146,4 @@ jQuery(function ($) {
 
   // スクロール時に画像をフェードインさせる
   $(window).on("scroll", fadeInImagesOnScroll);
-
-  // ドロワーメニューのセットアップ
-  setupDrawerMenu();
 });
