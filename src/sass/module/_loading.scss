@@ -59,12 +59,14 @@
 .loading__img {
   position: absolute;
   top: 0;
-  width: vw(375, 188);
-  min-height: 100vh;
-  aspect-ratio: 188 / 667;
+  // width: vw(375, 188);
+  // min-height: 100vh;
+  // aspect-ratio: 188 / 667;
+  width: 50%;
+  height: 100vh;
   @include mq("md") {
-    width: vw(1440, 720);
-    aspect-ratio: 720 / 768;
+    // width: vw(1440, 720);
+    // aspect-ratio: 720 / 768;
   }
 }
 
@@ -83,6 +85,14 @@
 .loading__img img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+}
+
+.loading__img-left img {
+  object-position: right top;
+}
+.loading__img-right img {
+  object-position: left top;
 }
 
 @keyframes imgLeft {

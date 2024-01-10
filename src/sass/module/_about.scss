@@ -22,7 +22,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: vw(375, 128);
+  width: calc(128 / 345 * 100%);
   aspect-ratio: 128 / 194;
   z-index: 20;
   @include mq("md") {
@@ -35,7 +35,7 @@
   position: absolute;
   right: 0;
   bottom: 0;
-  width: vw(375, 281);
+  width: calc(281 / 345 * 100%);
   aspect-ratio: 281 / 186;
   z-index: 10;
   @include mq("md") {
@@ -54,10 +54,11 @@
   margin-top: rem(40);
   @include mq("md") {
     display: flex;
+    margin-top: 0;
     padding-right: rem(40);
     position: absolute;
-    top: rem(165);
-    left: rem(200);
+    top: rem(200);
+    left: rem(199);
     z-index: 40;
   }
 }
@@ -83,7 +84,6 @@
 
 .about__right {
   @include mq("md") {
-    margin-top: rem(-3);
     margin-left: rem(40);
   }
 }

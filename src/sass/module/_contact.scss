@@ -30,7 +30,7 @@
 }
 
 .contact__border {
-  margin: rem(5) auto 0;
+  margin: rem(4) auto 0;
   width: rem(295);
   height: rem(2);
   background-color: $c-main;
@@ -62,6 +62,7 @@
   font-size: rem(16);
   font-weight: $regular;
   line-height: calc(24 / 16);
+  text-align: center;
 }
 
 .contact__item + .contact__item {
