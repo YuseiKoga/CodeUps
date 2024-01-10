@@ -1,17 +1,20 @@
 @use "global" as *;
 
 .voice-card {
+  min-height: rem(420);
   background: $white;
   box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
   @include mq("md") {
-    width: rem(520);
+    min-height: rem(396);
+    aspect-ratio: initial;
   }
 }
 
 .voice-card a {
   display: block;
   padding: rem(15) rem(16) rem(24);
-  transition: opacity .3s;
+  height: 100%;
+  transition: opacity 0.3s;
   @include mq("md") {
     padding: rem(24);
   }
@@ -70,26 +73,22 @@
 .voice-card__title {
   position: relative;
   margin-top: rem(4);
+  padding-bottom: rem(3);
   color: $c-font;
   font-size: rem(16);
   font-weight: $medium;
   line-height: calc(23 / 16);
+  border-bottom: rem(2) solid $c-main;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
   @include mq("md") {
     margin-top: rem(8);
     font-size: rem(24);
     line-height: calc(35 / 24);
+    -webkit-line-clamp: 2;
   }
-}
-
-.voice-card__title::after {
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: rem(-5);
-  left: 0;
-  width: 100%;
-  height: rem(2);
-  background-color: $c-main;
 }
 
 .voice-card__img {
@@ -123,4 +122,11 @@
   font-size: rem(16);
   font-weight: $regular;
   line-height: calc(24 / 16);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 10;
+  overflow: hidden;
+  @include mq("md") {
+    -webkit-line-clamp: 7;
+  }
 }

@@ -1,18 +1,21 @@
 @use "global" as *;
 
 .blog-card {
-  width: vw(375, 333);
+  width: min(calc(333 / 345 * 100%), 100%);
+  aspect-ratio: 333 / 447;
   background-color: $white;
   box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
   @include mq("md") {
-    width: auto;
+    width: initial;
+    min-height: 100%;
   }
 }
 
 .blog-card a {
   display: block;
   padding: rem(16) rem(16) rem(24);
-  transition: opacity .3s;
+  height: 100%;
+  transition: opacity 0.3s;
 }
 
 .blog-card a:hover {
@@ -21,7 +24,6 @@
 
 .blog-card__img {
   aspect-ratio: 301 / 201;
-  overflow: hidden;
 }
 
 .blog-card__img img {
@@ -44,28 +46,26 @@
 }
 
 .blog-card__title {
-  position: relative;
+  padding-bottom: rem(3);
   color: $c-font;
   font-size: rem(16);
   font-weight: $medium;
   line-height: calc(24 / 16);
-}
-
-.blog-card__title::after {
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: rem(-5);
-  left: 0;
-  width: 100%;
-  height: rem(2);
-  background-color: $c-main;
+  border-bottom: rem(2) solid $c-main;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
 }
 
 .blog-card__text {
-  margin-top: rem(20);
+  margin-top: rem(15);
   color: $c-font;
   font-size: rem(16);
   font-weight: $regular;
   line-height: calc(24 / 16);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
 }

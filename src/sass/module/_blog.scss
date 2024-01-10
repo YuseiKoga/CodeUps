@@ -9,25 +9,20 @@
     background-size: 100% rem(500);
   }
 }
+
 .blog__items {
   margin-top: rem(28);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: rem(40);
   @include mq("md") {
     margin-top: rem(80);
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: rem(40);
   }
 }
 
 .blog__item {
   margin: auto;
-}
-
-.blog__item + .blog__item {
-  margin-top: rem(40);
-  @include mq("md") {
-    margin-top: 0;
-  }
 }
 
 .blog__button {

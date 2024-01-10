@@ -3,7 +3,7 @@
 .contact__container {
   @include mq("md") {
     display: flex;
-    padding: rem(80) rem(50);
+    padding: rem(80) rem(50) rem(80) rem(50);
     background: $white;
     box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.25);
   }
@@ -46,7 +46,6 @@
   @include mq("md") {
     margin: rem(23) 0 0;
     display: flex;
-    width: rem(440);
   }
 }
 
@@ -70,20 +69,32 @@
 }
 
 .contact__map {
+  position: relative;
   margin: rem(15) auto 0;
   width: rem(295);
-  aspect-ratio: 295 / 160;
+  overflow: hidden;
   @include mq("md") {
     margin: 0 0 0 auto;
-    width: rem(273);
-    aspect-ratio: 273 / 148;
+    flex: 0 0 rem(273);
   }
 }
 
-.contact__img iframe {
+.contact__map::before {
+  content: "";
+  display: block;
+  padding-top: calc(160 / 295 * 100%);
+  @include mq("md") {
+    padding-top: calc(148 / 273 * 100%);
+  }
+}
+
+.contact__map iframe {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .contact__right {
