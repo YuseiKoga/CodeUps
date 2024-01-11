@@ -147,19 +147,28 @@
 .contact__bg-deco {
   position: relative;
   margin: auto;
-  max-width: 1340px;
+  max-width: rem(345);
+  @include mq("md") {
+    max-width: 1340px;
+  }
 }
 
 .contact__bg-deco::before {
   content: "";
   display: block;
   position: absolute;
-  top: rem(-40);
+  top: rem(-26);
   right: 0;
-  width: rem(301);
-  height: rem(138);
+  width: rem(109);
+  height: rem(50);
   background-image: url(../images/top/img-contact-deco.svg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  @include mq("md") {
+    top: rem(-40);
+    right: 0;
+    width: rem(301);
+    height: rem(138);
+  }
 }
