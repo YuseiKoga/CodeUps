@@ -33,7 +33,7 @@
   justify-content: center;
   align-items: center;
   height: inherit;
-  transition: opacity .3s;
+  transition: opacity 0.3s;
 }
 .header__logo a:hover {
   opacity: $opacity;
@@ -54,7 +54,8 @@
   margin-left: auto;
   padding: 0;
   position: relative;
-  width: rem(32);
+  transform: translateX(rem(15));
+  width: rem(62);
   height: inherit;
   cursor: pointer;
   z-index: 20;
@@ -68,7 +69,7 @@
   left: 50%;
   transform: translateX(-50%);
   display: block;
-  width: 100%;
+  width: rem(32);
   height: rem(2);
   background-color: $white;
   transition: 0.5s;

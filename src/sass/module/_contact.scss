@@ -63,6 +63,9 @@
   font-weight: $regular;
   line-height: calc(24 / 16);
   text-align: center;
+  @include mq("md") {
+    text-align: left;
+  }
 }
 
 .contact__item + .contact__item {
@@ -71,7 +74,7 @@
 
 .contact__map {
   position: relative;
-  margin: rem(15) auto 0;
+  margin: rem(16) auto 0;
   width: rem(295);
   overflow: hidden;
   @include mq("md") {

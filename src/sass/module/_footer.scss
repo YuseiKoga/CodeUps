@@ -25,7 +25,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: opacity .3s;
+  transition: opacity 0.3s;
 }
 
 .footer__logo a:hover {
@@ -60,7 +60,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity .3s;
+  transition: opacity 0.3s;
 }
 .footer__sns-item a:hover {
   opacity: $opacity;
@@ -72,10 +72,10 @@
 }
 
 .footer__nav {
-  margin-top: rem(39);
+  margin-top: rem(28);
   display: flex;
   @include mq("md") {
-    margin-top: rem(17);
+    margin-top: rem(5);
   }
 }
 
@@ -93,7 +93,7 @@
 }
 
 .footer__nav-items + .footer__nav-items {
-  margin-top: rem(40);
+  margin-top: rem(16);
   @include mq("md") {
     margin-top: 0;
     margin-left: rem(120);
@@ -102,13 +102,27 @@
 
 .footer__nav-item {
   position: relative;
-  padding-left: rem(22);
 }
-.footer__nav-item::before {
+.footer__nav-item + .footer__nav-item {
+  margin-top: rem(16);
+}
+
+.footer__nav-item a {
+  position: relative;
+  display: block;
+  padding-block: rem(12);
+  padding-left: rem(22);
+  font-size: rem(16);
+  font-weight: $bold;
+  line-height: calc(18 / 16);
+  color: $white;
+  transition: opacity 0.3s;
+}
+.footer__nav-item > a::before {
   content: "";
   display: block;
   position: absolute;
-  top: 0;
+  top: rem(12);
   left: 0;
   width: rem(18);
   height: rem(18);
@@ -117,34 +131,20 @@
   background-size: contain;
   background-position: center;
 }
-.footer__nav-item + .footer__nav-item {
-  margin-top: rem(40);
-}
-
-.footer__nav-item a {
-  display: block;
-  font-size: rem(16);
-  font-weight: $bold;
-  line-height: calc(18 / 16);
-  color: $white;
-  transition: opacity .3s;
-}
 .footer__nav-item a:hover {
   opacity: $opacity;
 }
 
-.footer__sub-item {
-  margin-top: rem(24);
-}
 .footer__sub-item a {
+  padding-block: rem(12);
   font-weight: $regular;
 }
 
 .footer__copyright {
-  margin-top: rem(33);
+  margin-top: rem(21);
   text-align: center;
   @include mq("md") {
-    margin-top: rem(74);
+    margin-top: rem(62);
   }
 }
 .footer__copyright small {
