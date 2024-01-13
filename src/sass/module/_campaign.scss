@@ -1,5 +1,9 @@
 @use "global" as *;
 
+.campaign {
+  overflow: hidden;
+}
+
 .campaign__inner {
   @include mq("md") {
     position: relative;
