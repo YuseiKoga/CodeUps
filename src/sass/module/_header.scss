@@ -113,3 +113,15 @@
 .header__drawer.is-open {
   right: 0;
 }
+
+.header__drawer.header__drawer.is-open::before {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: rem(80);
+  background-color: $c-main;
+  z-index: 20;
+}

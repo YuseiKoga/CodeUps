@@ -126,4 +126,7 @@
   background-image: url(../images/top/icon-about-bg.svg);
   background-repeat: no-repeat;
   background-size: contain;
+  @media not screen and (min-width: 1299px) {
+    right: 25px;
+  }
 }

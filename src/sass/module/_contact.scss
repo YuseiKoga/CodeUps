@@ -171,4 +171,7 @@
     width: rem(301);
     height: rem(138);
   }
+  @media not screen and (min-width: 1365px) {
+    right: 25px;
+  }
 }

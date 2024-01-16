@@ -3,7 +3,7 @@
 .sp-nav {
   display: flex;
   padding: rem(92) rem(15) rem(104);
-  height: calc(100% + 1px);
+  height: 100%;
 }
 
 .sp-nav__wrap {
@@ -13,8 +13,7 @@
 .sp-nav__item {
   position: relative;
 }
-.sp-nav__item::before {
-}
+
 .sp-nav__item + .sp-nav__item {
   margin-top: rem(16);
 }

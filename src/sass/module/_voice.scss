@@ -36,6 +36,9 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  @media not screen and (min-width: 1265px) {
+    left: 25px;
+  }
 }
 
 .voice__bottom-deco {

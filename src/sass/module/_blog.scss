@@ -45,3 +45,25 @@
     margin-top: rem(80);
   }
 }
+
+.blog__bg-deco {
+  margin: auto;
+  position: relative;
+  max-width: 1240px;
+}
+
+.blog__bg-deco::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: rem(-76);
+  left: 0;
+  width: rem(437);
+  height: rem(201);
+  background-image: url(../images/top/img-blog-bg-deco.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  @media not screen and (min-width: 1265px) {
+    left: rem(25);
+  }
+}

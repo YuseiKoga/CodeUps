@@ -30,36 +30,39 @@ jQuery(function ($) {
 
   // ハンバーガーアイコンとドロワーメニュー
   $(function () {
-    const $hamburger = $(".js-hamburger");
-    const $drawerLinks = $(".js-drawer a[href], .js-header a[href]");
-
-    // ハンバーガーアイコンがクリックされた時の処理
-    $hamburger.click(function () {
-      const $this = $(this);
-      $this.toggleClass("is-open");
-      $this.hasClass("is-open") ? toggleDrawer(true) : toggleDrawer(false);
-    });
-
-    // リンクがクリックされた時の処理
-    $drawerLinks.on("click", function () {
-      toggleDrawer(false);
-    });
-
-    // ウィンドウのリサイズ時の処理
-    $(window).on("resize", function () {
-      if (window.matchMedia("(min-width:768px)").matches) {
-        toggleDrawer(false);
+    $(".js-hamburger").click(function () {
+      $(this).toggleClass("is-open");
+      if ($(this).hasClass("is-open")) {
+        openDrawer();
+      } else {
+        closeDrawer();
       }
     });
 
-    // ドロワーメニューの開閉
-    function toggleDrawer(open) {
-      const $drawer = $(".js-drawer");
-      $drawer.toggleClass("is-open", open);
-      $hamburger.toggleClass("is-open", open);
-    }
+    // backgroundまたはページ内リンクをクリックで閉じる
+    $(".js-drawer a[href], .js-header a[href]").on("click", function () {
+      closeDrawer();
+    });
+
+    // resizeイベント
+    $(window).on("resize", function () {
+      if (window.matchMedia("(min-width: 768px)").matches) {
+        closeDrawer();
+      }
+    });
   });
 
+  function openDrawer() {
+    $(".js-drawer").addClass("is-open");
+    $(".js-hamburger").addClass("is-open");
+    $("html").css({ overflow: "hidden", height: "100%" });
+  }
+
+  function closeDrawer() {
+    $(".js-drawer").removeClass("is-open");
+    $(".js-hamburger").removeClass("is-open");
+    $("html").css({ overflow: "auto", height: "auto" });
+  }
   // mvSwiperのオプション
   const mvSwiperOptions = {
     loop: true,
@@ -95,10 +98,10 @@ jQuery(function ($) {
     loopAdditionalSlides: 1,
     speed: 300,
     slidesPerView: "auto",
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
+    // autoplay: {
+    //   delay: 3000,
+    //   disableOnInteraction: false,
+    // },
     breakpoints: {
       // 768px以上の画面幅の場合の設定
       768: {

@@ -22,17 +22,17 @@
 }
 
 .mv__main-title {
-  padding-left: rem(20);
   font-family: $third-font-family;
   font-size: rem(40);
   font-weight: $regular;
   line-height: calc(48 / 40);
   letter-spacing: calc(21.6 / 40 * 1em);
+  text-indent: calc(21.6 / 40 * 1em);
   @include mq("md") {
-    padding-left: vw(1440, 40);
     font-size: vw(1440, 80);
     line-height: calc(100 / 80);
     letter-spacing: calc(43.2 / 80 * 1em);
+    text-indent: calc((43.2 / 80 * 1em));
   }
 }
 

@@ -16,12 +16,14 @@
   padding-bottom: rem(40);
   @include mq("md") {
     margin-top: rem(40);
-    padding-bottom: rem(80);
+    padding-bottom: rem(10);
   }
 }
 
 .campaign__swiper .swiper-slide {
   width: max-content;
+  height: auto;
+  display: flex;
 }
 
 .campaign__card {
@@ -86,6 +88,9 @@
 
 .campaign__button {
   text-align: center;
+  @include mq("md") {
+    margin-top: rem(70);
+  }
 }
 
 .swiper-button-next,
