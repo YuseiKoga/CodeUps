@@ -10,12 +10,11 @@
 }
 
 .campaign-card a {
-  display: block;
-  overflow: hidden;
-  transition: opacity 0.3s;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  overflow: hidden;
+  transition: opacity 0.3s;
 }
 
 .campaign-card a:hover {
@@ -23,8 +22,8 @@
 }
 
 .campaign-card__img img {
-  aspect-ratio: 280 / 188;
   width: 100%;
+  aspect-ratio: 280 / 188;
   object-fit: cover;
   @include mq("md") {
     aspect-ratio: 333 / 223;
@@ -56,16 +55,16 @@
 }
 
 .campaign-card__title {
-  position: relative;
   margin-top: rem(4);
   padding-bottom: rem(7);
+  position: relative;
+  flex-grow: 1;
   width: 100%;
   color: $c-font;
   font-size: rem(16);
   font-weight: $medium;
   line-height: calc(24 / 16);
   border-bottom: rem(2) solid $c-main;
-  flex-grow: 1;
 }
 
 .campaign-card__text {

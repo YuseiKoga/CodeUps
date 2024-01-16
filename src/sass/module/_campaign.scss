@@ -13,7 +13,7 @@
 .campaign__swiper {
   margin-top: rem(28);
   margin-right: calc(50% - 50vw);
-  padding-bottom: rem(40);
+  padding-bottom: rem(10);
   @include mq("md") {
     margin-top: rem(40);
     padding-bottom: rem(10);
@@ -21,9 +21,9 @@
 }
 
 .campaign__swiper .swiper-slide {
+  display: flex;
   width: max-content;
   height: auto;
-  display: flex;
 }
 
 .campaign__card {
@@ -87,6 +87,7 @@
 }
 
 .campaign__button {
+  margin-top: rem(30);
   text-align: center;
   @include mq("md") {
     margin-top: rem(70);
@@ -100,7 +101,7 @@
 }
 .swiper-button-next,
 .swiper-button-prev {
+  margin-top: initial;
   position: initial;
   top: initial;
-  margin-top: initial;
 }

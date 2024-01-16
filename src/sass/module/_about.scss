@@ -9,8 +9,8 @@
 }
 
 .about__bg-container {
-  position: relative;
   margin-top: rem(28);
+  position: relative;
   aspect-ratio: 345 / 212;
   @include mq("md") {
     margin-top: rem(40);
@@ -53,9 +53,9 @@
 .about__container {
   margin-top: rem(40);
   @include mq("md") {
-    display: flex;
     margin-top: 0;
     padding-right: rem(40);
+    display: flex;
     position: absolute;
     top: rem(200);
     left: rem(199);
@@ -109,8 +109,8 @@
 }
 
 .about__bg-deco {
-  position: relative;
   margin: auto;
+  position: relative;
   width: 100%;
   max-width: rem(1274);
   z-index: 30;
