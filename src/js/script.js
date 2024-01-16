@@ -98,10 +98,10 @@ jQuery(function ($) {
     loopAdditionalSlides: 1,
     speed: 300,
     slidesPerView: "auto",
-    // autoplay: {
-    //   delay: 3000,
-    //   disableOnInteraction: false,
-    // },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
     breakpoints: {
       // 768px以上の画面幅の場合の設定
       768: {
