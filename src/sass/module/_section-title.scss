@@ -15,7 +15,7 @@
     line-height: 1;
   }
 }
-.section-title__main span {
+.section-title__main::first-letter {
   color: $c-main;
 }
 
@@ -35,7 +35,7 @@
     color: $white;
   }
 }
-.section-title__main--white span {
+.section-title__main--white::first-letter {
   @include mq("md") {
     color: $c-sub;
   }

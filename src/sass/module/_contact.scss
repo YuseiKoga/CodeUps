@@ -1,5 +1,26 @@
 @use "global" as *;
 
+.contact {
+  @include mq("md") {
+    position: relative;
+  }
+}
+
+.contact::before {
+  @include mq("md") {
+    content: "";
+    display: block;
+    position: absolute;
+    top: rem(-40);
+    right: calc(50% - min(46.5vw, rem(669.6)));
+    width: rem(301);
+    height: rem(138);
+    background-image: url(../images/top/img-contact-deco.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
 .contact__container {
   @include mq("md") {
     display: flex;
@@ -142,36 +163,4 @@
 .contact__button {
   margin-top: rem(40);
   text-align: center;
-}
-
-.contact__bg-deco {
-  position: relative;
-  margin: auto;
-  max-width: rem(345);
-  @include mq("md") {
-    max-width: 1340px;
-  }
-}
-
-.contact__bg-deco::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: rem(-26);
-  right: 0;
-  width: rem(109);
-  height: rem(50);
-  background-image: url(../images/top/img-contact-deco.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  @include mq("md") {
-    top: rem(-40);
-    right: 0;
-    width: rem(301);
-    height: rem(138);
-  }
-  @media not screen and (min-width: 1365px) {
-    right: 25px;
-  }
 }
