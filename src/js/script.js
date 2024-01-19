@@ -1,4 +1,14 @@
 jQuery(function ($) {
+  let webStorage = function () {
+    if (sessionStorage.getItem("access")) {
+      $(".js-loading").remove();
+    } else {
+      sessionStorage.setItem("access", "true");
+      $(".js-loading").addClass("is-loading");
+    }
+  };
+  webStorage();
+
   // ヘッダーの高さを取得し、スクロール位置の調整
   const headerHeight = $(".js-header").height();
   $("html").css("scroll-padding-top", headerHeight + "px");
@@ -10,7 +20,6 @@ jQuery(function ($) {
     const showPosFactor = 1 / 3;
     pageTop.hide();
 
-    // ページトップボタンがクリックされた時の処理
     pageTop.on("click", function () {
       $("body,html").animate({ scrollTop: 0 }, 500);
       return false;
@@ -63,6 +72,7 @@ jQuery(function ($) {
     $(".js-hamburger").removeClass("is-open");
     $("html").css({ overflow: "auto", height: "auto" });
   }
+
   // mvSwiperのオプション
   const mvSwiperOptions = {
     loop: true,
@@ -73,24 +83,11 @@ jQuery(function ($) {
       crossFade: true,
     },
     autoplay: {
-      delay: 11000,
+      delay: 4000,
       disableOnInteraction: false,
     },
   };
-  // mvSwiperの初期化
   const mvSwiper = new Swiper(".js-mv-swiper", mvSwiperOptions);
-
-  setTimeout(function () {
-    mvSwiper.params.autoplay.delay = 4000;
-    mvSwiper.autoplay.start();
-  }, 11000);
-
-  $(".js-mv-img").each(function () {
-    var $element = $(this);
-    setTimeout(function () {
-      $element.addClass("is-animation");
-    }, 7000);
-  });
 
   // キャンペーンSwiperのオプション
   const campaignSwiperOptions = {
@@ -103,7 +100,6 @@ jQuery(function ($) {
       disableOnInteraction: false,
     },
     breakpoints: {
-      // 768px以上の画面幅の場合の設定
       768: {
         navigation: {
           nextEl: ".js-campaign__next-button",
@@ -112,8 +108,6 @@ jQuery(function ($) {
       },
     },
   };
-
-  // キャンペーンSwiperの初期化
   const campaignSwiper = new Swiper(
     ".js-campaign-swiper",
     campaignSwiperOptions

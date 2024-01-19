@@ -16,20 +16,6 @@
   padding-bottom: rem(10);
   @include mq("md") {
     margin-top: rem(40);
-    padding-bottom: rem(10);
-  }
-}
-
-.campaign__swiper .swiper-slide {
-  display: flex;
-  width: max-content;
-  height: auto;
-}
-
-.campaign__card {
-  margin-right: rem(24);
-  @include mq("md") {
-    margin-right: rem(40);
   }
 }
 
