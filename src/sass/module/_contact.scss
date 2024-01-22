@@ -12,7 +12,7 @@
     display: block;
     position: absolute;
     top: rem(-40);
-    right: calc(50% - min(46.5vw, rem(669.6)));
+    right: calc(50% - min((50vw - 25px), rem(670)));
     width: rem(301);
     height: rem(138);
     background-image: url(../images/top/img-contact-deco.svg);
