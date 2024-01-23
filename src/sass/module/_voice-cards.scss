@@ -2,4 +2,9 @@
 
 .voice-cards {
   display: grid;
+  grid-template-columns: 1fr;
+  gap: rem(40);
+  @include mq("md") {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

@@ -2,4 +2,10 @@
 
 .blog-cards {
   display: grid;
+  grid-template-columns: calc(333 / 345 * 100%);
+  justify-content: center;
+  gap: rem(40);
+  @include mq("md") {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

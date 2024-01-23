@@ -102,8 +102,8 @@ jQuery(function ($) {
     breakpoints: {
       768: {
         navigation: {
-          nextEl: ".js-campaign__next-button",
-          prevEl: ".js-campaign__prev-button",
+          nextEl: ".js-campaign-next-button",
+          prevEl: ".js-campaign-prev-button",
         },
       },
     },

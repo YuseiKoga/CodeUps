@@ -1,33 +1,64 @@
 @use "global" as *;
 
 .button {
-  display: inline-block;
-  padding-right: rem(4);
-  padding-bottom: rem(4);
-}
-
-.button__content {
-  position: relative;
-  padding: rem(15) rem(38);
+  padding: rem(20) rem(4) rem(24) 0;
   display: inline-flex;
+  justify-content: center;
+  position: relative;
+  width: rem(206);
   color: $white;
-  border: 1px solid $c-main;
-  background-color: $c-main;
-}
-
-.button__content::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: rem(3);
-  left: rem(3);
-  width: calc(100% + rem(2));
-  height: calc(100% + rem(2));
-  border: 1px solid $c-main;
+  font-family: $second-font-family;
+  font-size: rem(14);
+  line-height: 1;
   z-index: 10;
 }
 
-.button__content::after {
+.button:hover {
+  @include mq("md") {
+    color: $c-main;
+  }
+}
+
+.button::after {
+  margin: rem(1) 0 0 rem(7);
+  content: "";
+  width: rem(42);
+  height: rem(8);
+  mask-image: url(../images/common/icon-button.svg);
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+  background-color: $white;
+}
+
+.button:hover::after {
+  background-color: $c-main;
+}
+
+.button span {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - rem(4));
+  height: calc(100% - rem(4));
+  background-color: $c-main;
+  border: 1px solid $c-main;
+  z-index: -1;
+}
+
+.button span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: rem(4);
+  left: rem(4);
+  width: 100%;
+  height: 100%;
+  border: 1px solid $c-main;
+}
+
+.button span::after {
   content: "";
   display: block;
   position: absolute;
@@ -35,39 +66,14 @@
   left: 0;
   width: 100%;
   height: 100%;
+  background-color: $white;
   transform: scaleX(0);
   transform-origin: left;
-  background-color: $white;
-  transition: transform 0.2s cubic-bezier(0.45, 0, 0.55, 1);
-  z-index: 20;
+  transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1);
 }
 
-.button:hover .button__content {
-  color: $c-main;
-}
-
-.button:hover .button__content::after {
-  transform: scaleX(1);
-}
-
-.button__content span {
-  position: relative;
-  color: currentColor;
-  font-family: $second-font-family;
-  font-size: rem(14);
-  font-weight: $regular;
-  line-height: calc(22 / 14);
-  transition: 0.3s;
-  z-index: 30;
-}
-
-.button__content svg {
-  position: relative;
-  margin-top: rem(5);
-  margin-left: rem(8);
-  width: rem(42);
-  height: rem(8);
-  stroke: currentColor;
-  transition: 0.3s;
-  z-index: 30;
+.button:hover span::after {
+  @include mq("md") {
+    transform: scaleX(1);
+  }
 }

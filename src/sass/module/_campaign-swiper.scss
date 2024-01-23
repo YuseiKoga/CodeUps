@@ -2,43 +2,7 @@
 
 .campaign-swiper__item {
   margin-right: rem(24);
-  width: min(calc(280 / 360 * 100%), rem(333));
-  height: auto;
   @include mq("md") {
     margin-right: rem(40);
-    width: rem(333);
-  }
-}
-
-.campaign-swiper__link {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  transition: opacity 0.3s;
-}
-
-.campaign-swiper__link:hover {
-  @include mq("md") {
-    opacity: 0.6;
-  }
-}
-
-.campaign-swiper__body {
-  @include mq("md") {
-    padding: rem(24) rem(16) rem(40);
-  }
-}
-
-.campaign-swiper__title {
-  @include mq("md") {
-    padding-bottom: rem(7.5);
-    font-size: rem(16);
-    line-height: calc(24 / 16);
-  }
-}
-
-.campaign-swiper__text {
-  @include mq("md") {
-    margin-top: rem(15.5);
   }
 }
