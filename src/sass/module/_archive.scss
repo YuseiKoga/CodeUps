@@ -9,6 +9,10 @@
   display: none;
 }
 
+.archive__items li {
+  cursor: pointer;
+}
+
 .archive__sub-items li,
 .archive__items li:not(:first-of-type) span {
   margin-top: rem(4);

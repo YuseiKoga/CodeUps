@@ -12,12 +12,20 @@
 
 .popular-card__img {
   flex: 0 0 calc(121 / 263 * 100%);
+  overflow: hidden;
 }
 
 .popular-card__img img {
   aspect-ratio: 121 / 90;
   width: 100%;
   object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.popular-card a:hover .popular-card__img img {
+  @include mq("md") {
+    transform: scale(1.1);
+  }
 }
 
 .popular-card__body {
