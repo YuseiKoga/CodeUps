@@ -1,0 +1,16 @@
+@use "global" as *;
+
+.breadcrumb {
+  line-height: 1;
+}
+
+.breadcrumb span {
+  display: inline-block;
+  vertical-align: top;
+  font-size: rem(14);
+  line-height: calc(20 / 14);
+}
+
+.breadcrumb--white {
+  color: $white;
+}

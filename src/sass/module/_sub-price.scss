@@ -1,0 +1,104 @@
+@use "global" as *;
+
+.sub-price__container {
+  margin-inline: auto;
+  max-width: rem(700);
+}
+
+.sub-price__block:not(:first-child) {
+  margin-top: rem(40);
+  @include mq("md") {
+    margin-top: rem(80);
+  }
+}
+
+.sub-price__block {
+  @include mq("md") {
+    display: flex;
+  }
+}
+
+.sub-price__title {
+  padding-block: rem(8);
+  text-align: center;
+  color: $white;
+  font-size: rem(16);
+  font-weight: $bold;
+  line-height: calc(24 / 16);
+  background-color: $c-main;
+  @include mq("md") {
+    display: grid;
+    place-content: center;
+    flex: 0 0 rem(200);
+  }
+}
+
+.sub-price__title span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  @include mq("md") {
+    flex-direction: column-reverse;
+  }
+}
+
+.sub-price__title span::before {
+  content: "";
+  display: inline-block;
+  width: rem(24);
+  height: rem(24);
+  background-image: url(../images/common/icon-price-title.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  @include mq("md") {
+    margin-top: rem(8);
+    width: rem(64);
+    height: rem(64);
+  }
+}
+
+.sub-price__items {
+  display: grid;
+  grid-template-columns: calc(240 / 345 * 100%) calc(105 / 345 * 100%);
+  grid-auto-rows: 1fr;
+  @include mq("md") {
+    grid-template-columns: 68% 32%;
+    flex: 1;
+    border-top: 1px solid $c-main;
+  }
+}
+
+.sub-price__term {
+  padding-block: rem(5.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: calc(24 / 16);
+  border-style: solid;
+  border-width: 0 1px 1px 1px;
+  border-color: transparent $c-main $c-main $c-main;
+  @include mq("md") {
+    padding: rem(17) rem(15);
+    flex-direction: row;
+    justify-content: start;
+    border-width: 0 1px 1px 0;
+    border-color: transparent $c-main $c-main 0;
+  }
+}
+
+.sub-price__description {
+  padding: rem(0) rem(15);
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  font-size: rem(16);
+  line-height: calc(24 / 16);
+  border-style: solid;
+  border-width: 0 1px 1px 0;
+  border-color: transparent $c-main $c-main transparent;
+}

@@ -1,0 +1,73 @@
+@use "global" as *;
+
+.not-found {
+  padding: rem(80) 0 rem(40) 0;
+  position: relative;
+  background-color: $c-main;
+  @include mq("md") {
+    padding: rem(90) 0 rem(148) 0;
+  }
+}
+
+.not-found::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: rem(80);
+  left: 50%;
+  transform: translateX(-50%);
+  width: rem(345);
+  height: rem(345);
+  background-image: url(../images/common/img-404bg.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  @include mq("md") {
+    top: rem(90);
+    left: calc(50% - min(50vw, rem(540)));
+    transform: initial;
+    width: rem(698);
+    height: rem(698);
+  }
+}
+
+.not-found__container {
+  margin-top: rem(52);
+  @include mq("md") {
+    margin-top: rem(120);
+  }
+}
+
+.not-found__title {
+  text-align: center;
+  color: $white;
+  font-family: $third-font-family;
+  font-size: rem(80);
+  font-weight: $regular;
+  line-height: calc(96 / 80);
+  letter-spacing: 0.5em;
+  @include mq("md") {
+    font-size: rem(160);
+    line-height: calc(192 / 160);
+  }
+}
+
+.not-found__text {
+  margin-top: rem(-4);
+  text-align: center;
+  color: $white;
+  font-family: $third-font-family;
+  font-size: rem(16);
+  line-height: calc(24 / 16);
+  @include mq("md") {
+    margin-top: rem(24);
+  }
+}
+
+.not-found__button {
+  margin-top: rem(40);
+  text-align: center;
+  @include mq("md") {
+    margin-top: rem(80);
+  }
+}

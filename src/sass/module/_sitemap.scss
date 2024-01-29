@@ -1,0 +1,68 @@
+@use "global" as *;
+
+.sitemap__container {
+  display: flex;
+  justify-content: center;
+  @include mq("md") {
+    justify-content: space-between;
+  }
+}
+
+.sitemap__wrap {
+  @include mq("md") {
+    display: contents;
+  }
+}
+
+.sitemap__wrap:nth-of-type(1) {
+  margin-right: rem(4);
+}
+
+.sitemap__wrap:nth-of-type(2) {
+  margin-left: rem(23);
+}
+
+.sitemap__items + .sitemap__items {
+  margin-top: rem(16);
+  @include mq("md") {
+    margin-top: 0;
+  }
+}
+
+.sitemap__item + .sitemap__item {
+  margin-top: rem(16);
+}
+
+.sitemap__item a {
+  padding: rem(12) 0;
+  display: block;
+  font-size: rem(16);
+  font-weight: $bold;
+  line-height: calc(18 / 16);
+}
+
+.sitemap__item > a {
+  padding-left: rem(22);
+  position: relative;
+}
+
+.sitemap__item > a::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: rem(18);
+  height: rem(18);
+  mask-image: url(../images/common/icon-hitode.svg);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  background-color: $c-font;
+}
+
+.sitemap__sub-item a {
+  padding-left: rem(24);
+  font-weight: $regular;
+}

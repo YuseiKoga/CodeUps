@@ -1,0 +1,23 @@
+@use "global" as *;
+
+.sidebar-title {
+  padding-left: rem(16);
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-size: rem(24);
+  font-weight: $regular;
+  line-height: calc(35 / 24);
+  border-left: 8px solid $c-main;
+}
+
+.sidebar-title::before {
+  margin-right: rem(8);
+  content: "";
+  display: inline-block;
+  width: rem(50);
+  height: rem(50);
+  background-image: url(../images/common/icon-sidebar.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}

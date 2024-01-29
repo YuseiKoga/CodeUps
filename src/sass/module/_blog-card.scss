@@ -31,19 +31,19 @@
   display: block;
   font-family: $second-font-family;
   font-size: rem(12);
-  line-height: (18 / 12);
+  line-height: calc(18 / 12);
 }
 
 .blog-card__title {
   padding-bottom: rem(3.5);
   font-size: rem(16);
   font-weight: $medium;
-  line-height: (24 / 16);
+  line-height: calc(24 / 16);
   border-bottom: 1px solid $c-main;
 }
 
 .blog-card__text {
   margin-top: rem(15.5);
   font-size: rem(16);
-  line-height: (24 / 16);
+  line-height: calc(24 / 16);
 }

@@ -7,9 +7,6 @@
     padding-left: $padding-sp;
     margin-right: auto;
     margin-left: auto;
-    @include mq("sm") {
-      max-width: $inner-sm + strip-unit($padding-sp) * 2;
-    }
     @include mq("md") {
       max-width: $inner + strip-unit($padding-pc) * 2;
       padding-right: $padding-pc;

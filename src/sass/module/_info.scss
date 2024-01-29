@@ -1,0 +1,145 @@
+@use "global" as *;
+
+.info__tab {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info__tab-item {
+  padding: rem(10) rem(16);
+  width: rem(102);
+  color: $c-main;
+  text-align: center;
+  font-size: rem(14);
+  line-height: calc(20 / 14);
+  background: $c-sub;
+  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+  transition: color 0.3s, background 0.3s;
+  @include mq("md") {
+    padding: rem(13) 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: rem(300);
+    font-size: rem(24);
+    line-height: 1;
+    cursor: pointer;
+  }
+}
+
+.info__tab-item:hover {
+  @include mq("md") {
+    color: $white;
+    background-color: $c-main;
+  }
+}
+
+.info__tab-item::before {
+  @include mq("md") {
+    margin-right: rem(8);
+    content: "";
+    display: inline-block;
+    width: rem(64);
+    height: rem(64);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: $c-main;
+    transition: color 0.3s, background 0.3s;
+  }
+}
+
+.info__tab-item:hover::before {
+  @include mq("md") {
+    background-color: $white;
+  }
+}
+
+.info__tab-item:nth-of-type(1)::before {
+  @include mq("md") {
+    mask-image: url(../images/info/icon-info01.svg);
+  }
+}
+
+.info__tab-item:nth-of-type(2)::before {
+  mask-image: url(../images/info/icon-info02.svg);
+}
+
+.info__tab-item:nth-of-type(3)::before {
+  mask-image: url(../images/info/icon-info03.svg);
+}
+
+.info__tab-item span {
+  display: inline-block;
+}
+
+.info__tab-item.is-active {
+  color: $white;
+  background-color: $c-main;
+}
+.info__tab-item.is-active::before {
+  @include mq("md") {
+    background-color: $white;
+  }
+}
+
+.info__contents {
+  margin-top: rem(16);
+  @include mq("md") {
+    margin-top: rem(24);
+  }
+}
+
+.info__content {
+  padding: rem(23);
+  display: none;
+  border: 1px solid $c-main;
+  @include mq("md") {
+    padding: rem(24);
+    align-items: center;
+  }
+}
+
+.info__content.is-active {
+  display: block;
+  @include mq("md") {
+    display: flex;
+  }
+}
+
+.info__body {
+  @include mq("md") {
+    flex: 0 0 calc((100% - rem(48)) / 2);
+  }
+}
+
+.info__title {
+  padding-bottom: rem(7.5);
+  font-size: rem(24);
+  font-weight: $bold;
+  line-height: 1;
+  border-bottom: 1px solid $c-main;
+}
+
+.info__text {
+  margin-top: rem(7.5);
+  font-size: rem(16);
+  line-height: calc(24 / 16);
+}
+
+.info__img {
+  margin-top: rem(8);
+  aspect-ratio: 297 / 189;
+  @include mq("md") {
+    margin: 0 0 0 rem(48);
+    flex: 0 0 calc((100% - rem(48)) / 2);
+    aspect-ratio: 492 / 313;
+  }
+}
+
+.info__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

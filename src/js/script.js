@@ -1,43 +1,61 @@
 jQuery(function ($) {
-  let webStorage = function () {
+  /* ========================================
+  // ローディングアニメーション
+  ======================================== */
+  function webStorage() {
     if (sessionStorage.getItem("access")) {
       $(".js-loading").remove();
     } else {
       sessionStorage.setItem("access", "true");
       $(".js-loading").addClass("is-loading");
     }
-  };
+  }
+
   webStorage();
 
-  // ヘッダーの高さを取得し、スクロール位置の調整
-  const headerHeight = $(".js-header").height();
-  $("html").css("scroll-padding-top", headerHeight + "px");
+  /* ========================================
+  // スムーススクロール時の高さ調整
+  ======================================== */
+  function scrollPositionSet() {
+    const headerHeight = $(".js-header").height();
+    $("html").css("scroll-padding-top", headerHeight + "px");
+  }
 
-  // ページトップに戻るボタン
-  $(function () {
-    const pageTop = $(".js-page-top");
-    const mv = $(".js-mv");
+  scrollPositionSet();
+
+  /* ========================================
+  // ページトップボタン
+  ======================================== */
+  function scrollPageTop() {
+    const Button = $(".js-page-top");
+    const mvHeight = $(".js-mv").height();
     const showPosFactor = 1 / 3;
-    pageTop.hide();
+    const showPos = mvHeight * showPosFactor;
 
-    pageTop.on("click", function () {
-      $("body,html").animate({ scrollTop: 0 }, 500);
-      return false;
-    });
+    // ボタン非表示
+    Button.hide();
 
+    // ボタンの表示・非表示
     $(window).on("scroll", function () {
-      const mvHeight = mv.height();
-      const showPos = mvHeight * showPosFactor;
-
       if ($(this).scrollTop() > showPos) {
-        pageTop.fadeIn();
+        Button.fadeIn();
       } else {
-        pageTop.fadeOut();
+        Button.fadeOut();
       }
     });
-  });
 
-  // ハンバーガーアイコンとドロワーメニュー
+    // クリックでページトップに戻る
+    Button.on("click", function () {
+      $("html,body").animate({ scrollTop: 0 }, 500);
+      return false;
+    });
+  }
+
+  scrollPageTop();
+
+  /* ========================================
+  // ドロワーメニュ
+  ======================================== */
   $(function () {
     $(".js-hamburger").click(function () {
       $(this).toggleClass("is-open");
@@ -73,7 +91,9 @@ jQuery(function ($) {
     $("html").css({ overflow: "auto", height: "auto" });
   }
 
-  // mvSwiperのオプション
+  /* ========================================
+  // Swiper（メインビュー）
+  ======================================== */
   const mvSwiperOptions = {
     loop: true,
     loopAdditionalSlides: 1,
@@ -89,7 +109,9 @@ jQuery(function ($) {
   };
   const mvSwiper = new Swiper(".js-mv-swiper", mvSwiperOptions);
 
-  // キャンペーンSwiperのオプション
+  /* ========================================
+  // Swiper（キャンペーン）
+  ======================================== */
   const campaignSwiperOptions = {
     loop: true,
     loopAdditionalSlides: 1,
@@ -113,7 +135,12 @@ jQuery(function ($) {
     campaignSwiperOptions
   );
 
-  // 画像に対して初期設定を行う
+  /* ========================================
+  // スクロールアニメーション（画像）
+  ======================================== */
+
+  /* 画像初期設定
+  ------------------------------ */
   function initializeImages() {
     $(".js-image").each(function () {
       const $imageContainer = $(this);
@@ -123,7 +150,11 @@ jQuery(function ($) {
         .css("opacity", "0");
     });
   }
-  // 画像をスクロールに応じてフェードインさせる
+
+  initializeImages();
+
+  /* スクロールアニメーション
+  ------------------------------ */
   function fadeInImagesOnScroll() {
     const fadeOffset = 100;
     const windowHeight = $(window).height();
@@ -149,9 +180,126 @@ jQuery(function ($) {
     });
   }
 
-  // ページロード時に初期設定を実行
-  initializeImages();
-
-  // スクロール時に画像をフェードインさせる
   $(window).on("scroll", fadeInImagesOnScroll);
+
+  /* ========================================
+  // モーダル（ギャラリー）
+  ======================================== */
+  function galleryModal() {
+    const windowSize = $(window).width();
+    const modalImage = $(".js-modal-img img");
+    const modal = $(".js-modal");
+
+    modalImage.click(function () {
+      if (windowSize < 768) {
+        return false;
+      } else {
+        // modal内に画像を複製して表示(背景をスクロール不可)
+        modal.html($(this).prop("outerHTML"));
+        modal.fadeIn();
+        $("html,body").css("overflow", "hidden");
+        return false;
+      }
+    });
+
+    // モーダル画像を非表示（背景をスクロール可）
+    modal.click(function () {
+      modal.fadeOut();
+      $("html,body").css("overflow", "auto");
+      return false;
+    });
+  }
+
+  galleryModal();
+
+  /* ========================================
+// タブ
+======================================== */
+
+  /* タブ切り替え
+------------------------------ */
+  function activateTab() {
+    const tabButtons = $(".js-tab-button");
+    const tabContents = $(".js-tab-content");
+
+    tabButtons.click(function () {
+      const index = tabButtons.index(this);
+
+      tabButtons.removeClass("is-active");
+      tabContents.removeClass("is-active");
+
+      $(this).addClass("is-active");
+      tabContents.eq(index).addClass("is-active");
+    });
+  }
+
+  activateTab();
+
+  /* タブ ダイレクトリンク
+------------------------------ */
+  function activateTabFromHash() {
+    let hash = location.hash;
+    hash = (hash.match(/^#tab\d+$/) || [])[0];
+    let tabName = "tab01";
+
+    if ($(hash).length) {
+      tabName = hash.slice(1);
+    }
+
+    const tabButtons = $(".js-tab-button");
+    const tabContents = $(".js-tab-content");
+
+    tabButtons.removeClass("is-active");
+    tabContents.removeClass("is-active");
+
+    const tabNumber = tabContents.filter("#" + tabName).index();
+
+    tabButtons.eq(tabNumber).addClass("is-active");
+    tabContents.eq(tabNumber).addClass("is-active");
+  }
+
+  activateTabFromHash();
+
+  /* ========================================
+  // アコーディオン（アーカイブ）
+  ======================================== */
+  function archiveAccordion() {
+    const accordionSelector = $(".js-archive-accordion");
+    const firstAccordionSelector = accordionSelector.first();
+    const accordionContent = $(".js-archive-content");
+
+    // 最初のアイテムを展開
+    firstAccordionSelector.find(accordionContent).css("display", "block");
+    firstAccordionSelector.addClass("is-active");
+
+    accordionSelector.on("click", function () {
+      $(this).find(accordionContent).slideToggle();
+      $(this).toggleClass("is-active");
+    });
+  }
+
+  archiveAccordion();
+
+  /* ========================================
+  // アコーディオン（FAQ）
+  ======================================== */
+  function faqAccordion() {
+    const accordionSelector = $(".js-faq-accordion");
+    const accordionContent = $(".js-faq-content");
+
+    accordionContent.css("display", "block");
+
+    accordionSelector.addClass("is-open");
+
+    accordionSelector.on("click", function () {
+      $(this).next().slideToggle();
+      $(this).toggleClass("is-open");
+    });
+  }
+
+  faqAccordion();
+
+  /* ========================================
+  // フォームバリデーション
+  ======================================== */
 });

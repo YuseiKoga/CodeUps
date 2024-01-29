@@ -1,0 +1,40 @@
+@use "global" as *;
+
+.archive-campaign {
+  position: relative;
+}
+
+.archive-campaign::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: rem(-24);
+  left: calc(50% - min(50vw - 15px, rem(172)));
+  width: rem(120);
+  height: rem(55);
+  background-image: url(../images/campaign/img-deco-sp.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  @include mq("md") {
+    top: rem(-70);
+    left: calc(50% - min((50vw - 25px), rem(620)));
+    width: rem(301);
+    height: rem(138);
+    background-image: url(../images/campaign/img-deco-pc.svg);
+  }
+}
+
+.archive-campaign__items {
+  margin: rem(40) auto 0;
+  width: calc(280 / 345 * 100%);
+  @include mq("md") {
+    margin: rem(40) 0 0;
+    width: 100%;
+  }
+}
+
+.archive-campaign__pagination {
+  margin-top: rem(80);
+  text-align: center;
+}

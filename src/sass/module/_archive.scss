@@ -1,0 +1,43 @@
+@use "global" as *;
+
+.archive__items {
+  margin-top: rem(24);
+}
+
+.archive__sub-items {
+  padding-left: rem(24);
+  display: none;
+}
+
+.archive__sub-items li,
+.archive__items li:not(:first-of-type) span {
+  margin-top: rem(4);
+}
+
+.archive__items span,
+.archive__sub-items a {
+  padding-left: rem(32);
+  position: relative;
+  display: block;
+  color: $c-main;
+  font-size: rem(24);
+  line-height: calc(35 / 24);
+}
+
+.archive__items span::before,
+.archive__sub-items a::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: rem(16);
+  transform: translate(-50%, -50%) rotate(90deg);
+  border-style: solid;
+  border-width: 0 rem(10.5) rem(18.18) rem(10.5);
+  border-color: transparent transparent $c-main transparent;
+  transition: transform 0.2s;
+}
+
+.archive__items li.is-active span::before {
+  transform: translate(-50%, -50%) rotate(180deg);
+}

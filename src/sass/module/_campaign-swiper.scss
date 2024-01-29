@@ -1,8 +1,11 @@
 @use "global" as *;
 
-.campaign-swiper__item {
+.campaign-swiper .swiper-slide {
   margin-right: rem(24);
+  width: rem(280);
+  height: auto;
   @include mq("md") {
     margin-right: rem(40);
+    width: rem(333);
   }
 }

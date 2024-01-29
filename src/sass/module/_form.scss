@@ -1,0 +1,227 @@
+@use 'global' as *;
+
+.form__item {
+  padding-block: rem(23.5);
+  border-bottom: 1px dashed $c-main;
+  @include mq('md') {
+    padding-block: rem(39.5);
+    display: flex;
+    align-items: start;
+  }
+}
+
+.form__item:first-child {
+  padding-top: 0;
+}
+
+.form__label {
+  display: flex;
+  align-items: center;
+  font-size: rem(16);
+  font-weight: $bold;
+  line-height: calc(23 / 16);
+  @include mq('md') {
+    flex: 1;
+  }
+}
+
+.form__label span {
+  margin-left: rem(8);
+  padding: rem(4.5) rem(16);
+  color: $white;
+  font-size: rem(12);
+  font-weight: $regular;
+  line-height: 1;
+  background-color: #c94800;
+}
+
+.form__label span::first-letter {
+  letter-spacing: .4em;
+}
+
+.form__input,
+.form__check,
+.form__select,
+.form__textarea {
+  margin-top: rem(16);
+  @include mq('md') {
+    margin-top: 0;
+    flex: 0 0 rem(480);
+  }
+}
+
+// INPUT
+.form__input input {
+  padding: rem(7.5) rem(15);
+  width: 100%;
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: 1;
+  border: 1px solid $c-main;
+  background-color: $white;
+}
+
+.form__input input::placeholder {
+  color: $c-sub;
+}
+
+// CHECKBOX
+.form__check label {
+  display: block;
+}
+
+.form__check label:not(:first-of-type) {
+  margin-top: rem(4);
+}
+
+.form__check input {
+  display: none;
+}
+
+.form__check input + span {
+  padding-left: rem(22);
+  display: inline-block;
+  position: relative;
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: calc(23 / 16);
+  cursor: pointer;
+}
+
+.form__check input + span::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: rem(14);
+  height: rem(14);
+  background-color: $white;
+  border: 1px solid $c-main;
+}
+
+.form__check input + span::after {
+  margin: rem(-1) 0 0 rem(2);
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) rotate(-40deg);
+  width: rem(10);
+  height: rem(5);
+  border-bottom: 2px solid #C94800;
+  border-left: 2px solid #C94800;
+  opacity: 0;
+  transition: opacity .2s;
+}
+
+.form__check input:checked + span::after {
+  opacity: 1;
+}
+
+// SELECT
+.form__select select {
+  padding: rem(13) rem(7);
+  width: 100%;
+  font-size: rem(12);
+  line-height: 1;
+  border: 1px solid $c-main;
+  background-image: url(../images/common/icon-form-select.svg);
+  background-repeat: no-repeat;
+  background-size: rem(10);
+  background-position: top rem(12) right rem(9);
+}
+
+// TEXTAREA
+.form__textarea textarea {
+  padding: rem(7.5) rem(15);
+  width: 100%;
+  height: rem(200);
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: calc(23 / 16);
+  border: 1px solid $c-main;
+  background-color: $white;
+}
+
+// PRIVACY CHECK
+.form__privacy {
+  margin: rem(39.5) auto 0;
+  width: max(calc(282 / 345 * 100%), rem(282));
+  @include mq('md') {
+    margin: rem(79.5) auto 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+.form__privacy input {
+  display: none;
+}
+
+.form__privacy input + span {
+  padding-left: rem(30);
+  display: inline-block;
+  position: relative;
+  font-size: rem(14);
+  font-weight: $regular;
+  line-height: calc(22 / 14);
+  cursor: pointer;
+}
+
+.form__privacy input + span::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: rem(22);
+  height: rem(22);
+  background-color: $white;
+  border: 1px solid $c-main;
+}
+
+.form__privacy input + span::after {
+  margin: rem(-2) 0 0 rem(3);
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) rotate(-40deg);
+  width: rem(16);
+  height: rem(9);
+  border-bottom: 2px solid #C94800;
+  border-left: 2px solid #C94800;
+  opacity: 0;
+  transition: opacity .2s;
+}
+
+.form__privacy input:checked + span::after {
+  opacity: 1;
+}
+
+// SUBMIT BUTTON
+.form__submit {
+  margin-top: rem(24);
+  text-align: center;
+  @include mq('md') {
+    margin-top: rem(40);
+  }
+}
+
+.form__submit input {
+  color: $white;
+  font-size: rem(14);
+  font-weight: $regular;
+  line-height: 1;
+  transition: color .3s;
+}
+
+.form__submit input:hover {
+  @include mq('md') {
+    color: $c-main;
+  }
+}

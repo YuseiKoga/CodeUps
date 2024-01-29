@@ -7,5 +7,12 @@
   gap: rem(40);
   @include mq("md") {
     grid-template-columns: repeat(3, 1fr);
+    gap: rem(80) rem(40);
+  }
+}
+
+.blog-cards--sub {
+  @include mq("md") {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

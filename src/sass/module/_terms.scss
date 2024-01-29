@@ -1,0 +1,36 @@
+@use "global" as *;
+
+.terms__container {
+  margin: auto;
+  max-width: rem(800);
+}
+
+.terms__title {
+  font-size: rem(24);
+  font-weight: $medium;
+  line-height: calc(35 / 24);
+  @include mq("md") {
+    font-size: rem(32);
+    line-height: calc(46 / 32);
+  }
+}
+
+.terms__content {
+  margin-top: rem(40);
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: calc(32 / 16);
+}
+
+.terms__numbers {
+  padding-left: 1.4em;
+  list-style: number;
+}
+
+.terms__item {
+  padding-left: 0.1em;
+}
+
+.terms-margin {
+  margin-top: 2em;
+}

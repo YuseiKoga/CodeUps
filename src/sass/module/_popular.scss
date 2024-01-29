@@ -1,0 +1,7 @@
+@use "global" as *;
+
+.popular__items {
+  margin-top: rem(24);
+  display: grid;
+  gap: rem(24);
+}

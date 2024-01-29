@@ -1,0 +1,41 @@
+@use "global" as *;
+
+.popular-card {
+  background: $white;
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+.popular-card a {
+  padding: rem(16);
+  display: flex;
+}
+
+.popular-card__img {
+  flex: 0 0 calc(121 / 263 * 100%);
+}
+
+.popular-card__img img {
+  aspect-ratio: 121 / 90;
+  width: 100%;
+  object-fit: cover;
+}
+
+.popular-card__body {
+  margin-left: calc(16 / 263 * 100%);
+  flex: 1;
+}
+
+.popular-card__date {
+  display: inline-block;
+  vertical-align: top;
+  font-family: $second-font-family;
+  font-size: rem(12);
+  line-height: calc(18 / 12);
+}
+
+.popular-card__title {
+  margin-top: rem(4);
+  font-size: rem(16);
+  font-weight: $medium;
+  line-height: calc(23 / 16);
+}

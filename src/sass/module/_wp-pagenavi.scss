@@ -1,0 +1,88 @@
+@use "global" as *;
+
+.wp-pagenavi {
+  display: inline-flex;
+  gap: rem(12);
+}
+
+.wp-pagenavi a,
+.wp-pagenavi span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(38);
+  height: rem(38);
+  color: $c-main;
+  font-family: $third-font-family;
+  font-size: rem(16);
+  font-weight: $bold;
+  line-height: 1;
+  border: 1px solid $c-main;
+  background-color: $white;
+  transition: color 0.3s, background 0.3s;
+}
+
+.wp-pagenavi .current {
+  color: $white;
+  background-color: $c-main;
+}
+
+.wp-pagenavi a:hover {
+  @include mq("md") {
+    color: $white;
+    background-color: $c-main;
+  }
+}
+
+.wp-pagenavi .previouspostslink {
+  margin-right: rem(28);
+  position: relative;
+}
+
+.wp-pagenavi .previouspostslink::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: rem(15);
+  width: rem(10);
+  height: rem(10);
+  border-top: 1px solid $c-main;
+  border-left: 1px solid $c-main;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.wp-pagenavi .nextpostslink {
+  margin-left: rem(28);
+  position: relative;
+}
+
+.wp-pagenavi .nextpostslink::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: rem(15);
+  width: rem(10);
+  height: rem(10);
+  border-top: 1px solid $c-main;
+  border-right: 1px solid $c-main;
+  transform: translateY(-50%) rotate(45deg);
+  transition: border 0.3s;
+}
+
+.wp-pagenavi .previouspostslink:hover::before,
+.wp-pagenavi .nextpostslink:hover::before {
+  @include mq("md") {
+    border-color: $white;
+  }
+}
+
+////////////////////////
+.wp-pagenavi .page:nth-of-type(5),
+.wp-pagenavi .page:nth-of-type(6) {
+  display: none;
+  @include mq("md") {
+    display: flex;
+  }
+}
