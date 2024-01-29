@@ -1,16 +1,9 @@
-@use 'global' as *;
-
-.sub-contact {
-  padding-bottom: rem(144);
-  @include mq('md') {
-    padding-bottom: rem(160);
-  }
-}
+@use "global" as *;
 
 .sub-contact__form {
   margin: auto;
   max-width: rem(480);
-  @include mq('md') {
+  @include mq("md") {
     max-width: rem(700);
   }
 }

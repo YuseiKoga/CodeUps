@@ -1,11 +1,4 @@
-@use 'global' as *;
-
-.contact-thanks {
-  padding-bottom: rem(144);
-  @include mq('md') {
-    padding-bottom: rem(120);
-  }
-}
+@use "global" as *;
 
 .contact-thanks__title {
   text-align: center;
