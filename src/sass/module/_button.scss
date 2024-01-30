@@ -46,11 +46,15 @@
 }
 
 .button:hover::after {
-  background-color: $c-main;
+  @include mq("md") {
+    background-color: $c-main;
+  }
 }
 
 .button--white:hover::after {
-  background-color: $white;
+  @include mq("md") {
+    background-color: $white;
+  }
 }
 
 .button span {
