@@ -1,9 +1,9 @@
-@use 'global' as *;
+@use "global" as *;
 
 .form__item {
   padding-block: rem(23.5);
   border-bottom: 1px dashed $c-main;
-  @include mq('md') {
+  @include mq("md") {
     padding-block: rem(39.5);
     display: flex;
     align-items: start;
@@ -20,7 +20,7 @@
   font-size: rem(16);
   font-weight: $bold;
   line-height: calc(23 / 16);
-  @include mq('md') {
+  @include mq("md") {
     flex: 1;
   }
 }
@@ -36,7 +36,7 @@
 }
 
 .form__label span::first-letter {
-  letter-spacing: .4em;
+  letter-spacing: 0.4em;
 }
 
 .form__input,
@@ -44,7 +44,7 @@
 .form__select,
 .form__textarea {
   margin-top: rem(16);
-  @include mq('md') {
+  @include mq("md") {
     margin-top: 0;
     flex: 0 0 rem(480);
   }
@@ -89,7 +89,7 @@
 }
 
 .form__check input + span::before {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: 50%;
@@ -103,7 +103,7 @@
 
 .form__check input + span::after {
   margin: rem(-1) 0 0 rem(2);
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: 50%;
@@ -111,10 +111,10 @@
   transform: translateY(-50%) rotate(-40deg);
   width: rem(10);
   height: rem(5);
-  border-bottom: 2px solid #C94800;
-  border-left: 2px solid #C94800;
+  border-bottom: 2px solid #c94800;
+  border-left: 2px solid #c94800;
   opacity: 0;
-  transition: opacity .2s;
+  transition: opacity 0.2s;
 }
 
 .form__check input:checked + span::after {
@@ -150,7 +150,7 @@
 .form__privacy {
   margin: rem(39.5) auto 0;
   width: max(calc(282 / 345 * 100%), rem(282));
-  @include mq('md') {
+  @include mq("md") {
     margin: rem(79.5) auto 0;
     width: 100%;
     text-align: center;
@@ -171,7 +171,7 @@
 }
 
 .form__privacy input + span::before {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: 50%;
@@ -185,7 +185,7 @@
 
 .form__privacy input + span::after {
   margin: rem(-2) 0 0 rem(3);
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: 50%;
@@ -193,10 +193,10 @@
   transform: translateY(-50%) rotate(-40deg);
   width: rem(16);
   height: rem(9);
-  border-bottom: 2px solid #C94800;
-  border-left: 2px solid #C94800;
+  border-bottom: 2px solid #c94800;
+  border-left: 2px solid #c94800;
   opacity: 0;
-  transition: opacity .2s;
+  transition: opacity 0.2s;
 }
 
 .form__privacy input:checked + span::after {
@@ -207,7 +207,7 @@
 .form__submit {
   margin-top: rem(24);
   text-align: center;
-  @include mq('md') {
+  @include mq("md") {
     margin-top: rem(40);
   }
 }
@@ -217,11 +217,33 @@
   font-size: rem(14);
   font-weight: $regular;
   line-height: 1;
-  transition: color .3s;
+  transition: color 0.3s;
 }
 
 .form__submit input:hover {
-  @include mq('md') {
+  @include mq("md") {
     color: $c-main;
   }
+}
+
+// バリデーション
+.error-message {
+  text-align: center;
+  color: #c94800;
+  font-size: rem(16);
+}
+
+.error-message span {
+  display: inline-block;
+}
+
+.form__input input.is-error,
+.form__textarea textarea.is-error {
+  border: 1px solid #c94800;
+  background: rgba(201, 72, 0, 0.2);
+}
+
+#consent.is-error + span::before {
+  border: 1px solid #c94800;
+  background: rgba(201, 72, 0, 0.2);
 }
