@@ -9,7 +9,7 @@
   display: block;
   position: absolute;
   top: rem(-24);
-  left: calc(50% - min(50vw - 15px, rem(172)));
+  left: calc(50% - (50vw - 15px));
   width: rem(120);
   height: rem(55);
   background-image: url(../images/common/img-ornament-sp.svg);
