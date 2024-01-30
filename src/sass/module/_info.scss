@@ -1,8 +1,10 @@
 @use "global" as *;
 
 .info__tab {
+  margin-inline: auto;
   display: flex;
-  justify-content: space-between;
+  gap: rem(19);
+  max-width: rem(346);
 }
 
 .info__tab-item {
