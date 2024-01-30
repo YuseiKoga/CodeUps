@@ -7,6 +7,7 @@
   gap: rem(16) rem(21);
   @include mq("md") {
     justify-content: start;
+    gap: rem(16) rem(32);
   }
 }
 

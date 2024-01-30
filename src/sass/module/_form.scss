@@ -233,6 +233,10 @@
   font-size: rem(16);
 }
 
+.error-message#formError {
+  margin-bottom: rem(40);
+}
+
 .error-message span {
   display: inline-block;
 }

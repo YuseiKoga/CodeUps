@@ -1,7 +1,8 @@
 @use "global" as *;
 
 .wp-pagenavi {
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
   gap: rem(12);
 }
 
