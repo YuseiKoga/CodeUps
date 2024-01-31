@@ -3,7 +3,7 @@
 .tab {
   display: flex;
   flex-wrap: wrap;
-  gap: rem(16) rem(21);
+  gap: rem(16) min(calc(21 / 345 * 100%), rem(21));
   @include mq("md") {
     justify-content: start;
     gap: rem(16) rem(32);
@@ -12,7 +12,7 @@
 
 .tab__item {
   padding-block: rem(9);
-  width: rem(162);
+  width: min(calc(162 / 345 * 100%) ,rem(162));
   color: $c-main;
   font-size: rem(14);
   line-height: 1;

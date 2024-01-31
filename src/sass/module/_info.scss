@@ -5,6 +5,10 @@
   display: flex;
   gap: rem(19);
   max-width: rem(346);
+  @include mq("md") {
+    justify-content: space-between;
+    max-width: 100%;
+  }
 }
 
 .info__tab-item {
