@@ -12,11 +12,12 @@
 
 .tab__item {
   padding-block: rem(9);
-  width: min(calc(162 / 345 * 100%) ,rem(162));
+  width: min(calc(162 / 345 * 100%), rem(162));
   color: $c-main;
   font-size: rem(14);
   line-height: 1;
   text-align: center;
+  background-color: $white;
   border: 1px solid $c-main;
   transition: color 0.3s, background 0.3s;
 }

@@ -78,9 +78,8 @@
     content: "";
     display: block;
     position: absolute;
-    top: 50%;
+    top: rem(3);
     left: 0;
-    transform: translateY(-50%);
     width: rem(18);
     height: rem(18);
     background-image: url(../images/common/icon-blog-list.svg);

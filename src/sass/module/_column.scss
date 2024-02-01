@@ -1,0 +1,29 @@
+@use "global" as *;
+
+.column {
+  margin-top: rem(52);
+@include mq('md') {
+  margin-top: rem(150);
+}
+}
+
+.column__container {
+  @include mq('md') {
+    display: flex;
+  }
+}
+
+.column__main {
+  @include mq('md') {
+    flex: 0 0 rem(706);
+  }
+}
+
+.column__side {
+  margin: rem(80) auto 0;
+  width: calc(295 / 345 * 100%);
+  @include mq('md') {
+    margin: 0 0 0 auto;
+    flex: 0 0 rem(295);
+  }
+}

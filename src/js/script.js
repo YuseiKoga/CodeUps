@@ -252,7 +252,7 @@ jQuery(function ($) {
     tabButtons.removeClass("is-active");
     tabContents.removeClass("is-active");
 
-    const tabNumber = tabContents.filter("#" + tabName).index();
+    const tabNumber = tabButtons.filter("#" + tabName).index();
 
     tabButtons.eq(tabNumber).addClass("is-active");
     tabContents.eq(tabNumber).addClass("is-active");

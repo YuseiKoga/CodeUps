@@ -1,16 +1,15 @@
 @use "global" as *;
 
-.faq__items {
+.faq__inner.inner {
   margin-inline: auto;
-  width: 100%;
-  max-width: rem(700);
+  max-width: rem(750);
 }
 
 .faq__item:not(:first-child) {
   margin-top: rem(40);
 }
 
-.faq__question {
+.faq-block__question {
   padding: rem(16) rem(60) rem(16) rem(16);
   position: relative;
   color: $white;
@@ -25,8 +24,8 @@
   }
 }
 
-.faq__question::before,
-.faq__question::after {
+.faq-block__question::before,
+.faq-block__question::after {
   content: "";
   display: block;
   position: absolute;
@@ -43,15 +42,15 @@
   }
 }
 
-.faq__question::after {
+.faq-block__question::after {
   transform: rotate(90deg);
 }
 
-.faq__question.is-open::after {
+.faq-block__question.is-open::after {
   transform: rotate(0deg);
 }
 
-.faq__answer {
+.faq-block__answer {
   padding: rem(23) rem(15);
   display: none;
   font-size: rem(16);
