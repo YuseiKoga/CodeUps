@@ -19,6 +19,7 @@ const changed = require("gulp-changed"); // 変更されたファイルのみを
 const del = require("del"); // ファイルやディレクトリを削除するためのモジュール
 const webp = require('gulp-webp');//webp変換
 const rename = require('gulp-rename');//ファイル名変更
+const themeName = "CodeUps"; // WordPress theme name
 
 // 読み込み先
 const srcPath = {
@@ -26,6 +27,7 @@ const srcPath = {
   js: "../src/js/**/*",
   img: "../src/images/**/*",
   html: ["../src/**/*.html", "!./node_modules/**"],
+  php: `../src/php/**/*.php`,
 };
 
 // html反映用
@@ -37,12 +39,26 @@ const destPath = {
   html: "../dist/",
 };
 
+// WordPress反映用
+const destWpPath = {
+  all: `../${themeName}/assets/**/*`,
+  css: `../${themeName}/assets/css/`,
+  js: `../${themeName}/assets/js/`,
+  img: `../${themeName}/assets/images/`,
+  php: `../${themeName}/`,
+};
+
 const browsers = ["last 2 versions", "> 5%", "ie = 11", "not ie <= 10", "ios >= 8", "and_chr >= 5", "Android >= 5"];
 
 // HTMLファイルのコピー
 const htmlCopy = () => {
   return src(srcPath.html).pipe(dest(destPath.html));
 };
+
+// PHPファイルのコピー
+const phpCopy = () => {
+  return src(srcPath.php).pipe(dest(destPath.php));
+}
 
 const cssSass = () => {
   // ソースファイルを指定
@@ -88,6 +104,7 @@ const cssSass = () => {
       .pipe(sourcemaps.write("./"))
       // コンパイル済みのCSSファイルを出力先に保存
       .pipe(dest(destPath.css))
+      .pipe(dest(destWpPath.css))
       // Sassコンパイルが完了したことを通知
       .pipe(
         notify({
@@ -105,6 +122,7 @@ const imgImagemin = () => {
     src(srcPath.img)
       // 変更があった画像のみ処理対象に
       .pipe(changed(destPath.img))
+      .pipe(changed(destWpPath.img))
       // 画像を圧縮
       .pipe(
         imagemin(
@@ -130,9 +148,11 @@ const imgImagemin = () => {
         )
       )
       .pipe(dest(destPath.img))
+      .pipe(dest(destWpPath.img))
       .pipe(webp())//webpに変換
       // 圧縮済みの画像ファイルを出力先に保存
       .pipe(dest(destPath.img))
+      .pipe(dest(destWpPath.img))
   );
 };
 
@@ -155,13 +175,15 @@ const jsBabel = () => {
       )
       // 圧縮済みのファイルを出力先に保存
       .pipe(dest(destPath.js))
+      .pipe(dest(destWpPath.js))
   );
 };
 
 // ブラウザーシンク
 const browserSyncOption = {
   notify: false,
-  server: "../dist/",
+  // server: "../dist/",
+  proxy: "",
 };
 const browserSyncFunc = () => {
   browserSync.init(browserSyncOption);
@@ -173,7 +195,7 @@ const browserSyncReload = (done) => {
 
 // ファイルの削除
 const clean = () => {
-  return del(destPath.all, { force: true });
+  return del([destPath.all, destWpPath.all], { force: true });
 };
 // ファイルの監視
 const watchFiles = () => {
@@ -181,10 +203,11 @@ const watchFiles = () => {
   watch(srcPath.js, series(jsBabel, browserSyncReload));
   watch(srcPath.img, series(imgImagemin, browserSyncReload));
   watch(srcPath.html, series(htmlCopy, browserSyncReload));
+  watch(srcPath.php, browserSyncReload);
 };
 
 // ブラウザシンク付きの開発用タスク
-exports.default = series(series(cssSass, jsBabel, imgImagemin, htmlCopy), parallel(watchFiles, browserSyncFunc));
+exports.default = series(series(cssSass, jsBabel, imgImagemin, htmlCopy, phpCopy), parallel(watchFiles, browserSyncFunc));
 
 // 本番用タスク
-exports.build = series(clean, cssSass, jsBabel, imgImagemin, htmlCopy);
+exports.build = series(clean, cssSass, jsBabel, imgImagemin, htmlCopy, phpCopy);
