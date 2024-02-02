@@ -3,4 +3,6 @@ _gulp/node_modules/
 _gulp/package-lock.json/
 .DS_Store
 dist
-WordPressTheme
+/index.php
+CodeUps
+

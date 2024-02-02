@@ -27,7 +27,7 @@ const srcPath = {
   js: "../src/js/**/*",
   img: "../src/images/**/*",
   html: ["../src/**/*.html", "!./node_modules/**"],
-  php: `../src/php/**/*.php`,
+  php: "../src/php/**/*",
 };
 
 // html反映用
@@ -57,7 +57,7 @@ const htmlCopy = () => {
 
 // PHPファイルのコピー
 const phpCopy = () => {
-  return src(srcPath.php).pipe(dest(destPath.php));
+  return src(srcPath.php).pipe(dest(destWpPath.php));
 }
 
 const cssSass = () => {
@@ -183,7 +183,7 @@ const jsBabel = () => {
 const browserSyncOption = {
   notify: false,
   // server: "../dist/",
-  proxy: "",
+  proxy: "http://codeups.local/",
 };
 const browserSyncFunc = () => {
   browserSync.init(browserSyncOption);
@@ -203,7 +203,7 @@ const watchFiles = () => {
   watch(srcPath.js, series(jsBabel, browserSyncReload));
   watch(srcPath.img, series(imgImagemin, browserSyncReload));
   watch(srcPath.html, series(htmlCopy, browserSyncReload));
-  watch(srcPath.php, browserSyncReload);
+  watch(srcPath.php, series(phpCopy,browserSyncReload));
 };
 
 // ブラウザシンク付きの開発用タスク
