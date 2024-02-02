@@ -3,7 +3,7 @@
   <!-- ローディング -->
   <div class="loading js-loading">
     <div class="loading__logo js-loading-logo">
-      <img src="./assets/images/common/img-loading-logo.svg" alt="diving">
+      <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/img-loading-logo.svg" alt="diving">
     </div>
   </div>
 
@@ -24,8 +24,8 @@
             <div class="swiper-slide">
               <div class="mv__img">
                 <picture>
-                  <source srcset="./assets/images/top/img-mv00.jpg" media="(min-width: 768px)">
-                  <img src="./assets/images/top/img-mv00-sp.jpg" alt="">
+                  <source srcset="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/img-mv00.jpg" media="(min-width: 768px)">
+                  <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/img-mv00-sp.jpg" alt="">
                 </picture>
               </div>
             </div>
@@ -33,8 +33,8 @@
             <div class="swiper-slide">
               <div class="mv__img">
                 <picture>
-                  <source srcset="./assets/images/top/img-mv01.jpg" media="(min-width: 768px)">
-                  <img src="./assets/images/top/img-mv01-sp.jpg" alt="">
+                  <source srcset="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/img-mv01.jpg" media="(min-width: 768px)">
+                  <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/img-mv01-sp.jpg" alt="">
                 </picture>
               </div>
             </div>
@@ -42,8 +42,8 @@
             <div class="swiper-slide">
               <div class="mv__img">
                 <picture>
-                  <source srcset="./assets/images/top/img-mv02.jpg" media="(min-width: 768px)">
-                  <img src="./assets/images/top/img-mv02-sp.jpg" alt="">
+                  <source srcset="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/img-mv02.jpg" media="(min-width: 768px)">
+                  <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/img-mv02-sp.jpg" alt="">
                 </picture>
               </div>
             </div>
@@ -51,8 +51,8 @@
             <div class="swiper-slide">
               <div class="mv__img">
                 <picture>
-                  <source srcset="./assets/images/top/img-mv03.jpg" media="(min-width: 768px)">
-                  <img src="./assets/images/top/img-mv03-sp.jpg" alt="">
+                  <source srcset="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/img-mv03.jpg" media="(min-width: 768px)">
+                  <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/img-mv03-sp.jpg" alt="">
                 </picture>
               </div>
             </div>
@@ -75,7 +75,7 @@
             <!-- Swiper-item -->
             <article class="swiper-slide campaign-swiper__item campaign-card">
               <figure class="campaign-card__img">
-                <img src="./assets/images/top/img-campaign1.webp" alt="">
+                <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/img-campaign1.webp" alt="">
               </figure>
               <div class="campaign-card__body">
                 <span class="campaign-card__category">ライセンス講習</span>
@@ -89,7 +89,7 @@
             </article>
             <article class="swiper-slide campaign-swiper__item campaign-card">
               <figure class="campaign-card__img">
-                <img src="./assets/images/top/img-campaign2.webp" alt="">
+                <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/img-campaign2.webp" alt="">
               </figure>
               <div class="campaign-card__body">
                 <span class="campaign-card__category">体験ダイビング</span>
@@ -103,7 +103,7 @@
             </article>
             <article class="swiper-slide campaign-swiper__item campaign-card">
               <figure class="campaign-card__img">
-                <img src="./assets/images/top/img-campaign3.webp" alt="">
+                <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/img-campaign3.webp" alt="">
               </figure>
               <div class="campaign-card__body">
                 <span class="campaign-card__category">体験ダイビング</span>
@@ -117,7 +117,7 @@
             </article>
             <article class="swiper-slide campaign-swiper__item campaign-card">
               <figure class="campaign-card__img">
-                <img src="./assets/images/top/img-campaign4.webp" alt="">
+                <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/img-campaign4.webp" alt="">
               </figure>
               <div class="campaign-card__body">
                 <span class="campaign-card__category">ファンダイビング</span>
@@ -131,7 +131,7 @@
             </article>
             <article class="swiper-slide campaign-swiper__item campaign-card">
               <figure class="campaign-card__img">
-                <img src="./assets/images/top/img-campaign1.webp" alt="">
+                <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/img-campaign1.webp" alt="">
               </figure>
               <div class="campaign-card__body">
                 <span class="campaign-card__category">ライセンス講習</span>
@@ -145,7 +145,7 @@
             </article>
             <article class="swiper-slide campaign-swiper__item campaign-card">
               <figure class="campaign-card__img">
-                <img src="./assets/images/top/img-campaign2.webp" alt="">
+                <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/img-campaign2.webp" alt="">
               </figure>
               <div class="campaign-card__body">
                 <span class="campaign-card__category">体験ダイビング</span>
@@ -159,7 +159,7 @@
             </article>
             <article class="swiper-slide campaign-swiper__item campaign-card">
               <figure class="campaign-card__img">
-                <img src="./assets/images/top/img-campaign3.webp" alt="">
+                <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/img-campaign3.webp" alt="">
               </figure>
               <div class="campaign-card__body">
                 <span class="campaign-card__category">体験ダイビング</span>
@@ -173,7 +173,7 @@
             </article>
             <article class="swiper-slide campaign-swiper__item campaign-card">
               <figure class="campaign-card__img">
-                <img src="./assets/images/top/img-campaign4.webp" alt="">
+                <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/img-campaign4.webp" alt="">
               </figure>
               <div class="campaign-card__body">
                 <span class="campaign-card__category">ファンダイビング</span>
@@ -211,10 +211,10 @@
         <div class="about__content-wrap">
           <div class="about__bg-container">
             <figure class="about__bg-left">
-              <img src="./assets/images/top/img-about01.jpg" alt="">
+              <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/img-about01.jpg" alt="">
             </figure>
             <figure class="about__bg-right">
-              <img src="./assets/images/top/img-about02.jpg" alt="">
+              <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/img-about02.jpg" alt="">
             </figure>
           </div>
           <div class="about__container">
@@ -246,7 +246,7 @@
         <!-- コンテンツ -->
         <div class="information__container">
           <figure class="information__img js-image">
-            <img src="./assets/images/top/img-information.jpg" alt="">
+            <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/img-information.jpg" alt="">
           </figure>
           <div class="information__body">
             <h3 class="information__lead">ライセンス講習</h3>
@@ -274,7 +274,7 @@
           <article class="blog-cards__item blog-card">
             <a href="#">
               <figure class="blog-card__img">
-                <img src="./assets/images/top/img-blog01.jpg" alt="">
+                <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/img-blog01.jpg" alt="">
               </figure>
               <time class="blog-card__date" datetime="2023-11-17">2023.11/17</time>
               <h3 class="blog-card__title">ライセンス取得</h3>
@@ -287,7 +287,7 @@
           <article class="blog-cards__item blog-card">
             <a href="#">
               <figure class="blog-card__img">
-                <img src="./assets/images/top/img-blog02.jpg" alt="">
+                <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/img-blog02.jpg" alt="">
               </figure>
               <time class="blog-card__date" datetime="2023-11-17">2023.11/17</time>
               <h3 class="blog-card__title">ウミガメと泳ぐ</h3>
@@ -300,7 +300,7 @@
           <article class="blog-cards__item blog-card">
             <a href="#">
               <figure class="blog-card__img">
-                <img src="./assets/images/top/img-blog03.jpg" alt="">
+                <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/img-blog03.jpg" alt="">
               </figure>
               <time class="blog-card__date" datetime="2023-11-17">2023.11/17</time>
               <h3 class="blog-card__title">カクレクマノミ</h3>
@@ -338,7 +338,7 @@
                 <h3 class="voice-card__title">ここにタイトルが入ります。ここにタイトル</h3>
               </div>
               <figure class="voice-card__img js-image">
-                <img src="./assets/images/top/img-voice01.jpg" alt="">
+                <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/img-voice01.jpg" alt="">
               </figure>
             </div>
             <div class="voice-card__body">
@@ -359,7 +359,7 @@
                 <h3 class="voice-card__title">ここにタイトルが入ります。ここにタイトル</h3>
               </div>
               <figure class="voice-card__img js-image">
-                <img src="./assets/images/top/img-voice02.jpg" alt="">
+                <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/img-voice02.jpg" alt="">
               </figure>
             </div>
             <div class="voice-card__body">
@@ -390,8 +390,8 @@
           <!-- 画像 -->
           <figure class="price__img js-image">
             <picture>
-              <source srcset="./assets/images/top/img-price-pc.jpg" media="(min-width: 768px)">
-              <img src="./assets/images/top/img-price-sp.jpg" alt="">
+              <source srcset="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/img-price-pc.jpg" media="(min-width: 768px)">
+              <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/img-price-sp.jpg" alt="">
             </picture>
           </figure>
           <!-- 料金リスト -->
