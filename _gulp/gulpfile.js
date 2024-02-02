@@ -19,7 +19,7 @@ const changed = require("gulp-changed"); // 変更されたファイルのみを
 const del = require("del"); // ファイルやディレクトリを削除するためのモジュール
 const webp = require('gulp-webp');//webp変換
 const rename = require('gulp-rename');//ファイル名変更
-const themeName = "CodeUps"; // WordPress theme name
+const themeName = "OriginalTheme"; // WordPress theme name
 
 // 読み込み先
 const srcPath = {
@@ -27,7 +27,7 @@ const srcPath = {
   js: "../src/js/**/*",
   img: "../src/images/**/*",
   html: ["../src/**/*.html", "!./node_modules/**"],
-  php: "../src/php/**/*",
+  php: `../${themeName}/`,
 };
 
 // html反映用
@@ -45,7 +45,6 @@ const destWpPath = {
   css: `../${themeName}/assets/css/`,
   js: `../${themeName}/assets/js/`,
   img: `../${themeName}/assets/images/`,
-  php: `../${themeName}/`,
 };
 
 const browsers = ["last 2 versions", "> 5%", "ie = 11", "not ie <= 10", "ios >= 8", "and_chr >= 5", "Android >= 5"];
@@ -54,11 +53,6 @@ const browsers = ["last 2 versions", "> 5%", "ie = 11", "not ie <= 10", "ios >= 
 const htmlCopy = () => {
   return src(srcPath.html).pipe(dest(destPath.html));
 };
-
-// PHPファイルのコピー
-const phpCopy = () => {
-  return src(srcPath.php).pipe(dest(destWpPath.php));
-}
 
 const cssSass = () => {
   // ソースファイルを指定
@@ -203,11 +197,11 @@ const watchFiles = () => {
   watch(srcPath.js, series(jsBabel, browserSyncReload));
   watch(srcPath.img, series(imgImagemin, browserSyncReload));
   watch(srcPath.html, series(htmlCopy, browserSyncReload));
-  watch(srcPath.php, series(phpCopy,browserSyncReload));
+  watch(srcPath.php, browserSyncReload);
 };
 
 // ブラウザシンク付きの開発用タスク
-exports.default = series(series(cssSass, jsBabel, imgImagemin, htmlCopy, phpCopy), parallel(watchFiles, browserSyncFunc));
+exports.default = series(series(cssSass, jsBabel, imgImagemin, htmlCopy), parallel(watchFiles, browserSyncFunc));
 
 // 本番用タスク
-exports.build = series(clean, cssSass, jsBabel, imgImagemin, htmlCopy, phpCopy);
+exports.build = series(clean, cssSass, jsBabel, imgImagemin, htmlCopy);
