@@ -5,7 +5,7 @@
       <div class="contact__left">
         <!-- ロゴ -->
         <div class="contact__logo">
-          <img src="./assets/images/top/logo02.svg" alt="CodeUps">
+          <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/logo02.svg" alt="CodeUps">
         </div>
         <hr class="contact__border">
         <div class="contact__wrap">
@@ -47,19 +47,19 @@
       <!-- ロゴ -->
       <div class="footer__logo">
         <a href="./index.html">
-          <img src="./assets/images/common/logo.svg" alt="CodeUps">
+          <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/logo.svg" alt="CodeUps">
         </a>
       </div>
       <!-- SNS -->
       <ul class="footer__sns-items">
         <li class="footer__sns-item">
           <a href="#">
-            <img src="./assets/images/common/icon-facebook.svg" alt="facebook">
+            <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/icon-facebook.svg" alt="facebook">
           </a>
         </li>
         <li class="footer__sns-item">
           <a href="#">
-            <img src="./assets/images/common/icon-instagram.svg" alt="instagram">
+            <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/icon-instagram.svg" alt="instagram">
           </a>
         </li>
       </ul>
