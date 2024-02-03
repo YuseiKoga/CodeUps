@@ -1,11 +1,11 @@
 @use "global" as *;
 
-.privacy__container {
+.common-page__inner.inner {
   margin: auto;
-  max-width: rem(800);
+  max-width: rem(850);
 }
 
-.privacy__title {
+.common-page__title {
   font-size: rem(24);
   font-weight: $medium;
   line-height: calc(35 / 24);
@@ -15,22 +15,22 @@
   }
 }
 
-.privacy__content {
+.common-page__content {
   margin-top: rem(40);
   font-size: rem(16);
   font-weight: $regular;
   line-height: calc(32 / 16);
-}
 
-.privacy__numbers {
-  padding-left: 1.4em;
-  list-style: number;
-}
+  p:empty {
+    margin-top: 2em;
+  }
 
-.privacy__item {
-  padding-left: 0.1em;
-}
+  ol {
+    padding-left: 1.4em;
+    list-style: number;
+  }
 
-.privacy-margin {
-  margin-top: 2em;
+  li {
+    padding-left: 0.1em;
+  }
 }
