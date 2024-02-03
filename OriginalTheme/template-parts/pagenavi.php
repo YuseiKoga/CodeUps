@@ -4,7 +4,7 @@ if (is_post_type_archive('campaign')) {
   $pagination_class = 'archive-campaign__pagination';
 } elseif (is_home()) {
   $pagination_class = 'archive-blog__pagination';
-} elseif (is_post_type_archive('voice')) {
+} elseif (is_post_type_archive('voice') || (is_tax('voice_category'))) {
   $pagination_class = 'archive-voice__pagination';
 }
 ?>
