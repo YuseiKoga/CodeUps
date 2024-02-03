@@ -56,12 +56,14 @@
       <ul class="footer__sns-items">
         <li class="footer__sns-item">
           <a href="#">
-            <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/icon-facebook.svg" alt="facebook">
+            <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/icon-facebook.svg"
+              alt="facebook">
           </a>
         </li>
         <li class="footer__sns-item">
           <a href="#">
-            <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/icon-instagram.svg" alt="instagram">
+            <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/icon-instagram.svg"
+              alt="instagram">
           </a>
         </li>
       </ul>
