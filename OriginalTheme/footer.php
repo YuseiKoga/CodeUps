@@ -1,3 +1,4 @@
+<?php if(!is_404() && !is_page('contact')) : ?>
 <!-- お問い合わせ　セクション -->
 <section class="contact layout-contact--top">
   <div class="contact__inner inner">
@@ -39,9 +40,10 @@
     </div>
   </div>
 </section>
+<?php endif; ?>
 
 <!-- フッター -->
-<footer class="footer layout-footer">
+<footer class="footer layout-footer <?php if (is_404() || is_page('contact')) { echo 'layout-footer--mt0';} ?>">
   <div class="footer__inner inner">
     <div class="footer__logo-wrap">
       <!-- ロゴ -->
