@@ -2,16 +2,16 @@
 <html <?php language_attributes(); ?>>
 
 <head>
-    <meta charset="<?php bloginfo('charset'); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="format-detection" content="telephone=no">
-    <?php wp_head(); ?>
+  <meta charset="<?php bloginfo('charset'); ?>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-    <?php wp_body_open(); ?>
+  <?php wp_body_open(); ?>
 
-    <header class="header layout-header js-header">
+  <header class="header layout-header js-header">
     <div class="header__inner">
       <!-- ロゴ -->
       <h1 class="header__logo">
@@ -160,3 +160,11 @@
     </div>
   </header>
 
+  <?php if(!is_front_page()) : ?>
+  <main>
+    <!-- メインビュー -->
+    <?php get_template_part('template-parts/sub-mv'); ?>
+
+    <!-- パンくず -->
+    <?php get_template_part('template-parts/breadcrumb') ?>
+    <?php endif; ?>
