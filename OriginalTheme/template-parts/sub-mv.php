@@ -35,6 +35,10 @@ if(is_page('about-us')) {
 } elseif(is_page('terms-of-service')) {
   $class = 'common';
   $title = 'Terms of Service';
+} elseif (is_tax('voice_category')) {
+  $class = 'voice';
+  $term = get_queried_object();
+  $title = $term->name;
 } else {
   $class = null;
   $title = '設定されていません';
