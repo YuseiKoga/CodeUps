@@ -5,12 +5,16 @@
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no">
+  <?php if(is_404()) : ?>
+  <meta http-equiv="refresh" content="3; url=<?php echo esc_url(home_url('')); ?>">
+  <?php endif; ?>
   <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
 
+  <!-- ヘッダー -->
   <header class="header layout-header js-header">
     <div class="header__inner">
       <!-- ロゴ -->
@@ -160,7 +164,7 @@
     </div>
   </header>
 
-  <?php if(!is_front_page()) : ?>
+  <?php if(!is_front_page() && !is_404() ) : ?>
   <main>
     <!-- メインビュー -->
     <?php get_template_part('template-parts/sub-mv'); ?>
