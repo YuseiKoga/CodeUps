@@ -1,14 +1,25 @@
 @use "global" as *;
 
-.breadcrumb {
-  line-height: 1;
+.breadcrumb__container {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
 }
 
 .breadcrumb span {
-  display: inline-block;
-  vertical-align: top;
+  font-weight: $regular;
   font-size: rem(14);
   line-height: calc(20 / 14);
+}
+
+.breadcrumb__between {
+  width: rem(4);
+  height: rem(8);
+  mask-image: url(../images/common/icon-breadcrumb.svg);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  background-color: $c-font;
 }
 
 .breadcrumb--white {
