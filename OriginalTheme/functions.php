@@ -1,4 +1,5 @@
 <?php
+// 基本設定
 function my_setup()
 {
     add_theme_support('post-thumbnails');
@@ -14,6 +15,7 @@ function my_setup()
 }
 add_action('after_setup_theme', 'my_setup');
 
+// 読み込み
 function my_script_init()
 {
   // jquery
@@ -29,4 +31,13 @@ function my_script_init()
   wp_enqueue_style('style-css', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.1');
 }
 add_action('wp_enqueue_scripts', 'my_script_init');
+
+// アーカイブの表示投稿数の制御
+function set_posts_per_page($query)
+{
+  if(!is_admin() && $query->is_main_query() && is_post_type_archive('voice')) {
+    $query->set('posts_per_page', 6);
+  }
+}
+add_action('pre_get_posts', 'set_posts_per_page');
 ?>
