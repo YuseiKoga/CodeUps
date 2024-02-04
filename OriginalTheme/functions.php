@@ -35,10 +35,12 @@ add_action('wp_enqueue_scripts', 'my_script_init');
 // アーカイブの表示投稿数の制御
 function set_posts_per_page($query)
 {
-  if(!is_admin() && $query->is_main_query() && is_post_type_archive('voice')) {
-    $query->set('posts_per_page', 6);
-  } elseif (!is_admin() && $query->is_main_query() && is_post_type_archive('campaign')) {
-    $query->set('posts_per_page', 4);
+  if (!is_admin() && $query->is_main_query()) {
+    if (is_post_type_archive('voice') || is_tax('voice_category')) {
+      $query->set('posts_per_page', 6);
+    } elseif (is_post_type_archive('campaign') || is_tax('campaign_category')) {
+      $query->set('posts_per_page', 4);
+    }
   }
 }
 add_action('pre_get_posts', 'set_posts_per_page');
