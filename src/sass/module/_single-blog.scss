@@ -38,32 +38,23 @@
 }
 
 .single-blog__content {
-  p {
+  * {
     margin-top: rem(24);
-    color: $black;
-    font-size: rem(16);
-    line-height: calc(24 / 16);
     @include mq("md") {
       margin-top: rem(40);
     }
   }
+  p {
+    color: $black;
+    font-size: rem(16);
+    line-height: calc(24 / 16);
+  }
 
   img {
-    margin-top: rem(24);
     display: block;
     max-width: 100%;
     width: 100%;
     height: auto;
-    @include mq("md") {
-      margin-top: rem(40);
-    }
-  }
-
-  ul {
-    margin-top: rem(24);
-    @include mq("md") {
-      margin-top: rem(40);
-    }
   }
 
   li {
