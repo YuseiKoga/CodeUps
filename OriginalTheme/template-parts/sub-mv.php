@@ -1,42 +1,46 @@
 <?php
-if(is_page('about-us')) {
+if (is_page('about-us')) {
   $class = 'about';
   $title = 'About us';
-} elseif(is_post_type_archive('campaign')) {
+} elseif (is_post_type_archive('campaign')) {
   $class = 'campaign';
   $title = 'Campaign';
-} elseif(is_page('information')) {
+} elseif (is_page('information')) {
   $class = 'info';
   $title = 'Information';
-} elseif(is_home()) {
+} elseif (is_home()) {
   $class = 'blog';
   $title = 'Blog';
-} elseif(is_single()) {
+} elseif (is_single()) {
   $class = 'blog';
   $title = 'Blog';
-} elseif(is_post_type_archive('voice')) {
+} elseif (is_post_type_archive('voice')) {
   $class = 'voice';
   $title = 'Voice';
-} elseif(is_page('price')) {
+} elseif (is_page('price')) {
   $class = 'price';
   $title = 'Price';
-} elseif(is_page('faq')) {
+} elseif (is_page('faq')) {
   $class = 'faq';
   $title = 'FAQ';
-} elseif(is_page('contact')) {
+} elseif (is_page('contact')) {
   $class = 'contact';
   $title = 'Contact';
-} elseif(is_page('sitemap')) {
+} elseif (is_page('sitemap')) {
   $class = 'common';
   $title = 'Site map';
-} elseif(is_page('privacypolicy')) {
+} elseif (is_page('privacypolicy')) {
   $class = 'common';
   $title = 'Privacy Policy';
-} elseif(is_page('terms-of-service')) {
+} elseif (is_page('terms-of-service')) {
   $class = 'common';
   $title = 'Terms of Service';
 } elseif (is_tax('voice_category')) {
   $class = 'voice';
+  $term = get_queried_object();
+  $title = $term->name;
+} elseif (is_tax('campaign_category')) {
+  $class = 'campaign';
   $term = get_queried_object();
   $title = $term->name;
 } else {
