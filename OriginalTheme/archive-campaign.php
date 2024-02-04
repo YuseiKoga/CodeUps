@@ -5,16 +5,7 @@
 
     <!-- タブメニュー -->
     <div class="archive-campaign__tab tab">
-      <span class="tab__item is-active">ALL</span>
-      <?php
-        $terms = get_terms([
-          'taxonomy'  => 'campaign_category',
-          'hide_empty' => true,
-        ]);
-        foreach ($terms as $term) {
-          echo '<a href="' . esc_url(get_term_link($term)) .'" class="tab__item">' .esc_html($term->name) .'</a>';
-        }
-      ?>
+      <?php get_template_part('template-parts/tab', null, array('taxonomy' => 'campaign_category', 'post_type' => 'campaign', 'is_archive' => true)); ?>
     </div>
 
     <!-- カードリスト -->
