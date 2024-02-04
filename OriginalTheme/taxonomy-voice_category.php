@@ -5,24 +5,7 @@
 
     <!-- タブメニュー -->
     <div class="archive-voice__tab tab">
-      <?php
-      $current_term = get_queried_object();
-      $is_term_page = $current_term instanceof WP_Term && $current_term->taxonomy === 'voice_category';
-      ?>
-      <!-- ALL Tab -->
-      <a href="<?php echo get_post_type_archive_link('voice'); ?>"
-        class="tab__item <?php if (!$is_term_page)  echo 'is-active'; ?>">ALL</a>
-      <!-- Terms Tab -->
-      <?php
-      $terms = get_terms([
-        'taxonomy' => 'voice_category',
-        'hide_empty' => true,
-      ]);
-      foreach ($terms as $term) {
-        $is_active = $is_term_page && ($current_term->term_id === $term->term_id);
-        echo '<a href="' . esc_url(get_term_link($term)) . '" class="tab__item ' . ($is_active ? 'is-active' : '') . '">' . esc_html($term->name) . '</a>';
-      }
-      ?>
+      <?php get_template_part('template-parts/tab', null, array('taxonomy' => 'voice_category', 'post_type' => 'voice', 'is_archive' => false)); ?>
     </div>
 
     <!-- カードリスト -->
