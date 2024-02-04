@@ -73,4 +73,47 @@ function Change_objectlabel()
 }
 add_action('init', 'Change_objectlabel');
 add_action('admin_menu', 'Change_menulabel');
+
+// ブログの抜粋文の文字数制限
+function custom_excerpt_length($length)
+{
+  return 80;
+}
+add_filter('excerpt_length', 'custom_excerpt_length', 999);
+
+// ブログの抜粋の末尾を変更
+function new_excerpt_more($more)
+{
+  return '[続きを読む...]';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
+// 記事のPVを取得
+function getPostViews($postID)
+{
+  $count_key = 'post_views_count';
+  $count = get_post_meta($postID, $count_key, true);
+  if ($count == '') {
+    delete_post_meta($postID, $count_key);
+    add_post_meta($postID, $count_key, '0');
+    return "0 View";
+  }
+  return $count. 'Views';
+}
+
+// 記事のPVをカウント
+function setPostViews($postID)
+{
+  $count_key = 'post_views_count';
+  $count = get_post_meta($postID, $count_key, true);
+  if ($count == '') {
+    $count = 0;
+    delete_post_meta($postID, $count_key);
+    add_post_meta($postID, $count_key, '0');
+  } else {
+    $count++;
+    update_post_meta($postID, $count_key, $count);
+  }
+}
+remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 ?>
