@@ -1,6 +1,6 @@
 <?php if (function_exists('wp_pagenavi')) : ?>
 <?php
-if (is_post_type_archive('campaign')) {
+if (is_post_type_archive('campaign') || (is_tax('campaign_category'))) {
   $pagination_class = 'archive-campaign__pagination';
 } elseif (is_home()) {
   $pagination_class = 'archive-blog__pagination';
