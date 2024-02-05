@@ -1,0 +1,30 @@
+@use "global" as *;
+
+.wpcf7-form-control-wrap {
+  display: block;
+}
+
+.wpcf7-checkbox {
+  display: block;
+}
+
+.wpcf7-list-item {
+  margin: 0;
+  @include mq("md") {
+    display: block;
+  }
+}
+
+.wpcf7-list-item + .wpcf7-list-item {
+  @include mq("md") {
+    margin-top: rem(4);
+  }
+}
+
+.wpcf7-spinner {
+  display: none;
+}
+
+.wpcf7 form.sent .wpcf7-response-output {
+  border-color: $c-main;
+}

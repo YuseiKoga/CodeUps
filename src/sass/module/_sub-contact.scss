@@ -1,5 +1,12 @@
 @use "global" as *;
 
+.sub-contact {
+  padding-bottom: rem(144);
+  @include mq("md") {
+    padding-bottom: rem(160);
+  }
+}
+
 .sub-contact__inner.inner {
   margin: auto;
   max-width: rem(510);

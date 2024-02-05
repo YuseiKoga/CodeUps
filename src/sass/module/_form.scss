@@ -212,42 +212,117 @@
   }
 }
 
-.form__submit input {
-  color: $white;
-  font-size: rem(14);
-  font-weight: $regular;
-  line-height: 1;
-  transition: color 0.3s;
+.form_submit label {
+  display: inline-block;
 }
 
-.form__submit input:hover {
+.form__submit input {
+  padding: 0;
+  position: absolute;
+}
+
+.form__submit-button {
+  padding: rem(20) rem(4) rem(24) 0;
+  display: inline-flex;
+  justify-content: center;
+  position: relative;
+  width: rem(206);
+  color: $white;
+  font-family: $second-font-family;
+  font-size: rem(14);
+  line-height: 1;
+  z-index: 10;
+}
+
+.form__submit input:hover ~ .form__submit-button {
   @include mq("md") {
     color: $c-main;
   }
 }
 
+.form__submit-button::after {
+  margin: rem(1) 0 0 rem(7);
+  content: "";
+  width: rem(42);
+  height: rem(8);
+  mask-image: url(../images/common/icon-button.svg);
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+  background-color: $white;
+}
+
+.form__submit input:hover ~ .form__submit-button::after {
+  @include mq("md") {
+    background-color: $c-main;
+  }
+}
+
+.form__submit-button span {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - rem(4));
+  height: calc(100% - rem(4));
+  background-color: $c-main;
+  border: 1px solid $c-main;
+  z-index: -1;
+}
+
+.form__submit-button span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: rem(4);
+  left: rem(4);
+  width: 100%;
+  height: 100%;
+  border: 1px solid $c-main;
+}
+
+.form__submit-button span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $white;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+.form__submit input:hover ~ .form__submit-button span::after {
+  @include mq("md") {
+    transform: scaleX(1);
+  }
+}
+
 // バリデーション
-.error-message {
-  text-align: center;
-  color: #c94800;
-  font-size: rem(16);
-}
+// .error-message {
+//   text-align: center;
+//   color: #c94800;
+//   font-size: rem(16);
+// }
 
-.error-message#formError {
-  margin-bottom: rem(40);
-}
+// .error-message#formError {
+//   margin-bottom: rem(40);
+// }
 
-.error-message span {
-  display: inline-block;
-}
+// .error-message span {
+//   display: inline-block;
+// }
 
-.form__input input.is-error,
-.form__textarea textarea.is-error {
-  border: 1px solid #c94800;
-  background: rgba(201, 72, 0, 0.2);
-}
+// .form__input input.is-error,
+// .form__textarea textarea.is-error {
+//   border: 1px solid #c94800;
+//   background: rgba(201, 72, 0, 0.2);
+// }
 
-#consent.is-error + span::before {
-  border: 1px solid #c94800;
-  background: rgba(201, 72, 0, 0.2);
-}
+// #consent.is-error + span::before {
+//   border: 1px solid #c94800;
+//   background: rgba(201, 72, 0, 0.2);
+// }

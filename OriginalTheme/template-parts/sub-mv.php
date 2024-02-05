@@ -23,7 +23,7 @@ if (is_page('about-us')) {
 } elseif (is_page('faq')) {
   $class = 'faq';
   $title = 'FAQ';
-} elseif (is_page('contact')) {
+} elseif (is_page('contact') || is_page('thanks')) {
   $class = 'contact';
   $title = 'Contact';
 } elseif (is_page('sitemap')) {

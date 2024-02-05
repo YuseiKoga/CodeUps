@@ -116,4 +116,52 @@ function setPostViews($postID)
   }
 }
 remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+
+//　ContactForm7のセレクトボックでカスタム投稿の投稿タイトルを出力
+function dynamic_dropdown_for_campaigns($tag) {
+  if ('your-select' != $tag['name']) {
+      return $tag;
+  }
+
+  $args = array(
+      'post_type' => 'campaign',
+      'posts_per_page' => -1,
+      'meta_query' => array(
+        array(
+          'key' => 'campaign_flg',
+          'value' => '1',
+          'compare' => '=',
+        ),
+      ),
+  );
+
+  $campaigns = new WP_Query($args);
+  $tag['raw_values'] = [];
+  $tag['values'] = [];
+  $tag['labels'] = [];
+
+  // 最初の選択肢を追加（ユーザーが選択できないようにする）
+  $tag['values'][] = '#'; // 非選択可能な値
+  $tag['labels'][] = 'キャンペーン内容を選択';
+
+  if ($campaigns->have_posts()) {
+      while ($campaigns->have_posts()) {
+          $campaigns->the_post();
+          $tag['values'][] = get_the_title();
+          $tag['labels'][] = get_the_title();
+      }
+  }
+
+  wp_reset_postdata();
+  return $tag;
+}
+add_filter('wpcf7_form_tag', 'dynamic_dropdown_for_campaigns', 10, 2);
+
+// Contact Form 7で自動挿入されるPタグ・brタグを削除
+function wpcf7_autop_return_false()
+{
+  return false;
+}
+add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
+
 ?>
