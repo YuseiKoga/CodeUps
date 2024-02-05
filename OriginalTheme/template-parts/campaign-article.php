@@ -41,7 +41,7 @@
         <p class="campaign-card__date"><?php echo esc_html($start_date); ?>-<?php echo esc_html($end_date); ?></p>
         <p class="campaign-card__contact">ご予約・お問い合わせはコチラ</p>
         <div class="campaign-card__button">
-          <a href="./contact.html" class="button">Contact us<span></span></a>
+          <a href="<?php echo esc_url(home_url('/contact')); ?>" class="button">Contact us<span></span></a>
         </div>
       </div>
     </div>

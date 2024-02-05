@@ -74,7 +74,7 @@
         <span class="comment-card__tag"><?php echo esc_html($age); ?>代(<?php echo esc_html($type); ?>)</span>
         <h3 class="comment-card__title"><?php the_title(); ?></h3>
         <div class="comment-card__button">
-          <a href="./voice.html" class="button">View more<span></span></a>
+          <a href="<?php echo esc_url(home_url('/voice')); ?>" class="button">View more<span></span></a>
         </div>
       </div>
     </article>
@@ -135,7 +135,7 @@
     <?php endif; ?>
 
     <div class="pr__button">
-      <a href="./campaign.html" class="button">View more<span></span></a>
+      <a href="<?php echo esc_url(home_url('/campaign')); ?>" class="button">View more<span></span></a>
     </div>
   </section>
 

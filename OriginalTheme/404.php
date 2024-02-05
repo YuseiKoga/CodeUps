@@ -4,7 +4,7 @@
   <!-- パンくず -->
   <div class="breadcrumb breadcrumb--white layout-breadcrumb">
     <div class="inner">
-      <span><a href="#">TOP</a></span>
+      <span><a href="<?php echo esc_url(home_url()); ?>">TOP</a></span>
       <span>404</span>
     </div>
   </div>

@@ -103,7 +103,7 @@
 
       <!-- ボタン -->
       <div class="campaign__button">
-        <a href="./campaign.html" class="button">View more<span></span></a>
+        <a href="<?php echo esc_url(home_url('/campaign')); ?>" class="button">View more<span></span></a>
       </div>
 
       <!-- Swiper-button -->
@@ -143,7 +143,7 @@
               ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
             </p>
             <div class="about__button">
-              <a href="./about.html" class="button">View more<span></span></a>
+              <a href="<?php echo esc_url(home_url('/about')); ?>" class="button">View more<span></span></a>
             </div>
           </div>
         </div>
@@ -170,7 +170,7 @@
           <p class="information__text">当店はダイビングライセンス（Cカード）世界最大の教育機関PADIの「正規店」として店舗登録されています。<br>
             正規登録店として、安心安全に初めての方でも安心安全にライセンス取得をサポート致します。</p>
           <div class="information__button">
-            <a href="./information.html" class="button">View more<span></span></a>
+            <a href="<?php echo esc_url(home_url('/information')); ?>" class="button">View more<span></span></a>
           </div>
         </div>
       </div>
@@ -220,7 +220,7 @@
 
       <!-- ボタン -->
       <div class="blog__button">
-        <a href="./blog.html" class="button">View more<span></span></a>
+        <a href="<?php echo esc_url(home_url('/blog')); ?>" class="button">View more<span></span></a>
       </div>
     </div>
   </section>
@@ -286,7 +286,7 @@
 
       <!-- ボタン -->
       <div class="voice__button">
-        <a href="./voice.html" class="button">View more<span></span></a>
+        <a href="<?php echo esc_url(home_url('/voice')); ?>" class="button">View more<span></span></a>
       </div>
     </div>
   </section>
@@ -350,7 +350,7 @@
 
       <!-- ボタン -->
       <div class="price__button">
-        <a href="./price.html" class="button">View more<span></span></a>
+        <a href="<?php echo esc_url(home_url('/price')); ?>" class="button">View more<span></span></a>
       </div>
     </div>
   </section>
