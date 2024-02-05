@@ -41,7 +41,8 @@ if (!is_user_logged_in() && !is_robots()) {
             $prev_post = get_previous_post();
             // 前の記事が存在する場合、リンクを取得し、href属性に設定
             if (!empty($prev_post)): ?>
-            <a href="<?php echo esc_url(get_permalink($prev_post->ID)); ?>"></a>
+            <a href="<?php echo esc_url(get_permalink($prev_post->ID)); ?>"
+              class="single-blog__pagination-link single-blog__pagination-link--prev"></a>
             <?php endif; ?>
 
             <?php
@@ -49,7 +50,8 @@ if (!is_user_logged_in() && !is_robots()) {
             $next_post = get_next_post();
             // 次の記事が存在する場合、リンクを取得し、href属性に設定
             if (!empty($next_post)): ?>
-            <a href="<?php echo esc_url(get_permalink($next_post->ID)); ?>"></a>
+            <a href="<?php echo esc_url(get_permalink($next_post->ID)); ?>"
+              class="single-blog__pagination-link single-blog__pagination-link--next"></a>
             <?php endif; ?>
           </div>
         </div>
