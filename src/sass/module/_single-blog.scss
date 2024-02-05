@@ -95,7 +95,7 @@
   gap: rem(82);
 }
 
-.single-blog__pagination a {
+.single-blog__pagination-link {
   position: relative;
   width: rem(38);
   height: rem(38);
@@ -103,11 +103,11 @@
   transition: background 0.3s;
 }
 
-.single-blog__pagination a:hover {
+.single-blog__pagination-link:hover {
   background-color: $c-main;
 }
 
-.single-blog__pagination a::before {
+.single-blog__pagination-link::before {
   content: "";
   display: block;
   position: absolute;
@@ -118,13 +118,13 @@
   transition: border 0.3s;
 }
 
-.single-blog__pagination a:first-of-type::before {
+.single-blog__pagination-link--prev::before {
   left: 40%;
   border-bottom: 1px solid $c-main;
   border-left: 1px solid $c-main;
 }
 
-.single-blog__pagination a:last-of-type::before {
+.single-blog__pagination--next::before {
   right: 40%;
   border-top: 1px solid $c-main;
   border-right: 1px solid $c-main;
