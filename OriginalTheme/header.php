@@ -19,7 +19,7 @@
     <div class="header__inner">
       <!-- ロゴ -->
       <h1 class="header__logo">
-        <a href="./index.html">
+        <a href="<?php echo esc_url(home_url()); ?>">
           <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/logo.svg" alt="CodeUps">
         </a>
       </h1>
@@ -27,49 +27,49 @@
       <nav class="header__nav pc-nav">
         <ul class="pc-nav__items">
           <li class="pc-nav__item">
-            <a href="./campaign.html">
+            <a href="<?php echo esc_url(home_url('/campaign')); ?>">
               <span class="pc-nav__en">Campaign</span>
               <span class="pc-nav__ja">キャンペーン</span>
             </a>
           </li>
           <li class="pc-nav__item">
-            <a href="./about.html">
+            <a href="<?php echo esc_url(home_url('/about')); ?>">
               <span class="pc-nav__en">About us</span>
               <span class="pc-nav__ja">私たちについて</span>
             </a>
           </li>
           <li class="pc-nav__item">
-            <a href="./information.html">
+            <a href="<?php echo esc_url(home_url('/information')); ?>">
               <span class="pc-nav__en">Information</span>
               <span class="pc-nav__ja">ダイビング情報</span>
             </a>
           </li>
           <li class="pc-nav__item">
-            <a href="./blog.html">
+            <a href="<?php echo esc_url(home_url('/blog')); ?>">
               <span class="pc-nav__en">Blog</span>
               <span class="pc-nav__ja">ブログ</span>
             </a>
           </li>
           <li class="pc-nav__item">
-            <a href="./voice.html">
+            <a href="<?php echo esc_url(home_url('/voice')); ?>">
               <span class="pc-nav__en">Voice</span>
               <span class="pc-nav__ja">お客様の声</span>
             </a>
           </li>
           <li class="pc-nav__item">
-            <a href="./price.html">
+            <a href="<?php echo esc_url(home_url('/price')); ?>">
               <span class="pc-nav__en">Price</span>
               <span class="pc-nav__ja">料金一覧</span>
             </a>
           </li>
           <li class="pc-nav__item">
-            <a href="./faq.html">
+            <a href="<?php echo esc_url(home_url('/faq')); ?>">
               <span class="pc-nav__en">FAQ</span>
               <span class="pc-nav__ja">よくある質問</span>
             </a>
           </li>
           <li class="pc-nav__item">
-            <a href="./contact.html">
+            <a href="<?php echo esc_url(home_url('/contact')); ?>">
               <span class="pc-nav__en">Contact</span>
               <span class="pc-nav__ja">お問い合わせ</span>
             </a>
@@ -88,74 +88,74 @@
           <div class="sp-nav__wrap">
             <ul class="sp-nav__items">
               <li class="sp-nav__item">
-                <a href="./campaign.html">キャンペーン</a>
+                <a href="<?php echo esc_url(home_url('/campaign')); ?>">キャンペーン</a>
                 <!-- サブナビゲーション -->
                 <ul class="sp-nav__sub-items">
                   <li class="sp-nav__sub-item">
-                    <a href="./campaign.html">ライセンス取得</a>
+                    <a href="<?php echo esc_url(home_url('/campaign_category/licence')); ?>">ライセンス取得</a>
                   </li>
                   <li class="sp-nav__sub-item">
-                    <a href="./campaign.html">貸切体験ダイビング</a>
+                    <a href="<?php echo esc_url(home_url('/campaign_category/trial')); ?>">貸切体験ダイビング</a>
                   </li>
                   <li class="sp-nav__sub-item">
-                    <a href="./campaign.html">ナイトダイビング</a>
+                    <a href="<?php echo esc_url(home_url('/campaign_category/fun')); ?>">ファンダイビング</a>
                   </li>
                 </ul>
               </li>
               <li class="sp-nav__item">
-                <a href="./about.html">私たちについて</a>
+                <a href="<?php echo esc_url(home_url('/about')); ?>">私たちについて</a>
               </li>
               <li class="sp-nav__item">
-                <a href="./information.html">ダイビング情報</a>
+                <a href="<?php echo esc_url(home_url('/information')); ?>">ダイビング情報</a>
                 <!-- サブナビゲーション -->
                 <ul class="sp-nav__sub-items">
                   <li class="sp-nav__sub-item">
-                    <a href="./information.html#info01">ライセンス講習</a>
+                    <a href="<?php echo esc_url(home_url('/information#tab01')); ?>">ライセンス講習</a>
                   </li>
                   <li class="sp-nav__sub-item">
-                    <a href="./information.html#info03">体験ダイビング</a>
+                    <a href="<?php echo esc_url(home_url('/information#tab3')); ?>">体験ダイビング</a>
                   </li>
                   <li class="sp-nav__sub-item">
-                    <a href="./information.html#info02">ファンダイビング</a>
+                    <a href="<?php echo esc_url(home_url('/information#tab02')); ?>">ファンダイビング</a>
                   </li>
                 </ul>
               </li>
               <li class="sp-nav__item">
-                <a href="./blog.html">ブログ</a>
+                <a href="<?php echo esc_url(home_url('/blog')); ?>">ブログ</a>
               </li>
             </ul>
           </div>
           <div class="sp-nav__wrap">
             <ul class="sp-nav__items">
               <li class="sp-nav__item">
-                <a href="./voice.html">お客様の声</a>
+                <a href="<?php echo esc_url(home_url('/voice')); ?>">お客様の声</a>
               </li>
               <li class="sp-nav__item">
-                <a href="./price.html">料金一覧</a>
+                <a href="<?php echo esc_url(home_url('/price')); ?>">料金一覧</a>
                 <!-- サブナビゲーション -->
                 <ul class="sp-nav__sub-items">
                   <li class="sp-nav__sub-item">
-                    <a href="./price.html#priceLicence">ライセンス講習</a>
+                    <a href="<?php echo esc_url(home_url('/price#priceLicence')); ?>">ライセンス講習</a>
                   </li>
                   <li class="sp-nav__sub-item">
-                    <a href="./price.html#priceExperience">体験ダイビング</a>
+                    <a href="<?php echo esc_url(home_url('/price#priceExperience')); ?>">体験ダイビング</a>
                   </li>
                   <li class="sp-nav__sub-item">
-                    <a href="./price.html#priceFun">ファンダイビング</a>
+                    <a href="<?php echo esc_url(home_url('/price#priceFun')); ?>">ファンダイビング</a>
                   </li>
                 </ul>
               </li>
               <li class="sp-nav__item">
-                <a href="./faq.html">よくある質問</a>
+                <a href="<?php echo esc_url(home_url('/faq')); ?>">よくある質問</a>
               </li>
               <li class="sp-nav__item">
-                <a href="./privacy.html">プライバシー<br>ポリシー</a>
+                <a href="<?php echo esc_url(home_url('/privacypolicy')); ?>">プライバシー<br>ポリシー</a>
               </li>
               <li class="sp-nav__item">
-                <a href="./terms.html">利用規約</a>
+                <a href="<?php echo esc_url(home_url('/terms-of-service')); ?>">利用規約</a>
               </li>
               <li class="sp-nav__item">
-                <a href="./contact.html">お問い合わせ</a>
+                <a href="<?php echo esc_url(home_url('contact')); ?>">お問い合わせ</a>
               </li>
             </ul>
           </div>
