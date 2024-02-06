@@ -300,6 +300,25 @@ jQuery(function ($) {
   faqAccordion();
 
   /* ========================================
+  // WP-PageNaviの表示制御
+  ======================================== */
+  function wpPageNaviDisplay() {
+    const pages = $(".wp-pagenavi .page");
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      pages.each(function (index) {
+        if (index >= 3) {
+          $(this).css("display", "none");
+        }
+      });
+    } else {
+      pages.css("display", "flex");
+    }
+  }
+
+  wpPageNaviDisplay();
+  $(window).on("resize", wpPageNaviDisplay);
+
+  /* ========================================
   // フォームバリデーション
   ======================================== */
   // function formValidation() {

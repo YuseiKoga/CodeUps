@@ -78,12 +78,3 @@
     border-color: $white;
   }
 }
-
-////////////////////////
-.wp-pagenavi .page:nth-of-type(5),
-.wp-pagenavi .page:nth-of-type(6) {
-  display: none;
-  @include mq("md") {
-    display: flex;
-  }
-}
