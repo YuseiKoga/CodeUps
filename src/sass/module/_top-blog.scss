@@ -1,13 +1,13 @@
 @use "global" as *;
 
-.blog {
+.top-blog {
   @include mq("md") {
     position: relative;
     padding-top: rem(100);
   }
 }
 
-.blog::before {
+.top-blog::before {
   @include mq("md") {
     content: "";
     display: block;
@@ -23,7 +23,7 @@
   }
 }
 
-.blog::after {
+.top-blog::after {
   @include mq("md") {
     content: "";
     display: block;
@@ -38,14 +38,14 @@
   }
 }
 
-.blog__items {
+.top-blog__items {
   margin-top: rem(28);
   @include mq("md") {
     margin-top: rem(80);
   }
 }
 
-.blog__button {
+.top-blog__button {
   margin-top: rem(40);
   text-align: center;
   @include mq("md") {

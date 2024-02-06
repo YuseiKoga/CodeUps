@@ -171,10 +171,10 @@
   </section>
 
   <!-- ブログ　セクション -->
-  <section class="blog layout-blog">
-    <div class="blog__inner inner">
+  <section class="top-blog layout-top-blog">
+    <div class="top-blog__inner inner">
       <!-- セクションタイトル -->
-      <hgroup class="blog__title section-title">
+      <hgroup class="top-blog__title section-title">
         <p class="section-title__main section-title__main--white">Blog</p>
         <h2 class="section-title__sub section-title__sub--white">ブログ</h2>
       </hgroup>
@@ -189,7 +189,7 @@
 
       if ($blog_query->have_posts()) :
       ?>
-      <div class="blog__items blog-cards">
+      <div class="top-blog__items blog-cards">
         <?php // ループ START
         while ($blog_query->have_posts()) : $blog_query->the_post();
 
@@ -212,7 +212,7 @@
       <?php endif; wp_reset_postdata(); ?>
 
       <!-- ボタン -->
-      <div class="blog__button">
+      <div class="top-blog__button">
         <a href="<?php echo esc_url(home_url('/blog')); ?>" class="button">View more<span></span></a>
       </div>
     </div>
