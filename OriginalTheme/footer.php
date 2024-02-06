@@ -13,7 +13,7 @@
           <!-- 情報リスト -->
           <ul class="contact__items">
             <li class="contact__item">沖縄県那覇市1-1</li>
-            <li class="contact__item">TEL:0120-000-0000</li>
+            <li class="contact__item"><a href="tel:0120-000-0000">TEL:0120-000-0000</a></li>
             <li class="contact__item">営業時間:8:30-19:00</li>
             <li class="contact__item">定休日:毎週火曜日</li>
           </ul>
@@ -56,13 +56,13 @@
       <!-- SNS -->
       <ul class="footer__sns-items">
         <li class="footer__sns-item">
-          <a href="<?php echo esc_url(home_url()); ?>">
+          <a href="https://www.facebook.com/" target="_blank">
             <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/icon-facebook.svg"
               alt="facebook">
           </a>
         </li>
         <li class="footer__sns-item">
-          <a href="<?php echo esc_url(home_url()); ?>">
+          <a href="https://www.instagram.com/" target="_blank">
             <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/icon-instagram.svg"
               alt="instagram">
           </a>
