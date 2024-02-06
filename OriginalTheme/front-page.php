@@ -56,13 +56,6 @@
       $args = array(
         'post_type' => 'campaign',
         'posts_per_page' => -1,
-        'meta_query' => array(
-          array(
-            'key' => 'campaign_flg', // ACFフィールド名
-            'value' => '1', // 真偽値で「true」
-            'compare' => '='
-          )
-        )
       );
 
       $campaign_query = new WP_Query($args);

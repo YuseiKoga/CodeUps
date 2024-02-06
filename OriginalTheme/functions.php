@@ -133,13 +133,6 @@ function dynamic_dropdown_for_campaigns($tag)
   $args = array(
       'post_type' => 'campaign',
       'posts_per_page' => -1,
-      'meta_query' => array(
-        array(
-          'key' => 'campaign_flg',
-          'value' => '1',
-          'compare' => '=',
-        ),
-      ),
   );
 
   $campaigns = new WP_Query($args);
