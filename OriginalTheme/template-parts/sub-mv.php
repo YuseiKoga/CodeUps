@@ -8,7 +8,7 @@ if (is_page('about-us')) {
 } elseif (is_page('information')) {
   $class = 'info';
   $title = 'Information';
-} elseif (is_home()) {
+} elseif (is_home() || is_date()) {
   $class = 'blog';
   $title = 'Blog';
 } elseif (is_single()) {
