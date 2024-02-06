@@ -147,6 +147,9 @@
           <li class="footer__nav-item">
             <a href="<?php echo esc_url(home_url('/contact')); ?>">お問い合わせ</a>
           </li>
+          <li class="footer__nav-item">
+            <a href="<?php echo esc_url(home_url('/sitemap')); ?>">サイトマップ</a>
+          </li>
         </ul>
       </div>
     </nav>
