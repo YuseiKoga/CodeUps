@@ -36,7 +36,7 @@
         <p class="campaign-card__after-price campaign-card__after-price--sub">
           ¥<?php echo esc_html($formatted_special_price); ?></p>
       </div>
-      <div class="campaign-card__wrap u-desktop">
+      <div class="campaign-card__wrap">
         <p class="campaign-card__description"><?php echo nl2br(esc_html($campaign_text)); ?></p>
         <p class="campaign-card__date"><?php echo esc_html($start_date); ?>-<?php echo esc_html($end_date); ?></p>
         <p class="campaign-card__contact">ご予約・お問い合わせはコチラ</p>
