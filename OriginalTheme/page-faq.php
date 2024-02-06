@@ -2,7 +2,7 @@
 
 <section class="faq layout-sub-contents ornament">
   <div class="inner faq__inner">
-    <?php $faq_items = SCF::get('faq'); ?>
+    <?php $faq_items = SCF::get_option_meta('faq', 'faq_field'); ?>
     <?php if (! empty($faq_items)) : ?>
     <!-- 質問リスト -->
     <ul class="faq__items">

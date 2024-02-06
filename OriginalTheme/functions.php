@@ -15,6 +15,7 @@ function my_setup()
 }
 add_action('after_setup_theme', 'my_setup');
 
+
 // 読み込み
 function my_script_init()
 {
@@ -32,6 +33,7 @@ function my_script_init()
 }
 add_action('wp_enqueue_scripts', 'my_script_init');
 
+
 // アーカイブの表示投稿数の制御
 function set_posts_per_page($query)
 {
@@ -44,6 +46,7 @@ function set_posts_per_page($query)
   }
 }
 add_action('pre_get_posts', 'set_posts_per_page');
+
 
 // デフォルト投稿の情報変更
 function Change_menulabel()
@@ -74,6 +77,7 @@ function Change_objectlabel()
 add_action('init', 'Change_objectlabel');
 add_action('admin_menu', 'Change_menulabel');
 
+
 // ブログの抜粋文の文字数制限
 function custom_excerpt_length($length)
 {
@@ -87,6 +91,7 @@ function new_excerpt_more($more)
   return '[続きを読む...]';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
+
 
 // 記事のPVを取得
 function getPostViews($postID)
@@ -117,10 +122,12 @@ function setPostViews($postID)
 }
 remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 
+
 //　ContactForm7のセレクトボックでカスタム投稿の投稿タイトルを出力
-function dynamic_dropdown_for_campaigns($tag) {
+function dynamic_dropdown_for_campaigns($tag)
+{
   if ('your-select' != $tag['name']) {
-      return $tag;
+    return $tag;
   }
 
   $args = array(
@@ -157,11 +164,54 @@ function dynamic_dropdown_for_campaigns($tag) {
 }
 add_filter('wpcf7_form_tag', 'dynamic_dropdown_for_campaigns', 10, 2);
 
+
 // Contact Form 7で自動挿入されるPタグ・brタグを削除
 function wpcf7_autop_return_false()
 {
   return false;
 }
 add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
+
+
+// Thanksページへリダイレクト
+function redirect_to_thanks_page()
+{
+  $home = home_url();
+  echo <<< EOD
+  <script>
+    document.addEventListener( 'wpcf7mailsent', function( event) {
+      location = '{$home}/thanks/';
+    }, false);
+  </script>
+  EOD;
+}
+add_action('wp_footer', 'redirect_to_thanks_page');
+
+
+// SCFのオプションページ設定
+SCF::add_options_page(
+  'メインビジュアル',
+  'メインビジュアル画像',
+  'manage_options',
+  'mainVisual',
+  'dashicons-cover-image',
+  7
+);
+SCF::add_options_page (
+  'ギャラリー',
+  'ギャラリー画像',
+  'manage_options',
+  'gallery',
+  'dashicons-format-gallery',
+  7
+);
+SCF::add_options_page (
+  'よくある質問',
+  'よくある質問',
+  'manage_options',
+  'faq',
+  'dashicons-editor-paste-text',
+  7
+);
 
 ?>

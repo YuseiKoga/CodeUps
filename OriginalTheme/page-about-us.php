@@ -23,10 +23,8 @@
     <div class="gallery__modal js-modal"></div>
     <div class="gallery__items">
       <?php
-      // ページIDを取得
-      $page_id = get_the_ID();
       // カスタムフィールドから画像を取得
-      $gallery_images = SCF::get('gallery_field', $page_id);
+      $gallery_images = SCF::get_option_meta('gallery' ,'gallery_field');
 
       // 画像が設定されているか確認
       if(!empty($gallery_images)){

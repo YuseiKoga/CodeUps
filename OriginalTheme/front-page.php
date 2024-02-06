@@ -23,7 +23,7 @@
         <div class="swiper-wrapper">
           <?php
           // カスタムフィールドを取得
-          $slides = SCF::get('top-mainVisual'); // 'slides'はカスタムフィールドのグループ名を想定
+          $slides = SCF::get_option_meta('mainVisual','top-mainVisual'); // 'slides'はカスタムフィールドのグループ名を想定
           foreach ($slides as $slide) {
             $pc_image_url = wp_get_attachment_url($slide['pc-image']);
             $sp_image_url = wp_get_attachment_url($slide['sp-image']);
