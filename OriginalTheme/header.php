@@ -18,11 +18,20 @@
   <header class="header layout-header js-header">
     <div class="header__inner">
       <!-- ロゴ -->
+      <?php if (is_front_page()) : ?>
       <h1 class="header__logo">
         <a href="<?php echo esc_url(home_url()); ?>">
           <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/logo.svg" alt="CodeUps">
         </a>
       </h1>
+      <?php else : ?>
+      <div class="header__logo">
+        <a href="<?php echo esc_url(home_url()); ?>">
+          <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/logo.svg" alt="CodeUps">
+        </a>
+      </div>
+      <?php endif; ?>
+
       <!-- ナビゲーション -->
       <nav class="header__nav pc-nav">
         <ul class="pc-nav__items">
