@@ -39,6 +39,7 @@
   font-size: rem(16);
   font-weight: $bold;
   line-height: calc(18 / 16);
+  transition: opacity 0.3s;
 }
 
 .sitemap__item > a {
@@ -65,4 +66,10 @@
 .sitemap__sub-item a {
   padding-left: rem(24);
   font-weight: $regular;
+}
+
+.sitemap__item a:hover {
+  @include mq("md") {
+    opacity: 0.7;
+  }
 }
