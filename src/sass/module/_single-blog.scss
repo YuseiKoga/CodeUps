@@ -86,6 +86,9 @@
 
 .single-blog__pagination {
   margin-top: rem(40);
+  @include mq("md") {
+    margin-top: rem(80);
+  }
 }
 
 .single-blog__pagination-wrap {
