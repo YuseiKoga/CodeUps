@@ -12,8 +12,8 @@
 }
 
 .info__tab-item {
-  padding: rem(10) rem(16);
-  width: rem(102);
+  padding: rem(10) 0.5em;
+  width: calc(102 / 345 * 100%);
   color: $c-main;
   text-align: center;
   font-size: rem(14);

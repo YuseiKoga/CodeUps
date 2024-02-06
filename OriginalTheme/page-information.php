@@ -2,13 +2,14 @@
 
 <section class="info layout-sub-contents ornament">
   <div class="inner">
+
     <!-- タブメニュー -->
     <ul class="info__tab">
-      <li class="info__tab-item js-tab-button is-active" id="tab01"><span>ライセンス</span><span>講習</span>
-      </li>
+      <li class="info__tab-item js-tab-button is-active" id="tab01"><span>ライセンス</span><span>講習</span></li>
       <li class="info__tab-item js-tab-button" id="tab02"><span>ファン</span><span>ダイビング</span></li>
       <li class="info__tab-item js-tab-button" id="tab03"><span>体験</span><span>ダイビング</span></li>
     </ul>
+
     <!-- タブコンテンツ -->
     <div class="info__contents">
       <article class="info__content js-tab-content is-active">
@@ -23,6 +24,7 @@
             alt="ライセンス講習の様子">
         </figure>
       </article>
+
       <article class="info__content js-tab-content">
         <div class="info__body">
           <h2 class="info__title">ファンダイビング</h2>
@@ -35,6 +37,7 @@
             alt="ファンダイビングの様子">
         </figure>
       </article>
+
       <article class="info__content js-tab-content">
         <div class="info__body">
           <h2 class="info__title">体験ダイビング</h2>
