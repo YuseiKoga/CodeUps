@@ -17,7 +17,7 @@
                   href="<?php echo esc_url(home_url('/campaign_category/fun')); ?>">ファンダイビング</a></li>
             </ul>
           </li>
-          <li class="sitemap__item"><a href="./about.html">私たちについて</a></li>
+          <li class="sitemap__item"><a href="<?php echo esc_url('/about'); ?>">私たちについて</a></li>
         </ul>
         <ul class="sitemap__items">
           <li class="sitemap__item">
