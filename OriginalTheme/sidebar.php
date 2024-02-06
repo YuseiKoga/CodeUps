@@ -1,7 +1,9 @@
 <aside class="column__side sidebar">
+
   <!-- 人気記事 -->
   <section class="sidebar__popular popular layout-sidebar-section">
     <h2 class="sidebar-title">人気記事</h2>
+
     <!-- カードリスト -->
     <?php
     $popular_posts_args = array(
@@ -37,9 +39,9 @@
           </div>
         </a>
       </article>
-      <?php endwhile; wp_reset_postdata(); // ループ END ?>
+      <?php endwhile; // ループ END ?>
     </div>
-    <?php endif; ?>
+    <?php endif; wp_reset_postdata(); ?>
   </section>
 
 
@@ -62,11 +64,9 @@
 
     <article class="comment__item comment-card">
       <figure class="comment-card__img">
-        <?php
-        if (has_post_thumbnail()) :
-          the_post_thumbnail();
-          else :
-        ?>
+        <?php if (has_post_thumbnail()) : ?>
+        <?php the_post_thumbnail(); ?>
+        <?php else : ?>
         <img src='<?php echo esc_url(get_theme_file_uri('/assets/images/common/no-image.webp')); ?>' alt=''>
         <?php endif; ?>
       </figure>
@@ -78,7 +78,7 @@
         </div>
       </div>
     </article>
-    <?php endwhile; wp_reset_postdata(); endif; ?>
+    <?php endwhile; endif; wp_reset_postdata(); ?>
   </section>
 
 
@@ -130,9 +130,9 @@
         </div>
       </article>
 
-      <?php endwhile; wp_reset_postdata(); // ループここまで ?>
+      <?php endwhile; // ループここまで ?>
     </div>
-    <?php endif; ?>
+    <?php endif; wp_reset_postdata(); ?>
 
     <div class="pr__button">
       <a href="<?php echo esc_url(home_url('/campaign')); ?>" class="button">View more<span></span></a>
