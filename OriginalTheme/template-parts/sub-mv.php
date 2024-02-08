@@ -49,6 +49,12 @@ if (is_page('about-us')) {
 }
 ?>
 
+<?php if (is_single()) : ?>
+<section class="sub-mv sub-mv--<?php echo $class; ?> js-mv">
+  <div class="sub-mv__title"><?php echo $title; ?></div>
+</section>
+<?php else : ?>
 <section class="sub-mv sub-mv--<?php echo $class; ?> js-mv">
   <h1 class="sub-mv__title"><?php echo $title; ?></h1>
 </section>
+<?php endif; ?>
