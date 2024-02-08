@@ -248,6 +248,11 @@
         $type = get_field('type');
         $text = get_field('text');
 
+        // テキストを２００文字に制御
+        if (mb_strlen($text) > 200) {
+          $text = mb_substr($text, 0, 200) . '...';
+        }
+
         // カスタムタクソノミーの名前を取得、存在しない場合は'未分類'を設定
         $terms = get_the_terms(get_the_ID(), 'voice_category');
         $term_name = !empty($terms) ? esc_html($terms[0]->name) : '未分類';
