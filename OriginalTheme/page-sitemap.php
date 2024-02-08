@@ -55,6 +55,7 @@
                 class="u-mobile">ポリシー</a></li>
           <li class="sitemap__item"><a href="<?php echo esc_url(home_url('/terms-of-service')); ?>">利用規約</a></li>
           <li class="sitemap__item"><a href="<?php echo esc_url(home_url('/contact')); ?>">お問い合わせ</a></li>
+          <li class="sitemap__item"><a href="<?php echo esc_url(home_url('/sitemap')); ?>">サイトマップ</a></li>
         </ul>
       </div>
     </div>
