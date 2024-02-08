@@ -306,38 +306,34 @@
         <!-- 料金リスト -->
         <ul class="price__items">
           <?php
-          // 料金表を表示する関数(引数：料金表のタイトル)
-          function displayPriceInfo($title) {
-            // 固定ページ"price"の情報を取得(カスタムフィールドを含む)
-            $page_object = get_page_by_path('price');
-            if ($page_object) {
-              $page_id = $page_object->ID;
-              $licence_fields = SCF::get('licence', $page_id);
+          function displayPriceItems($metaKey, $itemTitle, $courseKey, $feeKey) {
+            $items = SCF::get_option_meta('price', $metaKey);
 
-              if (!empty($licence_fields)) {
-                echo '<li class="price__item">';
-                echo '<h3 class="price__item-title">' . $title . '</h3>';
-                echo '<dl class="price__sub-items">';
-                foreach ($licence_fields as $fields) {
-                  echo '<div class="price__sub-item">';
-                  echo '<dt class="price__sub-title">' . esc_html($fields['licence_course']) . '</dt>';
-                  echo '<dd class="price__sub-body">' . esc_html($fields['licence_fee']) . '</dd>';
-                  echo '</div>';
-                }
-                echo '</dl>';
-                echo '</li>';
-              } else {
-                echo '<li class="price__item">' . $title . ': 情報が設定されていません</li>';
+            if (!empty($items)) {
+              echo '<li class="price__item">';
+              echo "<h3 class=\"price__item-title\">$itemTitle</h3>";
+              echo '<dl class="price__sub-items">';
+
+              foreach ($items as $item) {
+                $course = isset($item[$courseKey]) ? $item[$courseKey] : '';
+                $fee = isset($item[$feeKey]) ? $item[$feeKey] : '';
+
+                echo '<div class="price__sub-item">';
+                echo '<dt class="price__sub-title">' . esc_html($course) . '</dt>';
+                echo '<dd class="price__sub-body">' . esc_html($fee) . '</dd>';
+                echo '</div>';
               }
+
+              echo '</dl>';
+              echo '</li>';
             }
           }
 
-        // 各料金表の表示
-        displayPriceInfo('ライセンス講習');
-        displayPriceInfo('体験ダイビング');
-        displayPriceInfo('ファンダイビング');
-        displayPriceInfo('スペシャルダイビング');
-        ?>
+          displayPriceItems('licence', 'ライセンス講習', 'licence_course', 'licence_fee');
+          displayPriceItems('trial', '体験ダイビング', 'trial_course', 'trial_fee');
+          displayPriceItems('fun', 'ファンダイビング', 'fun_course', 'fun_fee');
+          displayPriceItems('special', 'スペシャルダイビング', 'special_course', 'special_fee');
+          ?>
         </ul>
       </div>
 

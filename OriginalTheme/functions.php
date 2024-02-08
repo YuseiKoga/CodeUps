@@ -206,5 +206,13 @@ SCF::add_options_page (
   'dashicons-editor-paste-text',
   7
 );
+SCF::add_options_page (
+  '料金一覧',
+  '料金一覧',
+  'manage_options',
+  'price',
+  'dashicons-money-alt',
+  7
+);
 
 ?>
