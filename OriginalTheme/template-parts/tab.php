@@ -1,14 +1,8 @@
 <?php
-/**
- * タクソノミーと投稿タイプに基づいてタブをレンダリングする。
- *
- * @param string $taxonomy タブに使用するタクソノミー。
- * @param string $post_type タブに使用する投稿タイプ。
- * @param bool $is_archive アーカイブページであるかどうかを示す。
- */
+// タクソノミーと投稿タイプに基づいてタブをレンダリングする。
 function render_tabs($taxonomy, $post_type, $is_archive = false) {
     $current_term = get_queried_object();
-    $is_term_page = isTermPage($current_term, $taxonomy, $is_archive);
+    $is_term_page = is_term_page($current_term, $taxonomy, $is_archive);
 
     // 'ALL'タブのリンクは常に投稿タイプのアーカイブページへのリンクを生成
     echo '<a href="' . get_post_type_archive_link($post_type) . '" class="tab__item ' . (!$is_term_page ? 'is-active' : '') . '">ALL</a>';
@@ -21,15 +15,8 @@ function render_tabs($taxonomy, $post_type, $is_archive = false) {
     }
 }
 
-/**
- * 現在のページがタームページかどうかを確認する。
- *
- * @param object $current_term 現在クエリされているオブジェクト。
- * @param string $taxonomy チェックするタクソノミー。
- * @param bool $is_archive アーカイブページであるかどうか。
- * @return bool タームページであればtrue、そうでなければfalse。
- */
-function isTermPage($current_term, $taxonomy, $is_archive) {
+// 現在のページがタームページかどうかを確認する。
+function is_term_page($current_term, $taxonomy, $is_archive) {
     return !$is_archive && $current_term instanceof WP_Term && $current_term->taxonomy === $taxonomy;
 }
 

@@ -4,61 +4,47 @@
   <div class="inner sub-price__inner">
     <div class="sub-price__container">
       <!-- 料金ブロック -->
-      <div class="sub-price__block" id="priceLicence">
-        <h2 class="sub-price__title"><span>ライセンス講習</span></h2>
-        <!-- 料金表 -->
-        <?php $licence_fields = SCF::get('licence'); ?>
-        <?php if(!empty($licence_fields)) : ?>
-        <dl class="sub-price__items">
-          <?php foreach ( $licence_fields as $fields ) : ?>
-          <dt class="sub-price__term"><?php echo esc_html( $fields['licence_course'] ); ?></dt>
-          <dd class="sub-price__description"><?php echo esc_html( $fields['licence_fee'] ); ?></dd>
-          <?php endforeach; ?>
-        </dl>
-        <?php endif; ?>
-      </div>
-      <!-- 料金ブロック -->
-      <div class="sub-price__block" id="priceExperience">
-        <h2 class="sub-price__title"><span>体験ダイビング</span></h2>
-        <!-- 料金表 -->
-        <?php $trial_fields = SCF::get('trial'); ?>
-        <?php if(!empty($trial_fields)) : ?>
-        <dl class="sub-price__items">
-          <?php foreach ( $trial_fields as $fields ) : ?>
-          <dt class="sub-price__term"><?php echo esc_html( $fields['trial_course'] ); ?></dt>
-          <dd class="sub-price__description"><?php echo esc_html( $fields['trial_fee'] ); ?></dd>
-          <?php endforeach; ?>
-        </dl>
-        <?php endif; ?>
-      </div>
-      <!-- 料金ブロック -->
-      <div class="sub-price__block" id="priceFun">
-        <h2 class="sub-price__title"><span>ファンダイビング</span></h2>
-        <!-- 料金表 -->
-        <?php $fun_fields = SCF::get('fun'); ?>
-        <?php if(!empty($fun_fields)) : ?>
-        <dl class="sub-price__items">
-          <?php foreach ( $fun_fields as $fields ) : ?>
-          <dt class="sub-price__term"><?php echo esc_html( $fields['fun_course'] ); ?></dt>
-          <dd class="sub-price__description"><?php echo esc_html( $fields['fun_fee'] ); ?></dd>
-          <?php endforeach; ?>
-        </dl>
-        <?php endif; ?>
-      </div>
-      <!-- 料金ブロック -->
-      <div class="sub-price__block">
-        <h2 class="sub-price__title"><span>スペシャルダイビング</span></h2>
-        <!-- 料金表 -->
-        <?php $special_fields = SCF::get('special'); ?>
-        <?php if(!empty($special_fields)) : ?>
-        <dl class="sub-price__items">
-          <?php foreach ( $special_fields as $fields ) : ?>
-          <dt class="sub-price__term"><?php echo esc_html( $fields['special_course'] ); ?></dt>
-          <dd class="sub-price__description"><?php echo esc_html( $fields['special_fee'] ); ?></dd>
-          <?php endforeach; ?>
-        </dl>
-        <?php endif; ?>
-      </div>
+      <?php
+      // SCFからカスタムフィールド情報を取得
+      function get_price_fields($field_name) {
+        return SCF::get($field_name);
+      }
+
+      // 料金表の生成
+      function render_price_block($title, $fields, $course_key, $fee_key) {
+        if (!empty($fields)) {
+          echo '<div class="sub-price__block" id="price' . esc_attr($title) . '">';
+          echo '<h2 class="sub-price__title"><span>' . esc_html($title) . '</span></h2>';
+          echo '<dl class="sub-price__items">';
+
+        foreach ($fields as $field) {
+          echo '<dt class="sub-price__term">' . esc_html($field[$course_key]) . '</dt>';
+          echo '<dd class="sub-price__description">' . esc_html($field[$fee_key]) . '</dd>';
+        }
+
+        echo '</dl>';
+        echo '</div>';
+        }
+      }
+      ?>
+
+      <?php
+      // ライセンス講習
+      $licence_fields = get_price_fields('licence');
+      render_price_block('ライセンス講習', $licence_fields, 'licence_course', 'licence_fee');
+
+      // 体験ダイビングの料金
+      $trial_fields = get_price_fields('trial');
+      render_price_block('体験ダイビング', $trial_fields, 'trial_course', 'trial_fee');
+
+      // ファンダイビングの料金
+      $fun_fields = get_price_fields('fun');
+      render_price_block('ファンダイビング', $fun_fields, 'fun_course', 'fun_fee');
+
+      // スペシャルダイビングの料金
+      $special_fields = get_price_fields('special');
+      render_price_block('スペシャルダイビング', $special_fields, 'special_course', 'special_fee');
+      ?>
     </div>
   </div>
 </section>
