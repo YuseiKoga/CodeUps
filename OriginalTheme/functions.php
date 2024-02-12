@@ -215,4 +215,7 @@ SCF::add_options_page (
   7
 );
 
+// the_archive_titleのプレフィックスを取り除く
+add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
+
 ?>

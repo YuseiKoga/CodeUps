@@ -172,12 +172,3 @@
       </div>
     </div>
   </header>
-
-  <?php if(!is_front_page() && !is_404() ) : ?>
-  <main>
-    <!-- メインビュー -->
-    <?php get_template_part('template-parts/sub-mv'); ?>
-
-    <!-- パンくず -->
-    <?php get_template_part('template-parts/breadcrumb') ?>
-    <?php endif; ?>

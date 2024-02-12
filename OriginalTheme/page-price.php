@@ -1,10 +1,20 @@
 <?php get_header(); ?>
 
-<section class="sub-price layout-sub-contents ornament">
-  <div class="inner sub-price__inner">
-    <div class="sub-price__container">
-      <!-- 料金ブロック -->
-      <?php
+<main>
+
+  <!-- メインビジュアル -->
+  <section class="sub-mv sub-mv--price js-mv">
+    <h1 class="sub-mv__title">Price</h1>
+  </section>
+
+  <!-- パンくず -->
+  <?php get_template_part('template-parts/breadcrumb') ?>
+
+  <section class="sub-price layout-sub-contents ornament">
+    <div class="inner sub-price__inner">
+      <div class="sub-price__container">
+        <!-- 料金ブロック -->
+        <?php
       // SCFからカスタムフィールド情報を取得
       function get_price_fields($field_name) {
         return SCF::get_option_meta('price', $field_name);
@@ -28,7 +38,7 @@
       }
       ?>
 
-      <?php
+        <?php
       // ライセンス講習
       $licence_fields = get_price_fields('licence');
       render_price_block('ライセンス講習', $licence_fields, 'licence_course', 'licence_fee');
@@ -45,9 +55,9 @@
       $special_fields = get_price_fields('special');
       render_price_block('スペシャルダイビング', $special_fields, 'special_course', 'special_fee');
       ?>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 </main>
 
 <?php get_footer(); ?>

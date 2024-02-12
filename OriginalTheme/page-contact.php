@@ -1,10 +1,20 @@
 <?php get_header(); ?>
 
-<section class="sub-contact layout-sub-contents ornament">
-  <div class="inner sub-contact__inner">
-    <?php echo do_shortcode('[contact-form-7 id="c2a5504" title="お問い合わせ入力"]'); ?>
-  </div>
-</section>
+<main>
+
+  <!-- メインビジュアル -->
+  <section class="sub-mv sub-mv--contact js-mv">
+    <h1 class="sub-mv__title">Contact</h1>
+  </section>
+
+  <!-- パンくず -->
+  <?php get_template_part('template-parts/breadcrumb') ?>
+
+  <section class="sub-contact layout-sub-contents ornament">
+    <div class="inner sub-contact__inner">
+      <?php echo do_shortcode('[contact-form-7 id="c2a5504" title="お問い合わせ入力"]'); ?>
+    </div>
+  </section>
 </main>
 
 <?php get_footer(); ?>

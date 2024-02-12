@@ -1,28 +1,38 @@
 <?php get_header(); ?>
 
-<!-- About　セクション -->
-<section class="sub-about layout-sub-contents ornament">
-  <div class="inner">
-    <div class="sub-about__wrap">
-      <h2 class="sub-about__title">Dive into<br>the Ocean</h2>
-      <p class="sub-about__text">
-        ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
-        ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-      </p>
-    </div>
-  </div>
-</section>
+<main>
 
-<!-- Gallery　セクション -->
-<section class="gallery layout-gallery">
-  <div class="inner">
-    <hgroup class="gallery__title section-title">
-      <p class="section-title__main">Gallery</p>
-      <h2 class="section-title__sub">フォト</h2>
-    </hgroup>
-    <div class="gallery__modal js-modal"></div>
-    <div class="gallery__items">
-      <?php
+  <!-- メインビジュアル -->
+  <section class="sub-mv sub-mv--about js-mv">
+    <h1 class="sub-mv__title">About</h1>
+  </section>
+
+  <!-- パンくず -->
+  <?php get_template_part('template-parts/breadcrumb') ?>
+
+  <!-- About　セクション -->
+  <section class="sub-about layout-sub-contents ornament">
+    <div class="inner">
+      <div class="sub-about__wrap">
+        <h2 class="sub-about__title">Dive into<br>the Ocean</h2>
+        <p class="sub-about__text">
+          ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
+          ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery　セクション -->
+  <section class="gallery layout-gallery">
+    <div class="inner">
+      <hgroup class="gallery__title section-title">
+        <p class="section-title__main">Gallery</p>
+        <h2 class="section-title__sub">フォト</h2>
+      </hgroup>
+      <div class="gallery__modal js-modal"></div>
+      <div class="gallery__items">
+        <?php
       // カスタムフィールドから画像を取得
       $gallery_images = SCF::get_option_meta('gallery' ,'gallery_field');
 
@@ -40,9 +50,9 @@
         }
       }
       ?>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 </main>
 
 <?php get_footer(); ?>
