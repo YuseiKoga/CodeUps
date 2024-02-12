@@ -13,7 +13,7 @@
   <section class="archive-campaign layout-sub-contents ornament">
     <div class="inner">
       <!-- タブメニュー -->
-      <div class="archive-campaign__tab tab">
+      <div class="archive-campaign__tab">
         <?php get_template_part('template-parts/tab', null, array('taxonomy' => 'campaign_category', 'post_type' => 'campaign', 'is_archive' => false)); ?>
       </div>
 
