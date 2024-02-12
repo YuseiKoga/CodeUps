@@ -22,7 +22,9 @@
       <?php get_template_part('template-parts/voice-article'); ?>
 
       <!-- ページネーション -->
-      <?php get_template_part('template-parts/pagenavi') ?>
+      <div class="archive-voice__pagination">
+        <?php get_template_part('template-parts/pagenavi') ?>
+      </div>
     </div>
   </section>
 

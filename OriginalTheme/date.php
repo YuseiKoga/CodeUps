@@ -40,7 +40,9 @@
           <?php endif; ?>
 
           <!-- ページネーション -->
-          <?php get_template_part('template-parts/pagenavi') ?>
+          <div class="archive-blog__pagination">
+            <?php get_template_part('template-parts/pagenavi') ?>
+          </div>
         </div>
 
         <!-- サイドバー -->

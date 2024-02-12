@@ -21,7 +21,9 @@
       <?php get_template_part('template-parts/campaign-article') ?>
 
       <!-- ページネーション -->
-      <?php get_template_part('template-parts/pagenavi'); ?>
+      <div class="archive-campaign__pagination">
+        <?php get_template_part('template-parts/pagenavi'); ?>
+      </div>
     </div>
   </section>
 
