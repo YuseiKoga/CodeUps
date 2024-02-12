@@ -7,7 +7,7 @@
       <?php
       // SCFからカスタムフィールド情報を取得
       function get_price_fields($field_name) {
-        return SCF::get($field_name);
+        return SCF::get_option_meta('price', $field_name);
       }
 
       // 料金表の生成
