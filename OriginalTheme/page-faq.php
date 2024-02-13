@@ -17,12 +17,16 @@
       <!-- 質問リスト -->
       <ul class="faq__items">
         <?php foreach ($faq_items as $item) : ?>
+        <?php if (!empty($item['question']) && !empty($item['answer'])) : ?>
         <li class="faq__item faq-block">
           <p class="faq-block__question js-faq-accordion"><?php echo nl2br( esc_html($item['question'])); ?></p>
           <p class="faq-block__answer js-faq-content"><?php echo nl2br( esc_html($item['answer'])); ?></p>
         </li>
+        <?php endif; ?>
         <?php endforeach; ?>
       </ul>
+      <?php else : ?>
+      <p>準備中です</p>
       <?php endif; ?>
     </div>
   </section>
