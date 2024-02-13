@@ -21,6 +21,8 @@
 
   <section class="common-page layout-sub-contents ornament">
     <div class="inner common-page__inner">
+      <?php if (have_posts()) : ?>
+      <?php while (have_posts()) : the_post(); ?>
       <div class="common-page__container">
         <h2 class="common-page__title"><?php the_title(); ?></h2>
         <!-- 内容は固定ページで管理 -->
@@ -28,6 +30,10 @@
           <?php the_content(); ?>
         </div>
       </div>
+      <?php endwhile; ?>
+      <?php else : ?>
+      <p>準備中です</p>
+      <?php endif; ?>
     </div>
   </section>
 
