@@ -1,5 +1,5 @@
 <?php if (have_posts()) : ?>
-<div class="archive-voice__items voice-cards">
+<div class="voice-cards">
   <?php
   // ループ開始
   while (have_posts()) : the_post();

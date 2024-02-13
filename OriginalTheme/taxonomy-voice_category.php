@@ -19,7 +19,9 @@
       </div>
 
       <!-- カードリスト -->
-      <?php get_template_part('template-parts/voice-article'); ?>
+      <div class="archive-voice__items">
+        <?php get_template_part('template-parts/voice-article'); ?>
+      </div>
 
       <!-- ページネーション -->
       <div class="archive-voice__pagination">
