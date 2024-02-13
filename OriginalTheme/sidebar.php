@@ -29,12 +29,16 @@
 
       <article class="popular__item popular-card">
         <a href="<?php the_permalink(); ?>">
+          <!-- アイキャッチ画像 -->
           <figure class="popular-card__img">
             <img src="<?php echo esc_url($image_url); ?>" alt="">
           </figure>
           <div class="popular-card__body">
-            <time class="popular-card__date"
-              datetime="<?php echo get_the_date('c'); ?>"><?php echo get_the_date('Y.m/d'); ?></time>
+            <!-- 投稿日 -->
+            <time class="popular-card__date" datetime="<?php the_time('c'); ?>">
+              <?php the_time('Y.m/d'); ?>
+            </time>
+            <!-- 投稿タイトル -->
             <h3 class="popular-card__title"><?php the_title(); ?></h3>
           </div>
         </a>

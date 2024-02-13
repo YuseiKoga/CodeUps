@@ -198,16 +198,19 @@
         ?>
         <article class="blog-cards__item blog-card">
           <a href="<?php the_permalink(); ?>">
+            <!-- アイキャッチ画像 -->
             <figure class="blog-card__img">
               <img src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php the_title(); ?>">
             </figure>
-            <time class="blog-card__date"
-              datetime="<?php echo get_the_date('c'); ?>"><?php echo get_the_date('Y.m/d'); ?></time>
+            <!-- 投稿日 -->
+            <time class="blog-card__date" datetime="<?php the_time('c'); ?>"><?php the_time('Y.m/d'); ?></time>
+            <!-- 投稿タイトル -->
             <h3 class="blog-card__title"><?php the_title(); ?></h3>
+            <!-- 投稿抜粋 -->
             <p class="blog-card__text"><?php the_excerpt(); ?></p>
           </a>
         </article>
-        <?php endwhile; ?>
+        <?php endwhile; // ループ終了 ?>
       </div>
       <?php endif; wp_reset_postdata(); ?>
 
