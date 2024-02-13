@@ -1,4 +1,4 @@
-<aside class="column__side sidebar">
+<aside class="sidebar">
 
   <!-- 人気記事 -->
   <?php
