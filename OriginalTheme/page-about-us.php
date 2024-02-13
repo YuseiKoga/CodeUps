@@ -24,6 +24,12 @@
   </section>
 
   <!-- Gallery　セクション -->
+  <?php
+    //カスタムフィールドから画像を取得
+    $gallery_images = SCF::get_option_meta('gallery', 'gallery_field');
+
+    if (!empty($gallery_images)) :
+  ?>
   <section class="gallery layout-gallery">
     <div class="inner">
       <hgroup class="gallery__title section-title">
@@ -33,26 +39,21 @@
       <div class="gallery__modal js-modal"></div>
       <div class="gallery__items">
         <?php
-      // カスタムフィールドから画像を取得
-      $gallery_images = SCF::get_option_meta('gallery' ,'gallery_field');
-
-      // 画像が設定されているか確認
-      if(!empty($gallery_images)){
         foreach($gallery_images as $gallery_image) {
           // 画像IDを取得
           $image_id = $gallery_image['gallery_image'];
           // 画像URLを取得
           $image_url = wp_get_attachment_url($image_id);
-
           echo '<div class="gallery__item js-modal-img">';
           echo '<img src="' . esc_url($image_url) .'" alt="">';
           echo '</div>';
         }
-      }
       ?>
       </div>
     </div>
   </section>
+  <?php endif; ?>
+
 </main>
 
 <?php get_footer(); ?>
