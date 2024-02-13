@@ -5,15 +5,11 @@
     while (have_posts()) : the_post();
 
      // ACFから情報を取得
-      $regular_price = get_field('regular_price');
-      $special_price = get_field('special_price');
+      $regular_price = number_format(get_field('regular_price'));
+      $special_price = number_format(get_field('special_price'));
       $campaign_text = get_field('campaign_text');
       $start_date = get_field('start_date');
       $end_date = get_field('end_date');
-
-      // 価格を3桁区切りにフォーマット
-      $formatted_regular_price = number_format($regular_price);
-      $formatted_special_price = number_format($special_price);
 
       // カスタムタクソノミーの名前を取得、存在しない場合は'未分類'を設定
       $terms = get_the_terms(get_the_ID(), 'campaign_category');
@@ -32,13 +28,21 @@
       <h2 class="campaign-card__title campaign-card__title--sub"><?php the_title(); ?></h2>
       <p class="campaign-card__text campaign-card__text--sub">全部コミコミ(お一人様)</p>
       <div class="campaign-card__price">
-        <p class="campaign-card__before-price">¥<?php echo esc_html($formatted_regular_price); ?></p>
+        <?php if (!empty($regular_price)) : ?>
+        <p class="campaign-card__before-price">¥<?php echo esc_html($regular_price); ?></p>
+        <?php endif; ?>
+        <?php if (!empty($special_price)) : ?>
         <p class="campaign-card__after-price campaign-card__after-price--sub">
-          ¥<?php echo esc_html($formatted_special_price); ?></p>
+          ¥<?php echo esc_html($special_price); ?></p>
+        <?php endif; ?>
       </div>
       <div class="campaign-card__wrap">
+        <?php if (!empty($campaign_text)) : ?>
         <p class="campaign-card__description"><?php echo nl2br(esc_html($campaign_text)); ?></p>
+        <?php endif; ?>
+        <?php if (!empty($start_date) && !empty($end_date)) : ?>
         <p class="campaign-card__date"><?php echo esc_html($start_date); ?>-<?php echo esc_html($end_date); ?></p>
+        <?php endif; ?>
         <p class="campaign-card__contact">ご予約・お問い合わせはコチラ</p>
         <div class="campaign-card__button">
           <a href="<?php echo esc_url(home_url('/contact')); ?>" class="button">Contact us<span></span></a>
@@ -48,4 +52,6 @@
   </article>
   <?php endwhile; // ループ終了 ?>
 </div>
+<?php else : ?>
+<p>現在開催中のキャンペーンはありません</p>
 <?php endif; ?>
