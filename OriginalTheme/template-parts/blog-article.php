@@ -26,4 +26,6 @@
   <?php endwhile; ?>
   <!-- ループ終了 -->
 </div>
+<?php else : ?>
+<p>ブログが投稿されていません</p>
 <?php endif; ?>
