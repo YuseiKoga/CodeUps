@@ -18,7 +18,9 @@
       </div>
 
       <!-- カードリスト -->
-      <?php get_template_part('template-parts/campaign-article') ?>
+      <div class="archive-campaign__items">
+        <?php get_template_part('template-parts/campaign-article') ?>
+      </div>
 
       <!-- ページネーション -->
       <div class="archive-campaign__pagination">

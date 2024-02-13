@@ -1,5 +1,5 @@
 <?php if (have_posts()) : ?>
-<div class="archive-campaign__items campaign-cards">
+<div class="campaign-cards">
   <?php
     // ループ開始
     while (have_posts()) : the_post();
