@@ -13,20 +13,24 @@
   <!-- メインビジュアル -->
   <section class="mv js-mv">
     <div class="mv__inner">
+
       <!-- タイトル -->
       <div class="mv__title-wrap">
         <h2 class="mv__main-title">DIVING</h2>
         <p class="mv__sub-title">into the ocean</p>
       </div>
+
       <!-- Swiper -->
       <div class="swiper mv__swiper js-mv-swiper">
         <div class="swiper-wrapper">
           <?php
           // カスタムフィールドを取得
-          $slides = SCF::get_option_meta('mainVisual','top-mainVisual'); // 'slides'はカスタムフィールドのグループ名を想定
-          foreach ($slides as $slide) {
-            $pc_image_url = wp_get_attachment_url($slide['pc-image']);
-            $sp_image_url = wp_get_attachment_url($slide['sp-image']);
+          $slides = SCF::get_option_meta('mainVisual','top-mainVisual');
+
+          if (!empty($slides)) :
+            foreach ($slides as $slide) :
+              $pc_image_url = esc_url(wp_get_attachment_url($slide['pc-image']));
+              $sp_image_url = esc_url(wp_get_attachment_url($slide['sp-image']));
           ?>
           <div class="swiper-slide">
             <div class="mv__img">
@@ -36,7 +40,17 @@
               </picture>
             </div>
           </div>
-          <?php } ?>
+          <?php endforeach; else : //カスタムフィールドが設定されていない場合 ?>
+          <div class="swiper-slide">
+            <div class="mv__img">
+              <picture>
+                <source srcset="<?php esc_url(get_theme_file_uri('/assets/images/top/img-mv-pc')); ?>"
+                  media="(min-width: 768px)">
+                <img src="<?php esc_url(get_theme_file_uri('/assets/images/top/img-mv-sp')); ?>" alt="">
+              </picture>
+            </div>
+          </div>
+          <?php endif;  ?>
         </div>
       </div>
     </div>
@@ -44,55 +58,72 @@
 
 
   <!-- キャンペーン セクション -->
+  <?php // クエリ
+    $args = array(
+      'post_type' => 'campaign',
+      'posts_per_page' => -1,
+    );
+
+    $campaign_query = new WP_Query($args);
+  ?>
+  <?php if ($campaign_query->have_posts()) : ?>
   <section class="campaign layout-campaign">
     <div class="campaign__inner inner">
+
       <!-- セクションタイトル -->
       <hgroup class="campaign__title section-title">
         <p class="section-title__main">Campaign</p>
         <h2 class="section-title__sub">キャンペーン</h2>
       </hgroup>
 
-      <?php // クエリ
-      $args = array(
-        'post_type' => 'campaign',
-        'posts_per_page' => -1,
-      );
-
-      $campaign_query = new WP_Query($args);
-
-      if ($campaign_query->have_posts()) : ?>
       <div class="swiper campaign__swiper campaign-swiper js-campaign-swiper">
         <div class="swiper-wrapper campaign-swiper__items">
-          <?php while ($campaign_query->have_posts()) : $campaign_query->the_post();
-          // アイキャッチ画像のURLを取得
-          if (has_post_thumbnail()) {
-            $image_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
-          } else {
-            $image_url = get_theme_file_uri("/assets/images/common/no-image.webp");
-          }
+          <?php
+            // ループ開始
+            while ($campaign_query->have_posts()) : $campaign_query->the_post();
 
-          // カテゴリーを取得
-          $terms = get_the_terms(get_the_ID(), 'campaign_category');
-          $category_name = (!empty($terms) && !is_wp_error($terms)) ? esc_html($terms[0]->name) : '未分類';
+            // アイキャッチ画像のURLを取得
+            if (has_post_thumbnail()) {
+              $image_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
+            } else {
+              $image_url = get_theme_file_uri("/assets/images/common/no-image.webp");
+            }
+
+            // カテゴリーを取得
+            $terms = get_the_terms(get_the_ID(), 'campaign_category');
+            $category_name = (!empty($terms) && !is_wp_error($terms)) ? esc_html($terms[0]->name) : '未分類';
+
+            // ACFから値を取得
+            $regular_price = number_format(get_field('regular_price'));
+            $special_price = number_format(get_field('special_price'));
           ?>
           <article class="swiper-slide campaign-swiper__item campaign-card">
+            <!-- アイキャッチ画像 -->
             <figure class="campaign-card__img">
               <img src="<?php echo esc_url($image_url); ?>" alt="<?php the_title(); ?>">
             </figure>
             <div class="campaign-card__body">
+              <!-- カテゴリー -->
               <span class="campaign-card__category"><?php echo $category_name; ?></span>
+              <!-- 投稿タイトル -->
               <h3 class="campaign-card__title"><?php the_title(); ?></h3>
               <p class="campaign-card__text">全部コミコミ(お一人様)</p>
+              <!-- 料金 -->
               <div class="campaign-card__price">
-                <p class="campaign-card__before-price">¥<?php echo number_format(get_field('regular_price')); ?></p>
-                <p class="campaign-card__after-price">¥<?php echo number_format(get_field('special_price')); ?></p>
+                <!-- 通常料金 -->
+                <?php if (!empty($regular_price)) : ?>
+                <p class="campaign-card__before-price">¥<?php echo $regular_price; ?></p>
+                <?php endif; ?>
+                <!-- 特別料金 -->
+                <?php if (!empty($special_price)) : ?>
+                <p class="campaign-card__after-price">¥<?php echo $special_price; ?></p>
+                <?php endif; ?>
               </div>
             </div>
           </article>
           <?php endwhile; ?>
         </div>
       </div>
-      <?php endif; wp_reset_postdata(); ?>
 
       <!-- ボタン -->
       <div class="campaign__button">
@@ -106,6 +137,7 @@
       </div>
     </div>
   </section>
+  <?php endif; wp_reset_postdata(); ?>
 
 
   <!-- アバウト セクション -->
@@ -170,32 +202,37 @@
     </div>
   </section>
 
+
   <!-- ブログ　セクション -->
+  <?php // クエリ
+    $args = array(
+      'post_type' => 'post',
+      'posts_per_page' => 3,
+    );
+
+    $blog_query = new WP_Query($args);
+  ?>
+
+  <?php if ($blog_query->have_posts()) : ?>
+
   <section class="top-blog layout-top-blog">
     <div class="top-blog__inner inner">
+
       <!-- セクションタイトル -->
       <hgroup class="top-blog__title section-title">
         <p class="section-title__main section-title__main--white">Blog</p>
         <h2 class="section-title__sub section-title__sub--white">ブログ</h2>
       </hgroup>
 
-      <?php // クエリ
-      $args = array(
-        'post_type' => 'post',
-        'posts_per_page' => 3,
-      );
-
-      $blog_query = new WP_Query($args);
-
-      if ($blog_query->have_posts()) :
-      ?>
       <div class="top-blog__items blog-cards">
-        <?php // ループ START
+        <?php
+        // ループ開始
         while ($blog_query->have_posts()) : $blog_query->the_post();
 
         // アイキャッチ画像のURLを取得
         $thumbnail_url = has_post_thumbnail() ? get_the_post_thumbnail_url(get_the_ID(), 'full') : get_theme_file_uri('/assets/images/common/no-image.webp');
         ?>
+
         <article class="blog-cards__item blog-card">
           <a href="<?php the_permalink(); ?>">
             <!-- アイキャッチ画像 -->
@@ -212,7 +249,6 @@
         </article>
         <?php endwhile; // ループ終了 ?>
       </div>
-      <?php endif; wp_reset_postdata(); ?>
 
       <!-- ボタン -->
       <div class="top-blog__button">
@@ -220,30 +256,33 @@
       </div>
     </div>
   </section>
+  <?php endif; wp_reset_postdata(); ?>
 
 
   <!-- 口コミ　セクション -->
+  <?php // クエリ
+    $args = array(
+      'post_type' => 'voice',
+      'posts_per_page' => 2,
+    );
+
+    $voice_query = new WP_Query($args);
+  ?>
+
+  <?php if ($voice_query->have_posts()) : ?>
+
   <section class="voice layout-voice">
     <div class="voice__inner inner">
+
       <!-- セクションタイトル -->
       <hgroup class="voice__title section-title">
         <p class="section-title__main">Voice</p>
         <h2 class="section-title__sub">お客様の声</h2>
       </hgroup>
 
-      <?php // クエリ
-      $args = array(
-        'post_type' => 'voice',
-        'posts_per_page' => 2,
-      );
-
-      $voice_query = new WP_Query($args);
-
-      if ($voice_query->have_posts()) :
-      ?>
-
       <div class="archive-voice__items voice-cards">
-        <?php // ループ開始
+        <?php
+        // ループ開始
         while ($voice_query->have_posts()) : $voice_query->the_post();
 
         // ACFから情報を取得
@@ -268,7 +307,9 @@
           <div class="voice-card__head">
             <div class="voice-card__content">
               <div class="voice-card__meta">
+                <?php if (!empty($age) && !empty($type)) : ?>
                 <span class="voice-card__tag"><?php echo esc_html($age); ?>代(<?php echo esc_html($type); ?>)</span>
+                <?php endif; ?>
                 <span class="voice-card__category"><?php echo $term_name; ?></span>
               </div>
               <h3 class="voice-card__title"><?php the_title(); ?></h3>
@@ -278,7 +319,9 @@
             </figure>
           </div>
           <div class="voice-card__body">
+            <?php if (!empty($text)) : ?>
             <p class="voice-card__text"><?php echo esc_html($text); ?></p>
+            <?php endif; ?>
           </div>
         </article>
         <?php endwhile; // ループ終了 ?>
@@ -326,10 +369,12 @@
                 $course = isset($item[$courseKey]) ? $item[$courseKey] : '';
                 $fee = isset($item[$feeKey]) ? $item[$feeKey] : '';
 
-                echo '<div class="price__sub-item">';
-                echo '<dt class="price__sub-title">' . esc_html($course) . '</dt>';
-                echo '<dd class="price__sub-body">' . esc_html($fee) . '</dd>';
-                echo '</div>';
+                if (!empty($course) && !empty($fee)) {
+                  echo '<div class="price__sub-item">';
+                  echo '<dt class="price__sub-title">' . esc_html($course) . '</dt>';
+                  echo '<dd class="price__sub-body">' . esc_html($fee) . '</dd>';
+                  echo '</div>';
+                }
               }
 
               echo '</dl>';
