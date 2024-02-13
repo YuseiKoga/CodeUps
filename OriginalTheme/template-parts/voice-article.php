@@ -26,7 +26,9 @@
     <div class="voice-card__head">
       <div class="voice-card__content">
         <div class="voice-card__meta">
+          <?php if (!empty($age) && !empty($type)) : ?>
           <span class="voice-card__tag"><?php echo esc_html($age); ?>代(<?php echo esc_html($type); ?>)</span>
+          <?php endif; ?>
           <span class="voice-card__category"><?php echo $term_name; ?></span>
         </div>
         <h3 class="voice-card__title"><?php the_title(); ?></h3>
@@ -36,9 +38,13 @@
       </figure>
     </div>
     <div class="voice-card__body">
+      <?php if (!empty($text)) : ?>
       <p class="voice-card__text"><?php echo esc_html($text); ?></p>
+      <?php endif; ?>
     </div>
   </article>
   <?php endwhile; // ループ終了 ?>
 </div>
+<?php else : ?>
+<p>投稿がありません</p>
 <?php endif; ?>
