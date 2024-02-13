@@ -28,8 +28,10 @@
           echo '<dl class="sub-price__items">';
 
         foreach ($fields as $field) {
-          echo '<dt class="sub-price__term">' . esc_html($field[$course_key]) . '</dt>';
-          echo '<dd class="sub-price__description">' . esc_html($field[$fee_key]) . '</dd>';
+          if (!empty($field[$course_key]) && !empty($field[$fee_key])) {
+            echo '<dt class="sub-price__term">' . esc_html($field[$course_key]) . '</dt>';
+            echo '<dd class="sub-price__description">' . esc_html($field[$fee_key]) . '</dd>';
+          }
         }
 
         echo '</dl>';
