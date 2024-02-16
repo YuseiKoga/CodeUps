@@ -238,5 +238,25 @@ function hide_editor_on_specific_page() {
 }
 add_action('admin_init', 'hide_editor_on_specific_page');
 
+// 特定のカスタム投稿タイプでエディターを非表示にする
+function hide_editor_for_custom_post_types() {
+  global $pagenow;
 
+  // 新規投稿ページか編集ページの場合のみ実行
+  if ($pagenow == 'post-new.php' || $pagenow == 'post.php') {
+      // カスタム投稿タイプを取得
+      $post_type = isset($_GET['post_type']) ? $_GET['post_type'] : null;
+      $post_id = isset($_GET['post']) ? $_GET['post'] : null;
+
+      if (is_null($post_type) && $post_id) {
+          $post_type = get_post_type($post_id);
+      }
+
+      // カスタム投稿タイプ 'campaign' または 'voice' の場合、エディターを非表示にする
+      if ($post_type == 'campaign' || $post_type == 'voice') {
+          remove_post_type_support($post_type, 'editor');
+      }
+  }
+}
+add_action('admin_init', 'hide_editor_for_custom_post_types');
 ?>
