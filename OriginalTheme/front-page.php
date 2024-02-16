@@ -94,8 +94,11 @@
             $category_name = (!empty($terms) && !is_wp_error($terms)) ? esc_html($terms[0]->name) : '未分類';
 
             // ACFから値を取得
-            $regular_price = number_format(get_field('regular_price'));
-            $special_price = number_format(get_field('special_price'));
+            $price_group = get_field('price_group');
+            if ($price_group) {
+              $regular_price = number_format($price_group['regular_price']);
+              $special_price = number_format($price_group['special_price']);
+            }
           ?>
           <article class="swiper-slide campaign-swiper__item campaign-card">
             <!-- アイキャッチ画像 -->
@@ -286,14 +289,13 @@
         while ($voice_query->have_posts()) : $voice_query->the_post();
 
         // ACFから情報を取得
-        $age = get_field('age');
-        $type = get_field('type');
-        $text = get_field('text');
-
-        // テキストを２００文字に制御
-        if (mb_strlen($text) > 200) {
-          $text = mb_substr($text, 0, 200) . '...';
+        $tag_group = get_field('tag_group');
+        if ($tag_group) {
+          $age = $tag_group['age'];
+          $type = $tag_group['type'];
         }
+
+        $text = get_field('text');
 
         // カスタムタクソノミーの名前を取得、存在しない場合は'未分類'を設定
         $terms = get_the_terms(get_the_ID(), 'voice_category');
@@ -326,7 +328,6 @@
         </article>
         <?php endwhile; // ループ終了 ?>
       </div>
-      <?php endif; wp_reset_postdata(); ?>
 
       <!-- ボタン -->
       <div class="voice__button">
@@ -334,6 +335,7 @@
       </div>
     </div>
   </section>
+  <?php endif; wp_reset_postdata(); ?>
 
   <!-- 料金　セクション -->
   <section class="price layout-price">

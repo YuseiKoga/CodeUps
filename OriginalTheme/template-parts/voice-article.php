@@ -5,14 +5,12 @@
   while (have_posts()) : the_post();
 
     // ACFから情報を取得
-    $age = get_field('age');
-    $type = get_field('type');
-    $text = get_field('text');
-
-    // テキストを２００文字に制御
-    if (mb_strlen($text) > 200) {
-      $text = mb_substr($text, 0, 200) . '...';
+    $tag_group = get_field('tag_group');
+    if ($tag_group) {
+      $age = $tag_group['age'];
+      $type = $tag_group['type'];
     }
+    $text = get_field('text');
 
     // カスタムタクソノミーの名前を取得、存在しない場合は'未分類'を設定
     $terms = get_the_terms(get_the_ID(), 'voice_category');

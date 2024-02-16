@@ -4,12 +4,18 @@
     // ループ開始
     while (have_posts()) : the_post();
 
-     // ACFから情報を取得
-      $regular_price = number_format(get_field('regular_price'));
-      $special_price = number_format(get_field('special_price'));
+      // ACFから情報を取得
+      $price_group = get_field('price_group');
+      if ($price_group) {
+        $regular_price = number_format($price_group['regular_price']);
+        $special_price = number_format($price_group['special_price']);
+      }
+      $date_group = get_field('date_group');
+      if ($date_group) {
+        $start_date = $date_group['start_date'];
+        $end_date = $date_group['end_date'];
+      }
       $campaign_text = get_field('campaign_text');
-      $start_date = get_field('start_date');
-      $end_date = get_field('end_date');
 
       // カスタムタクソノミーの名前を取得、存在しない場合は'未分類'を設定
       $terms = get_the_terms(get_the_ID(), 'campaign_category');
