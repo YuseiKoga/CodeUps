@@ -218,4 +218,25 @@ SCF::add_options_page (
 // the_archive_titleのプレフィックスを取り除く
 add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
 
+// 特定の固定ページでエディターを非表示にする
+function hide_editor_on_specific_page() {
+  $post_id = 0;
+  if(isset($_GET['post'])) {
+      $post_id = $_GET['post'];
+  } elseif(isset($_POST['post_ID'])) {
+      $post_id = $_POST['post_ID'];
+  }
+
+  if(!isset($post_id) || empty($post_id)) {
+      return;
+  }
+
+  // トップページのIDをここに設定
+  if($post_id == 8) {
+      remove_post_type_support('page', 'editor');
+  }
+}
+add_action('admin_init', 'hide_editor_on_specific_page');
+
+
 ?>

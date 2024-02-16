@@ -24,13 +24,12 @@
       <div class="swiper mv__swiper js-mv-swiper">
         <div class="swiper-wrapper">
           <?php
-          // カスタムフィールドを取得
-          $slides = SCF::get_option_meta('mainVisual','top-mainVisual');
+            $images = SCF::get_option_meta('mainVisual','mv_images');
 
-          if (!empty($slides)) :
-            foreach ($slides as $slide) :
-              $pc_image_url = esc_url(wp_get_attachment_url($slide['pc-image']));
-              $sp_image_url = esc_url(wp_get_attachment_url($slide['sp-image']));
+            if (!empty($images)) :
+              foreach ($images as $image) :
+                $pc_image_url = esc_url(wp_get_attachment_url($image['pc_image']));
+                $sp_image_url = esc_url(wp_get_attachment_url($image['sp_image']));
           ?>
           <div class="swiper-slide">
             <div class="mv__img">
@@ -40,7 +39,8 @@
               </picture>
             </div>
           </div>
-          <?php endforeach; else : //カスタムフィールドが設定されていない場合 ?>
+          <?php endforeach; ?>
+          <?php else : // カスタムフィールドが設定されていない場合のデフォルト画像 ?>
           <div class="swiper-slide">
             <div class="mv__img">
               <picture>

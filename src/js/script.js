@@ -96,7 +96,6 @@ jQuery(function ($) {
   ======================================== */
   const mvSwiperOptions = {
     loop: true,
-    loopAdditionalSlides: 1,
     speed: 2000,
     effect: "fade",
     fadeEffect: {
@@ -114,7 +113,6 @@ jQuery(function ($) {
   ======================================== */
   const campaignSwiperOptions = {
     loop: true,
-    loopAdditionalSlides: 1,
     speed: 300,
     slidesPerView: "auto",
     autoplay: {
