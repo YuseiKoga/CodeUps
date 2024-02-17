@@ -172,7 +172,7 @@ add_action('wp_footer', 'redirect_to_thanks_page');
 // SCFのオプションページ設定
 SCF::add_options_page(
   'メインビジュアル',
-  'メインビジュアル画像',
+  'メインビジュアル',
   'manage_options',
   'mainVisual',
   'dashicons-cover-image',
@@ -180,7 +180,7 @@ SCF::add_options_page(
 );
 SCF::add_options_page (
   'ギャラリー',
-  'ギャラリー画像',
+  'ギャラリー',
   'manage_options',
   'gallery',
   'dashicons-format-gallery',
