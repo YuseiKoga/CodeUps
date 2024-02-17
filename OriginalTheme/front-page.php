@@ -157,8 +157,7 @@
           </div>
           <div class="about__right">
             <p class="about__text">
-              ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
-              ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
+              「海の魅力をあなたに届ける」をモットーに、私たちのダイビングショップは、初心者から上級者まで全てのダイバーを歓迎します。<br>海の美しさと安全なダイビングを提供するため、経験豊かなインストラクターと最高品質の機材を用意しています。<br>私たちと一緒に、海の冒険を始めましょう。
             </p>
             <div class="about__button">
               <a href="<?php echo esc_url(home_url('/about')); ?>" class="button">View more<span></span></a>
@@ -276,7 +275,7 @@
           $type = $tag_group['type'];
         }
         // 口コミ
-        $text = get_field('text');
+        $text = esc_html(get_field('text'));
 
         // カスタムタクソノミーの名前を取得、存在しない場合は'未分類'を設定
         $terms = get_the_terms(get_the_ID(), 'voice_category');
@@ -307,7 +306,7 @@
           <div class="voice-card__body">
             <!-- 本文 -->
             <?php if (!empty($text)) : ?>
-            <p class="voice-card__text"><?php echo esc_html($text); ?></p>
+            <p class="voice-card__text"><?php echo nl2br($text); ?></p>
             <?php endif; ?>
           </div>
         </article>

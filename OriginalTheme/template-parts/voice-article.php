@@ -12,7 +12,7 @@
         $type = $tag_group['type'];
       }
       // 口コミ
-      $text = get_field('text');
+      $text = esc_html(get_field('text'));
 
       // カスタムタクソノミーの名前を取得、存在しない場合は'未分類'を設定
       $terms = get_the_terms(get_the_ID(), 'voice_category');
@@ -39,7 +39,7 @@
     </div>
     <div class="voice-card__body">
       <?php if (!empty($text)) : ?>
-      <p class="voice-card__text"><?php echo esc_html($text); ?></p>
+      <p class="voice-card__text"><?php echo nl2br($text); ?></p>
       <?php endif; ?>
     </div>
   </article>
