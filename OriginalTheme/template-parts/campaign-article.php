@@ -5,16 +5,19 @@
     while (have_posts()) : the_post();
 
       // ACFから情報を取得
+      // 通常価格・特別価格
       $price_group = get_field('price_group');
       if ($price_group) {
         $regular_price = number_format($price_group['regular_price']);
         $special_price = number_format($price_group['special_price']);
       }
+      // キャンペーン日時
       $date_group = get_field('date_group');
       if ($date_group) {
         $start_date = $date_group['start_date'];
         $end_date = $date_group['end_date'];
       }
+      // キャンペーン内容
       $campaign_text = get_field('campaign_text');
 
       // カスタムタクソノミーの名前を取得、存在しない場合は'未分類'を設定

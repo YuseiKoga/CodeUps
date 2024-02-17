@@ -12,9 +12,11 @@
 
   <section class="sub-contact layout-sub-contents ornament">
     <div class="inner sub-contact__inner">
+      <!-- ContactForm7読み込み（管理画面で設定） -->
       <?php echo do_shortcode('[contact-form-7 id="c2a5504" title="お問い合わせ入力"]'); ?>
     </div>
   </section>
+
 </main>
 
 <?php get_footer(); ?>

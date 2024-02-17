@@ -39,16 +39,14 @@
       <div class="gallery__modal js-modal"></div>
       <div class="gallery__items">
         <?php
-        foreach($gallery_images as $gallery_image) {
-          // 画像IDを取得
-          $image_id = $gallery_image['gallery_image'];
-          // 画像URLを取得
-          $image_url = wp_get_attachment_url($image_id);
-          echo '<div class="gallery__item js-modal-img">';
-          echo '<img src="' . esc_url($image_url) .'" alt="">';
-          echo '</div>';
-        }
-      ?>
+          foreach($gallery_images as $gallery_image) :
+            $image_id = $gallery_image['gallery_image'];
+            $image_url = wp_get_attachment_url($image_id);
+        ?>
+        <div class="gallery__item js-modal-img">
+          <img src="<?php echo esc_url($image_url); ?>" alt="">
+        </div>
+        <?php endforeach; ?>
       </div>
     </div>
   </section>

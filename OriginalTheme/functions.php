@@ -1,24 +1,22 @@
 <?php
 // 基本設定
-function my_setup()
-{
-    add_theme_support('post-thumbnails');
-    add_theme_support('automatic-feed-links');
-    add_theme_support('title-tag');
-    add_theme_support('html5', array(
-        'search-form',
-        'comment-form',
-        'comment-list',
-        'gallery',
-        'caption',
-    ));
+function my_setup() {
+  add_theme_support('post-thumbnails');
+  add_theme_support('automatic-feed-links');
+  add_theme_support('title-tag');
+  add_theme_support('html5', array(
+    'search-form',
+    'comment-form',
+    'comment-list',
+    'gallery',
+    'caption',
+  ));
 }
 add_action('after_setup_theme', 'my_setup');
 
 
 // 読み込み
-function my_script_init()
-{
+function my_script_init() {
   // jquery
   wp_deregister_script('jquery');
   wp_enqueue_script('jquery', '//code.jquery.com/jquery-3.6.1.min.js', '', '3.6.1', true);
@@ -35,8 +33,7 @@ add_action('wp_enqueue_scripts', 'my_script_init');
 
 
 // アーカイブの表示投稿数の制御
-function set_posts_per_page($query)
-{
+function set_posts_per_page($query) {
   if (!is_admin() && $query->is_main_query()) {
     if (is_post_type_archive('voice') || is_tax('voice_category')) {
       $query->set('posts_per_page', 6);
@@ -49,8 +46,7 @@ add_action('pre_get_posts', 'set_posts_per_page');
 
 
 // デフォルト投稿の情報変更
-function Change_menulabel()
-{
+function Change_menulabel() {
   global $menu;
   global $submenu;
   $name = 'ブログ';
@@ -58,8 +54,7 @@ function Change_menulabel()
   $submenu['edit.php'][5][0] = $name.'一覧';
   $submenu['edit.php'][10][0] = '新しい'.$name;
 }
-function Change_objectlabel()
-{
+function Change_objectlabel() {
   global $wp_post_types;
   $name = 'ブログ';
   $labels = &$wp_post_types['post']->labels;
@@ -79,23 +74,20 @@ add_action('admin_menu', 'Change_menulabel');
 
 
 // ブログの抜粋文の文字数制限
-function custom_excerpt_length($length)
-{
-  return 80;
+function custom_excerpt_length($length) {
+  return 85;
 }
 add_filter('excerpt_length', 'custom_excerpt_length', 999);
 
 // ブログの抜粋の末尾を変更
-function new_excerpt_more($more)
-{
-  return '[続きを読む...]';
+function new_excerpt_more($more) {
+  return '...';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
 
 // 記事のPVを取得
-function getPostViews($postID)
-{
+function getPostViews($postID) {
   $count_key = 'post_views_count';
   $count = get_post_meta($postID, $count_key, true);
   if ($count == '') {
@@ -107,8 +99,7 @@ function getPostViews($postID)
 }
 
 // 記事のPVをカウント
-function setPostViews($postID)
-{
+function setPostViews($postID) {
   $count_key = 'post_views_count';
   $count = get_post_meta($postID, $count_key, true);
   if ($count == '') {
@@ -124,8 +115,7 @@ remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 
 
 //　ContactForm7のセレクトボックでカスタム投稿の投稿タイトルを出力
-function dynamic_dropdown_for_campaigns($tag)
-{
+function dynamic_dropdown_for_campaigns($tag) {
   if ('your-select' != $tag['name']) {
     return $tag;
   }
@@ -145,11 +135,11 @@ function dynamic_dropdown_for_campaigns($tag)
   $tag['labels'][] = 'キャンペーン内容を選択';
 
   if ($campaigns->have_posts()) {
-      while ($campaigns->have_posts()) {
-          $campaigns->the_post();
-          $tag['values'][] = get_the_title();
-          $tag['labels'][] = get_the_title();
-      }
+    while ($campaigns->have_posts()) {
+      $campaigns->the_post();
+        $tag['values'][] = get_the_title();
+        $tag['labels'][] = get_the_title();
+    }
   }
 
   wp_reset_postdata();
@@ -159,16 +149,14 @@ add_filter('wpcf7_form_tag', 'dynamic_dropdown_for_campaigns', 10, 2);
 
 
 // Contact Form 7で自動挿入されるPタグ・brタグを削除
-function wpcf7_autop_return_false()
-{
+function wpcf7_autop_return_false() {
   return false;
 }
 add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
 
 
 // Thanksページへリダイレクト
-function redirect_to_thanks_page()
-{
+function redirect_to_thanks_page() {
   $home = home_url();
   echo <<< EOD
   <script>
@@ -215,8 +203,10 @@ SCF::add_options_page (
   7
 );
 
+
 // the_archive_titleのプレフィックスを取り除く
 add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
+
 
 // 特定の固定ページでエディターを非表示にする
 function hide_editor_on_specific_page() {
@@ -237,6 +227,7 @@ function hide_editor_on_specific_page() {
   }
 }
 add_action('admin_init', 'hide_editor_on_specific_page');
+
 
 // 特定のカスタム投稿タイプでエディターを非表示にする
 function hide_editor_for_custom_post_types() {
@@ -259,4 +250,3 @@ function hide_editor_for_custom_post_types() {
   }
 }
 add_action('admin_init', 'hide_editor_for_custom_post_types');
-?>

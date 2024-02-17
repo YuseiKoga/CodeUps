@@ -15,29 +15,29 @@
       <div class="sub-price__container">
         <!-- 料金ブロック -->
         <?php
-      // SCFからカスタムフィールド情報を取得
-      function get_price_fields($field_name) {
-        return SCF::get_option_meta('price', $field_name);
-      }
+        // SCFからカスタムフィールド情報を取得
+        function get_price_fields($field_name) {
+          return SCF::get_option_meta('price', $field_name);
+        }
 
-      // 料金表の生成
-      function render_price_block($title, $fields, $course_key, $fee_key) {
-        if (!empty($fields)) {
-          echo '<div class="sub-price__block" id="price' . esc_attr($title) . '">';
-          echo '<h2 class="sub-price__title"><span>' . esc_html($title) . '</span></h2>';
-          echo '<dl class="sub-price__items">';
+        // 料金表の生成
+        function render_price_block($title, $fields, $course_key, $fee_key) {
+          if (!empty($fields)) {
+            echo '<div class="sub-price__block" id="price' . esc_attr($title) . '">';
+            echo '<h2 class="sub-price__title"><span>' . esc_html($title) . '</span></h2>';
+            echo '<dl class="sub-price__items">';
 
-        foreach ($fields as $field) {
-          if (!empty($field[$course_key]) && !empty($field[$fee_key])) {
-            echo '<dt class="sub-price__term">' . esc_html($field[$course_key]) . '</dt>';
-            echo '<dd class="sub-price__description">' . esc_html($field[$fee_key]) . '</dd>';
+          foreach ($fields as $field) {
+            if (!empty($field[$course_key]) && !empty($field[$fee_key])) {
+              echo '<dt class="sub-price__term">' . esc_html($field[$course_key]) . '</dt>';
+              echo '<dd class="sub-price__description">' . esc_html($field[$fee_key]) . '</dd>';
+            }
+          }
+
+            echo '</dl>';
+            echo '</div>';
           }
         }
-
-        echo '</dl>';
-        echo '</div>';
-        }
-      }
       ?>
 
         <?php
@@ -60,6 +60,7 @@
       </div>
     </div>
   </section>
+
 </main>
 
 <?php get_footer(); ?>

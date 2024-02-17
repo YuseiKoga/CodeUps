@@ -7,23 +7,21 @@
   </div>
 </div>
 
-
 <main>
 
   <!-- メインビジュアル -->
   <section class="mv js-mv">
     <div class="mv__inner">
-
       <!-- タイトル -->
       <div class="mv__title-wrap">
         <h2 class="mv__main-title">DIVING</h2>
         <p class="mv__sub-title">into the ocean</p>
       </div>
-
       <!-- Swiper -->
       <div class="swiper mv__swiper js-mv-swiper">
         <div class="swiper-wrapper">
           <?php
+            // SCFの繰り返しフィールドから情報を取得
             $images = SCF::get_option_meta('mainVisual','mv_images');
 
             if (!empty($images)) :
@@ -58,24 +56,22 @@
 
 
   <!-- キャンペーン セクション -->
-  <?php // クエリ
+  <?php
     $args = array(
       'post_type' => 'campaign',
       'posts_per_page' => -1,
     );
-
     $campaign_query = new WP_Query($args);
   ?>
   <?php if ($campaign_query->have_posts()) : ?>
   <section class="campaign layout-campaign">
     <div class="campaign__inner inner">
-
       <!-- セクションタイトル -->
       <hgroup class="campaign__title section-title">
         <p class="section-title__main">Campaign</p>
         <h2 class="section-title__sub">キャンペーン</h2>
       </hgroup>
-
+      <!-- Swiper -->
       <div class="swiper campaign__swiper campaign-swiper js-campaign-swiper">
         <div class="swiper-wrapper campaign-swiper__items">
           <?php
@@ -83,11 +79,7 @@
             while ($campaign_query->have_posts()) : $campaign_query->the_post();
 
             // アイキャッチ画像のURLを取得
-            if (has_post_thumbnail()) {
-              $image_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
-            } else {
-              $image_url = get_theme_file_uri("/assets/images/common/no-image.webp");
-            }
+            $image_url = has_post_thumbnail() ? get_the_post_thumbnail_url() : get_theme_file_uri('/assets/images/common/no-image.webp');
 
             // カテゴリーを取得
             $terms = get_the_terms(get_the_ID(), 'campaign_category');
@@ -127,12 +119,10 @@
           <?php endwhile; ?>
         </div>
       </div>
-
       <!-- ボタン -->
       <div class="campaign__button">
         <a href="<?php echo esc_url(home_url('/campaign')); ?>" class="button">View more<span></span></a>
       </div>
-
       <!-- Swiper-button -->
       <div class="campaign__swiper-button u-desktop">
         <div class="swiper-button-prev campaign__prev-button  js-campaign-prev-button"></div>
@@ -207,35 +197,30 @@
 
 
   <!-- ブログ　セクション -->
-  <?php // クエリ
+  <?php
     $args = array(
       'post_type' => 'post',
       'posts_per_page' => 3,
     );
-
     $blog_query = new WP_Query($args);
   ?>
-
   <?php if ($blog_query->have_posts()) : ?>
-
   <section class="top-blog layout-top-blog">
     <div class="top-blog__inner inner">
-
       <!-- セクションタイトル -->
       <hgroup class="top-blog__title section-title">
         <p class="section-title__main section-title__main--white">Blog</p>
         <h2 class="section-title__sub section-title__sub--white">ブログ</h2>
       </hgroup>
-
+      <!-- ブログカードリスト -->
       <div class="top-blog__items blog-cards">
         <?php
         // ループ開始
         while ($blog_query->have_posts()) : $blog_query->the_post();
 
         // アイキャッチ画像のURLを取得
-        $thumbnail_url = has_post_thumbnail() ? get_the_post_thumbnail_url(get_the_ID(), 'full') : get_theme_file_uri('/assets/images/common/no-image.webp');
+        $thumbnail_url = has_post_thumbnail() ? get_the_post_thumbnail_url() : get_theme_file_uri('/assets/images/common/no-image.webp');
         ?>
-
         <article class="blog-cards__item blog-card">
           <a href="<?php the_permalink(); ?>">
             <!-- アイキャッチ画像 -->
@@ -247,12 +232,11 @@
             <!-- 投稿タイトル -->
             <h3 class="blog-card__title"><?php the_title(); ?></h3>
             <!-- 投稿抜粋 -->
-            <p class="blog-card__text"><?php the_excerpt(); ?></p>
+            <p class="blog-card__text"><?php echo get_the_excerpt(); ?></p>
           </a>
         </article>
         <?php endwhile; // ループ終了 ?>
       </div>
-
       <!-- ボタン -->
       <div class="top-blog__button">
         <a href="<?php echo esc_url(home_url('/blog')); ?>" class="button">View more<span></span></a>
@@ -263,38 +247,35 @@
 
 
   <!-- 口コミ　セクション -->
-  <?php // クエリ
+  <?php
     $args = array(
       'post_type' => 'voice',
       'posts_per_page' => 2,
     );
-
     $voice_query = new WP_Query($args);
   ?>
-
   <?php if ($voice_query->have_posts()) : ?>
-
   <section class="voice layout-voice">
     <div class="voice__inner inner">
-
       <!-- セクションタイトル -->
       <hgroup class="voice__title section-title">
         <p class="section-title__main">Voice</p>
         <h2 class="section-title__sub">お客様の声</h2>
       </hgroup>
-
+      <!-- 口コミカードリスト -->
       <div class="archive-voice__items voice-cards">
         <?php
         // ループ開始
         while ($voice_query->have_posts()) : $voice_query->the_post();
 
         // ACFから情報を取得
+        // タグ情報
         $tag_group = get_field('tag_group');
         if ($tag_group) {
           $age = $tag_group['age'];
           $type = $tag_group['type'];
         }
-
+        // 口コミ
         $text = get_field('text');
 
         // カスタムタクソノミーの名前を取得、存在しない場合は'未分類'を設定
@@ -304,23 +285,27 @@
         // 画像URLを取得、存在しない場合はデフォルト画像を設定
         $image_url = has_post_thumbnail() ? get_the_post_thumbnail_url() : get_theme_file_uri('/assets/images/common/no-image.webp');
         ?>
-
         <article class="voice-cards__item voice-card">
           <div class="voice-card__head">
             <div class="voice-card__content">
               <div class="voice-card__meta">
+                <!-- タグ -->
                 <?php if (!empty($age) && !empty($type)) : ?>
                 <span class="voice-card__tag"><?php echo esc_html($age); ?>代(<?php echo esc_html($type); ?>)</span>
                 <?php endif; ?>
+                <!-- カテゴリー -->
                 <span class="voice-card__category"><?php echo $term_name; ?></span>
               </div>
+              <!-- タイトル -->
               <h3 class="voice-card__title"><?php the_title(); ?></h3>
             </div>
+            <!-- 画像 -->
             <figure class="voice-card__img  js-image">
               <img src="<?php echo esc_url($image_url); ?>" alt="">
             </figure>
           </div>
           <div class="voice-card__body">
+            <!-- 本文 -->
             <?php if (!empty($text)) : ?>
             <p class="voice-card__text"><?php echo esc_html($text); ?></p>
             <?php endif; ?>
@@ -328,7 +313,6 @@
         </article>
         <?php endwhile; // ループ終了 ?>
       </div>
-
       <!-- ボタン -->
       <div class="voice__button">
         <a href="<?php echo esc_url(home_url('/voice')); ?>" class="button">View more<span></span></a>
@@ -336,6 +320,7 @@
     </div>
   </section>
   <?php endif; wp_reset_postdata(); ?>
+
 
   <!-- 料金　セクション -->
   <section class="price layout-price">
@@ -345,7 +330,7 @@
         <p class="section-title__main">Price</p>
         <h2 class="section-title__sub">料金一覧</h2>
       </hgroup>
-
+      <!-- コンテンツ -->
       <div class="price__container">
         <!-- 画像 -->
         <figure class="price__img js-image">
@@ -355,7 +340,6 @@
             <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/img-price-sp.jpg" alt="">
           </picture>
         </figure>
-
         <!-- 料金リスト -->
         <ul class="price__items">
           <?php
@@ -391,7 +375,6 @@
           ?>
         </ul>
       </div>
-
       <!-- ボタン -->
       <div class="price__button">
         <a href="<?php echo esc_url(home_url('/price')); ?>" class="button">View more<span></span></a>
@@ -400,6 +383,5 @@
   </section>
 
 </main>
-
 
 <?php get_footer(); ?>
