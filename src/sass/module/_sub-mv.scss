@@ -10,17 +10,6 @@
   }
 }
 
-.sub-mv::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(64, 143, 149, 0.3);
-}
-
 .sub-mv__title {
   position: absolute;
   top: 50%;
@@ -33,6 +22,7 @@
   font-family: $third-font-family;
   font-size: rem(40);
   line-height: calc(48 / 40);
+  text-shadow: 1px 1px 3px #444;
   @include mq("md") {
     top: rem(274);
     transform: translateX(-50%);
@@ -42,64 +32,37 @@
 }
 
 .sub-mv--campaign {
-  background-image: url(../images/sub-mv/img-campaign-sp.webp);
-  @include mq("md") {
-    background-image: url(../images/sub-mv/img-campaign-pc.webp);
-  }
+  background-image: url(../images/sub-mv/img-campaign.webp);
 }
 
 .sub-mv--about {
-  background-image: url(../images/sub-mv/img-about-sp.webp);
-  @include mq("md") {
-    background-image: url(../images/sub-mv/img-about-pc.webp);
-  }
+  background-image: url(../images/sub-mv/img-about.webp);
 }
 
 .sub-mv--info {
-  background-image: url(../images/sub-mv/img-info-sp.webp);
-  @include mq("md") {
-    background-image: url(../images/sub-mv/img-info-pc.webp);
-  }
+  background-image: url(../images/sub-mv/img-information.webp);
 }
 
 .sub-mv--blog {
-  background-image: url(../images/sub-mv/img-blog-sp.webp);
-  @include mq("md") {
-    background-image: url(../images/sub-mv/img-blog-pc.webp);
-  }
+  background-image: url(../images/sub-mv/img-blog.webp);
 }
 
 .sub-mv--voice {
-  background-image: url(../images/sub-mv/img-voice-sp.webp);
-  @include mq("md") {
-    background-image: url(../images/sub-mv/img-voice-pc.webp);
-  }
+  background-image: url(../images/sub-mv/img-voice.webp);
 }
 
 .sub-mv--price {
-  background-image: url(../images/sub-mv/img-price-sp.webp);
-  @include mq("md") {
-    background-image: url(../images/sub-mv/img-price-pc.webp);
-  }
+  background-image: url(../images/sub-mv/img-price.webp);
 }
 
 .sub-mv--faq {
-  background-image: url(../images/sub-mv/img-faq-sp.webp);
-  @include mq("md") {
-    background-image: url(../images/sub-mv/img-faq-pc.webp);
-  }
+  background-image: url(../images/sub-mv/img-faq.webp);
 }
 
 .sub-mv--contact {
-  background-image: url(../images/sub-mv/img-contact-sp.webp);
-  @include mq("md") {
-    background-image: url(../images/sub-mv/img-contact-pc.webp);
-  }
+  background-image: url(../images/sub-mv/img-contact.webp);
 }
 
 .sub-mv--common {
-  background-image: url(../images/sub-mv/img-common-sp.webp);
-  @include mq("md") {
-    background-image: url(../images/sub-mv/img-common-pc.webp);
-  }
+  background-image: url(../images/sub-mv/img-common.webp);
 }
