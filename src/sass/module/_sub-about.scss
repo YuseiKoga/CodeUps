@@ -18,7 +18,7 @@
   left: 0;
   width: 100%;
   aspect-ratio: 345 / 228;
-  background-image: url(../images/common/img-about01.webp);
+  background-image: url(../images/common/about01.webp);
   background-size: cover;
   z-index: -2;
   @include mq("md") {
@@ -40,7 +40,7 @@
     left: 0;
     width: rem(400);
     aspect-ratio: 400 / 606;
-    background-image: url(../images/common/img-about02.webp);
+    background-image: url(../images/common/about02.webp);
     background-size: cover;
     z-index: -1;
   }

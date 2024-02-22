@@ -145,10 +145,10 @@
       <div class="about__content-wrap">
         <div class="about__bg-container">
           <figure class="about__bg-left">
-            <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/img-about02.jpg" alt="">
+            <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/about02.webp" alt="">
           </figure>
           <figure class="about__bg-right">
-            <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/img-about01.jpg" alt="">
+            <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/about01.webp" alt="">
           </figure>
         </div>
         <div class="about__container">
