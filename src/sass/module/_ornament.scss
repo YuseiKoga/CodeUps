@@ -8,20 +8,20 @@
   content: "";
   display: block;
   position: absolute;
-  top: rem(-24);
+  top: rem(-40);
   left: calc(50% - (50vw - 15px));
-  width: rem(120);
-  height: rem(55);
-  background-image: url(../images/common/img-ornament-sp.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+  width: rem(100);
+  height: rem(45);
+  mask-image: url(../images/common/ornament.svg);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  background-color: $c-main;
   z-index: -1;
   @include mq("md") {
-    top: rem(-70);
+    top: rem(-120);
     left: calc(50% - min((50vw - 25px), rem(620)));
-    width: rem(301);
-    height: rem(138);
-    background-image: url(../images/common/img-ornament-pc.svg);
+    width: rem(300);
+    height: rem(140);
   }
 }
