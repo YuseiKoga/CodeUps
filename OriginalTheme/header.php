@@ -124,10 +124,10 @@
                     <a href="<?php echo esc_url(home_url('/information#tab01')); ?>">サファリツアー</a>
                   </li>
                   <li class="sp-nav__sub-item">
-                    <a href="<?php echo esc_url(home_url('/information#tab3')); ?>">フォトワーク</br>ショップ</a>
+                    <a href="<?php echo esc_url(home_url('/information#tab02')); ?>">フォトワーク</br>ショップ</a>
                   </li>
                   <li class="sp-nav__sub-item">
-                    <a href="<?php echo esc_url(home_url('/information#tab02')); ?>">自然保護活動体験</a>
+                    <a href="<?php echo esc_url(home_url('/information#tab03')); ?>">自然保護活動体験</a>
                   </li>
                 </ul>
               </li>

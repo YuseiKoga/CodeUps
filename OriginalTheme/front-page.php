@@ -14,7 +14,7 @@
     <div class="mv__inner">
       <!-- タイトル -->
       <div class="mv__title-wrap">
-        <h2 class="mv__main-title"><span>Journey</span>&nbsp;<span>into</span>&nbsp;<span>the&nbsp;Wild</span></h2>
+        <h2 class="mv__main-title"><span>Journey&nbsp;</span><span>into&nbsp;</span><span>the&nbsp;Wild</span></h2>
         <p class="mv__sub-title">Experience&nbsp;Nature's&nbsp;Majesty</p>
       </div>
       <!-- Swiper -->

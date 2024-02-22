@@ -37,11 +37,11 @@
                 <li class="sitemap__sub-item"><a
                     href="<?php echo esc_url(home_url('/information#tab01')); ?>">サファリツアー</a>
                 </li>
-                <li class="sitemap__sub-item"><a href="<?php echo esc_url(home_url('/information#tab03')); ?>">フォトワーク<br
+                <li class="sitemap__sub-item"><a href="<?php echo esc_url(home_url('/information#tab02')); ?>">フォトワーク<br
                       class="u-mobile">ショップ</a>
                 </li>
                 <li class="sitemap__sub-item"><a
-                    href="<?php echo esc_url(home_url('/information#tab02')); ?>">自然保護活動体験</a></li>
+                    href="<?php echo esc_url(home_url('/information#tab03')); ?>">自然保護活動体験</a></li>
               </ul>
             </li>
             <li class="sitemap__item"><a href="<?php echo esc_url(home_url('/blog')); ?>">ブログ</a></li>
