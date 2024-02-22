@@ -33,16 +33,18 @@
 .section-title__main--white {
   @include mq("md") {
     color: $white;
+    text-shadow: 1px 1px 1px #666;
   }
 }
 .section-title__main--white::first-letter {
   @include mq("md") {
-    color: $c-sub;
+    color: $color-accent;
   }
 }
 .section-title__sub--white {
   @include mq("md") {
     color: $white;
+    text-shadow: 1px 1px 1px #666;
   }
 }
 

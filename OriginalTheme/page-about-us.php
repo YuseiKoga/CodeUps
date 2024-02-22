@@ -14,9 +14,9 @@
   <section class="sub-about layout-sub-contents ornament">
     <div class="inner">
       <div class="sub-about__wrap">
-        <h2 class="sub-about__title">Dive into<br>the Ocean</h2>
+        <h2 class="sub-about__title">Journey <br class="u-mobile">into<br>the Wild</h2>
         <p class="sub-about__text">
-        「海の魅力をあなたに届ける」をモットーに、私たちのダイビングショップは、初心者から上級者まで全てのダイバーを歓迎します。<br>海の美しさと安全なダイビングを提供するため、経験豊かなインストラクターと最高品質の機材を用意しています。<br>私たちと一緒に、海の冒険を始めましょう。
+          私たちは自然との調和を大切にし、野生生物の美しさと多様性を深く理解しています。<br>私たちのサファリ体験は、単なる観光を超え、野生動物との貴重な出会い、自然の中での冒険、そして地球への敬意を深める旅を提供します。<br>あなたを待っているのは、息をのむようなサファリ体験と地球への深い敬意です。
         </p>
       </div>
     </div>

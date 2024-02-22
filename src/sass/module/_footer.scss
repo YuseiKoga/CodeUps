@@ -153,7 +153,6 @@
   font-weight: $regular;
   line-height: calc(18 / 12);
   color: $white;
-  white-space: nowrap;
   @include mq("md") {
     font-size: rem(14);
     line-height: calc(18 / 14);

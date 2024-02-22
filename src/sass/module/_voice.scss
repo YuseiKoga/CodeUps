@@ -21,19 +21,19 @@
   @include mq("md") {
     top: rem(-120);
     left: calc(50% - min((50vw - 25px), rem(620)));
-    width: rem(301);
-    height: rem(138);
-    background-image: url(../images/top/img-voice-deco01.svg);
+    width: rem(200);
+    height: rem(200);
+    background-image: url(../images/common/deco05.svg);
   }
 }
 
 .voice::after {
   @include mq("md") {
-    bottom: rem(-67);
+    bottom: rem(-160);
     right: calc(50% - min((50vw - 25px), rem(540)));
-    width: rem(71);
-    height: rem(162);
-    background-image: url(../images/top/img-voice-deco02.svg);
+    width: rem(200);
+    height: rem(200);
+    background-image: url(../images/common/deco06.svg);
   }
 }
 

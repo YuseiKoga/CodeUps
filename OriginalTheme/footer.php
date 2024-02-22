@@ -6,7 +6,7 @@
       <div class="contact__left">
         <!-- ロゴ -->
         <div class="contact__logo">
-          <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/logo02.svg" alt="CodeUps">
+          <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/logo.webp" alt="CodeUps">
         </div>
         <hr class="contact__border">
         <div class="contact__wrap">
@@ -50,7 +50,7 @@
       <!-- ロゴ -->
       <div class="footer__logo">
         <a href="<?php echo esc_url(home_url()); ?>">
-          <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/logo.svg" alt="CodeUps">
+          <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/logo.webp" alt="CodeUps">
         </a>
       </div>
       <!-- SNS -->
@@ -78,13 +78,13 @@
             <!-- サブナビゲーション -->
             <ul class="footer__sub-items">
               <li class="footer__sub-item">
-                <a href="<?php echo esc_url(home_url('/campaign_category/licence')); ?>">ライセンス取得</a>
+                <a href="<?php echo esc_url(home_url('/campaign_category/licence')); ?>">サファリツアー</a>
               </li>
               <li class="footer__sub-item">
-                <a href="<?php echo esc_url(home_url('/campaign_category/trial')); ?>">貸切体験ダイビング</a>
+                <a href="<?php echo esc_url(home_url('/campaign_category/trial')); ?>">フォトワークショップ</a>
               </li>
               <li class="footer__sub-item">
-                <a href="<?php echo esc_url(home_url('/campaign_category/fun')); ?>">ファンダイビング</a>
+                <a href="<?php echo esc_url(home_url('/campaign_category/fun')); ?>">自然保護活動体験</a>
               </li>
             </ul>
           </li>
@@ -94,17 +94,17 @@
         </ul>
         <ul class="footer__nav-items">
           <li class="footer__nav-item">
-            <a href="<?php echo esc_url(home_url('/information')); ?>">ダイビング情報</a>
+            <a href="<?php echo esc_url(home_url('/information')); ?>">サービス情報</a>
             <!-- サブナビゲーション -->
             <ul class="footer__sub-items">
               <li class="footer__sub-item">
-                <a href="<?php echo esc_url(home_url('/information#tab01')); ?>">ライセンス講習</a>
+                <a href="<?php echo esc_url(home_url('/information#tab01')); ?>">サファリツアー</a>
               </li>
               <li class="footer__sub-item">
-                <a href="<?php echo esc_url(home_url('/information#tab03')); ?>">体験ダイビング</a>
+                <a href="<?php echo esc_url(home_url('/information#tab03')); ?>">フォトワークショップ</a>
               </li>
               <li class="footer__sub-item">
-                <a href="<?php echo esc_url(home_url('/information#tab02')); ?>">ファンダイビング</a>
+                <a href="<?php echo esc_url(home_url('/information#tab02')); ?>">自然保護活動体験</a>
               </li>
             </ul>
           </li>
@@ -123,13 +123,13 @@
             <!-- サブナビゲーション -->
             <ul class="footer__sub-items">
               <li class="footer__sub-item">
-                <a href="<?php echo esc_url(home_url('/price#priceLicence')); ?>">ライセンス講習</a>
+                <a href="<?php echo esc_url(home_url('/price#priceLicence')); ?>">サファリツアー</a>
               </li>
               <li class="footer__sub-item">
-                <a href="<?php echo esc_url(home_url('/price#priceExperience')); ?>">体験ダイビング</a>
+                <a href="<?php echo esc_url(home_url('/price#priceExperience')); ?>">フォトワークショップ</a>
               </li>
               <li class="footer__sub-item">
-                <a href="<?php echo esc_url(home_url('/price#priceFun')); ?>">ファンダイビング</a>
+                <a href="<?php echo esc_url(home_url('/price#priceFun')); ?>">自然保護活動体験</a>
               </li>
             </ul>
           </li>
@@ -155,7 +155,7 @@
     </nav>
     <!-- コピーライト -->
     <div class="footer__copyright">
-      <small>Copyright &copy; <?php echo wp_date("Y"); ?> CodeUps LLC. All Rights Reserved.</small>
+      <small>Copyright &copy; <?php echo wp_date("Y"); ?>&nbsp;WildQuest Adventures Inc. All Rights Reserved.</small>
     </div>
   </div>
 

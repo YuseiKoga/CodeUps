@@ -11,13 +11,15 @@
     content: "";
     display: block;
     position: absolute;
-    bottom: rem(-90);
-    right: calc(50% - min((50vw - 25px), rem(637)));
-    width: rem(194);
-    height: rem(181);
-    background-image: url(../images/top/icon-about-bg.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
+    bottom: rem(-140);
+    right: calc(50% - min(50vw, rem(637)));
+    width: rem(110);
+    height: rem(200);
+    mask-image: url(../images/common/deco08.svg);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: $color-main;
     z-index: 20;
   }
 }
@@ -80,14 +82,14 @@
     display: flex;
     position: absolute;
     top: rem(200);
-    left: rem(199);
+    left: rem(100);
     z-index: 40;
   }
 }
 
 .about__left {
   @include mq("md") {
-    flex: 0 0 rem(400);
+    flex: 0 0 rem(500);
   }
 }
 

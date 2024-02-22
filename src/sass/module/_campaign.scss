@@ -55,20 +55,22 @@
     margin: auto;
     width: inherit;
     height: inherit;
-    background-repeat: no-repeat;
-    background-size: contain;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: center;
+    background-color: $color-main;
   }
 }
 
 .campaign__next-button::after {
   @include mq("md") {
-    background-image: url(../images/top/icon-next.svg);
+    mask-image: url(../images/top/icon-next.svg);
   }
 }
 
 .campaign__prev-button::after {
   @include mq("md") {
-    background-image: url(../images/top/icon-prev.svg);
+    mask-image: url(../images/top/icon-prev.svg);
   }
 }
 

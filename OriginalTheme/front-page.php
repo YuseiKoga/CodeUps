@@ -14,8 +14,8 @@
     <div class="mv__inner">
       <!-- タイトル -->
       <div class="mv__title-wrap">
-        <h2 class="mv__main-title">DIVING</h2>
-        <p class="mv__sub-title">into the ocean</p>
+        <h2 class="mv__main-title"><span>Journey</span>&nbsp;<span>into</span>&nbsp;<span>the&nbsp;Wild</span></h2>
+        <p class="mv__sub-title">Experience&nbsp;Nature's&nbsp;Majesty</p>
       </div>
       <!-- Swiper -->
       <div class="swiper mv__swiper js-mv-swiper">
@@ -145,19 +145,19 @@
       <div class="about__content-wrap">
         <div class="about__bg-container">
           <figure class="about__bg-left">
-            <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/img-about01.jpg" alt="">
+            <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/img-about02.jpg" alt="">
           </figure>
           <figure class="about__bg-right">
-            <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/img-about02.jpg" alt="">
+            <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/img-about01.jpg" alt="">
           </figure>
         </div>
         <div class="about__container">
           <div class="about__left">
-            <p class="about__lead">Dive into<br>the Ocean</p>
+            <p class="about__lead">Journey into<br>the Wild</p>
           </div>
           <div class="about__right">
             <p class="about__text">
-              「海の魅力をあなたに届ける」をモットーに、私たちのダイビングショップは、初心者から上級者まで全てのダイバーを歓迎します。<br>海の美しさと安全なダイビングを提供するため、経験豊かなインストラクターと最高品質の機材を用意しています。<br>私たちと一緒に、海の冒険を始めましょう。
+            私たちは自然との調和を大切にし、野生生物の美しさと多様性を深く理解しています。<br>私たちのサファリ体験は、単なる観光を超え、野生動物との貴重な出会い、自然の中での冒険、そして地球への敬意を深める旅を提供します。<br>あなたを待っているのは、息をのむようなサファリ体験と地球への深い敬意です。
             </p>
             <div class="about__button">
               <a href="<?php echo esc_url(home_url('/about')); ?>" class="button">View more<span></span></a>
@@ -180,10 +180,10 @@
       <!-- コンテンツ -->
       <div class="information__container">
         <figure class="information__img js-image">
-          <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/img-information.jpg" alt="">
+          <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/information01.webp" alt="">
         </figure>
         <div class="information__body">
-          <h3 class="information__lead">ライセンス講習</h3>
+          <h3 class="information__lead">サファリツアー</h3>
           <p class="information__text">当店はダイビングライセンス（Cカード）世界最大の教育機関PADIの「正規店」として店舗登録されています。<br>
             正規登録店として、安心安全に初めての方でも安心安全にライセンス取得をサポート致します。</p>
           <div class="information__button">
@@ -334,9 +334,9 @@
         <!-- 画像 -->
         <figure class="price__img js-image">
           <picture>
-            <source srcset="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/img-price-pc.jpg"
+            <source srcset="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/price-pc.jpg"
               media="(min-width: 768px)">
-            <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/img-price-sp.jpg" alt="">
+            <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/price-sp.jpg" alt="">
           </picture>
         </figure>
         <!-- 料金リスト -->
@@ -367,10 +367,9 @@
             }
           }
 
-          displayPriceItems('licence', 'ライセンス講習', 'licence_course', 'licence_fee');
-          displayPriceItems('trial', '体験ダイビング', 'trial_course', 'trial_fee');
-          displayPriceItems('fun', 'ファンダイビング', 'fun_course', 'fun_fee');
-          displayPriceItems('special', 'スペシャルダイビング', 'special_course', 'special_fee');
+          displayPriceItems('licence', 'サファリツアー', 'licence_course', 'licence_fee');
+          displayPriceItems('trial', 'フォトワークショップ', 'trial_course', 'trial_fee');
+          displayPriceItems('fun', '自然保護活動体験', 'fun_course', 'fun_fee');
           ?>
         </ul>
       </div>

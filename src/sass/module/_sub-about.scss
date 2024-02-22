@@ -5,7 +5,7 @@
   position: relative;
   width: 100%;
   @include mq("md") {
-    padding: rem(200) rem(40) rem(263) rem(203);
+    padding: rem(200) rem(40) rem(263) rem(120);
     display: flex;
   }
 }
@@ -63,12 +63,12 @@
 }
 
 .sub-about__text {
-  margin-top: calc(164 / 345 * 100%);
+  margin-top: calc(134 / 345 * 100%);
   font-size: rem(16);
   line-height: calc(24 / 16);
   @include mq("md") {
     margin-top: rem(26);
-    margin-left: rem(41);
+    margin-left: rem(40);
     color: $white;
     text-shadow: 1px 1px 3px #444;
   }

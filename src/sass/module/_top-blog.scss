@@ -19,6 +19,8 @@
     background-image: url(../images/top/img-blog-bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     z-index: -1;
   }
 }
@@ -30,9 +32,9 @@
     position: absolute;
     top: rem(24);
     left: calc(50% - min((50vw - 25px), rem(620)));
-    width: rem(437);
-    height: rem(201);
-    background-image: url(../images/top/img-blog-bg-deco.svg);
+    width: rem(200);
+    height: rem(200);
+    background-image: url(../images/common/deco03.svg);
     background-size: contain;
     background-repeat: no-repeat;
   }

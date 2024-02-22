@@ -21,11 +21,11 @@
 
 .header__logo {
   position: relative;
-  width: rem(102);
+  width: rem(80);
   height: inherit;
   z-index: 20;
   @include mq("md") {
-    width: rem(133);
+    width: rem(90);
   }
 }
 .header__logo a {

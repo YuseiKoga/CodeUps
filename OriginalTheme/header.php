@@ -21,13 +21,13 @@
       <?php if (is_front_page()) : ?>
       <h1 class="header__logo">
         <a href="<?php echo esc_url(home_url()); ?>">
-          <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/logo.svg" alt="CodeUps">
+          <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/logo.webp" alt="WildQuest Adventures">
         </a>
       </h1>
       <?php else : ?>
       <div class="header__logo">
         <a href="<?php echo esc_url(home_url()); ?>">
-          <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/logo.svg" alt="CodeUps">
+          <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/logo.webp" alt="WildQuest Adventures">
         </a>
       </div>
       <?php endif; ?>
@@ -50,7 +50,7 @@
           <li class="pc-nav__item">
             <a href="<?php echo esc_url(home_url('/information')); ?>">
               <span class="pc-nav__en">Information</span>
-              <span class="pc-nav__ja">ダイビング情報</span>
+              <span class="pc-nav__ja">サービス情報</span>
             </a>
           </li>
           <li class="pc-nav__item">
@@ -101,13 +101,13 @@
                 <!-- サブナビゲーション -->
                 <ul class="sp-nav__sub-items">
                   <li class="sp-nav__sub-item">
-                    <a href="<?php echo esc_url(home_url('/campaign_category/licence')); ?>">ライセンス取得</a>
+                    <a href="<?php echo esc_url(home_url('/campaign_category/licence')); ?>">サファリツアー</a>
                   </li>
                   <li class="sp-nav__sub-item">
-                    <a href="<?php echo esc_url(home_url('/campaign_category/trial')); ?>">貸切体験ダイビング</a>
+                    <a href="<?php echo esc_url(home_url('/campaign_category/trial')); ?>">フォトワーク</br>ショップ</a>
                   </li>
                   <li class="sp-nav__sub-item">
-                    <a href="<?php echo esc_url(home_url('/campaign_category/fun')); ?>">ファンダイビング</a>
+                    <a href="<?php echo esc_url(home_url('/campaign_category/fun')); ?>">自然保護活動体験</a>
                   </li>
                 </ul>
               </li>
@@ -115,17 +115,17 @@
                 <a href="<?php echo esc_url(home_url('/about')); ?>">私たちについて</a>
               </li>
               <li class="sp-nav__item">
-                <a href="<?php echo esc_url(home_url('/information')); ?>">ダイビング情報</a>
+                <a href="<?php echo esc_url(home_url('/information')); ?>">サービス情報</a>
                 <!-- サブナビゲーション -->
                 <ul class="sp-nav__sub-items">
                   <li class="sp-nav__sub-item">
-                    <a href="<?php echo esc_url(home_url('/information#tab01')); ?>">ライセンス講習</a>
+                    <a href="<?php echo esc_url(home_url('/information#tab01')); ?>">サファリツアー</a>
                   </li>
                   <li class="sp-nav__sub-item">
-                    <a href="<?php echo esc_url(home_url('/information#tab3')); ?>">体験ダイビング</a>
+                    <a href="<?php echo esc_url(home_url('/information#tab3')); ?>">フォトワーク</br>ショップ</a>
                   </li>
                   <li class="sp-nav__sub-item">
-                    <a href="<?php echo esc_url(home_url('/information#tab02')); ?>">ファンダイビング</a>
+                    <a href="<?php echo esc_url(home_url('/information#tab02')); ?>">自然保護活動体験</a>
                   </li>
                 </ul>
               </li>
@@ -144,13 +144,13 @@
                 <!-- サブナビゲーション -->
                 <ul class="sp-nav__sub-items">
                   <li class="sp-nav__sub-item">
-                    <a href="<?php echo esc_url(home_url('/price#priceLicence')); ?>">ライセンス講習</a>
+                    <a href="<?php echo esc_url(home_url('/price#priceLicence')); ?>">サファリツアー</a>
                   </li>
                   <li class="sp-nav__sub-item">
-                    <a href="<?php echo esc_url(home_url('/price#priceExperience')); ?>">体験ダイビング</a>
+                    <a href="<?php echo esc_url(home_url('/price#priceExperience')); ?>">フォトワーク</br>ショップ</a>
                   </li>
                   <li class="sp-nav__sub-item">
-                    <a href="<?php echo esc_url(home_url('/price#priceFun')); ?>">ファンダイビング</a>
+                    <a href="<?php echo esc_url(home_url('/price#priceFun')); ?>">自然保護活動体験</a>
                   </li>
                 </ul>
               </li>
