@@ -3,7 +3,7 @@
 .footer {
   padding-top: rem(48);
   padding-bottom: rem(56);
-  background-color: $c-main;
+  background-color: $color-main;
   @include mq("md") {
     padding-block: rem(80);
   }

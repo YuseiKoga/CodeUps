@@ -15,7 +15,7 @@
   color: $white;
   font-size: rem(16);
   line-height: calc(23 / 16);
-  background-color: $c-main;
+  background-color: $color-main;
   cursor: pointer;
   @include mq("md") {
     padding: rem(25.5) rem(112) rem(25.5) rem(40);
@@ -55,7 +55,7 @@
   display: none;
   font-size: rem(16);
   line-height: calc(23 / 16);
-  border: 1px solid $c-main;
+  border: 1px solid $color-main;
   background-color: #fff;
   @include mq("md") {
     margin-top: rem(16);

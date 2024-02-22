@@ -21,13 +21,15 @@
       <?php if (is_front_page()) : ?>
       <h1 class="header__logo">
         <a href="<?php echo esc_url(home_url()); ?>">
-          <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/logo.webp" alt="WildQuest Adventures">
+          <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/logo.svg"
+            alt="WildQuest Adventures">
         </a>
       </h1>
       <?php else : ?>
       <div class="header__logo">
         <a href="<?php echo esc_url(home_url()); ?>">
-          <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/logo.webp" alt="WildQuest Adventures">
+          <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/logo.svg"
+            alt="WildQuest Adventures">
         </a>
       </div>
       <?php endif; ?>

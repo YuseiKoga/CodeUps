@@ -25,7 +25,7 @@
   font-size: rem(16);
   font-weight: $bold;
   line-height: calc(24 / 16);
-  background-color: $c-main;
+  background-color: $color-main;
   @include mq("md") {
     display: grid;
     place-content: center;
@@ -68,7 +68,7 @@
   @include mq("md") {
     grid-template-columns: 68% 32%;
     flex: 1;
-    border-top: 1px solid $c-main;
+    border-top: 1px solid $color-main;
   }
 }
 
@@ -83,13 +83,13 @@
   line-height: calc(24 / 16);
   border-style: solid;
   border-width: 0 1px 1px 1px;
-  border-color: transparent $c-main $c-main $c-main;
+  border-color: transparent $color-main $color-main $color-main;
   @include mq("md") {
     padding: rem(17) rem(15);
     flex-direction: row;
     justify-content: start;
     border-width: 0 1px 1px 0;
-    border-color: transparent $c-main $c-main 0;
+    border-color: transparent $color-main $color-main 0;
   }
 }
 
@@ -102,5 +102,5 @@
   line-height: calc(24 / 16);
   border-style: solid;
   border-width: 0 1px 1px 0;
-  border-color: transparent $c-main $c-main transparent;
+  border-color: transparent $color-main $color-main transparent;
 }

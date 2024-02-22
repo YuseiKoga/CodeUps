@@ -3,7 +3,7 @@
 .not-found {
   padding: rem(80) 0 rem(40) 0;
   position: relative;
-  background-color: $c-main;
+  background-color: $color-main;
   @include mq("md") {
     padding: rem(90) 0 rem(148) 0;
   }
@@ -41,7 +41,7 @@
 .not-found__title {
   text-align: center;
   color: $white;
-  font-family: $third-font-family;
+  font-family: $second-font-family;
   font-size: rem(80);
   font-weight: $regular;
   line-height: calc(96 / 80);
@@ -56,7 +56,7 @@
   margin-top: rem(-4);
   text-align: center;
   color: $white;
-  font-family: $third-font-family;
+  font-family: $second-font-family;
   font-size: rem(16);
   line-height: calc(24 / 16);
   @include mq("md") {

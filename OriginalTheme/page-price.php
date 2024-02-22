@@ -43,19 +43,16 @@
         <?php
       // ライセンス講習
       $licence_fields = get_price_fields('licence');
-      render_price_block('ライセンス講習', $licence_fields, 'licence_course', 'licence_fee');
+      render_price_block('サファリツアー', $licence_fields, 'licence_course', 'licence_fee');
 
       // 体験ダイビングの料金
       $trial_fields = get_price_fields('trial');
-      render_price_block('体験ダイビング', $trial_fields, 'trial_course', 'trial_fee');
+      render_price_block('フォトワークショップ', $trial_fields, 'trial_course', 'trial_fee');
 
       // ファンダイビングの料金
       $fun_fields = get_price_fields('fun');
-      render_price_block('ファンダイビング', $fun_fields, 'fun_course', 'fun_fee');
+      render_price_block('自然保護活動体験', $fun_fields, 'fun_course', 'fun_fee');
 
-      // スペシャルダイビングの料金
-      $special_fields = get_price_fields('special');
-      render_price_block('スペシャルダイビング', $special_fields, 'special_course', 'special_fee');
       ?>
       </div>
     </div>

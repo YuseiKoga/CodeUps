@@ -55,10 +55,10 @@
 
 .campaign-card__category {
   padding: rem(8) rem(11);
-  color: $c-main;
+  color: $color-main;
   font-size: rem(12);
   line-height: 1;
-  border: 1px solid $c-main;
+  border: 1px solid $color-main;
   @include mq("md") {
     padding: rem(10) rem(15);
   }
@@ -72,7 +72,7 @@
   font-size: rem(16);
   font-weight: $medium;
   line-height: calc(24 / 16);
-  border-bottom: 1px solid $c-main;
+  border-bottom: 1px solid $color-main;
 }
 
 .campaign-card__title--sub {
@@ -125,7 +125,7 @@
 .campaign-card__before-price {
   margin-top: rem(10);
   position: relative;
-  font-family: $third-font-family;
+  font-family: $second-font-family;
   font-size: rem(20);
   font-weight: $bold;
   line-height: 1;
@@ -156,8 +156,8 @@
 
 .campaign-card__after-price {
   margin-left: rem(16);
-  color: $c-main;
-  font-family: $third-font-family;
+  color: $color-main;
+  font-family: $second-font-family;
   font-size: rem(32);
   font-weight: $bold;
   line-height: 1;
@@ -199,9 +199,9 @@
 
 .campaign-card__date {
   margin-top: rem(32);
-  color: $c-main;
+  color: $color-main;
   text-align: center;
-  font-family: $third-font-family;
+  font-family: $second-font-family;
   font-size: rem(16);
   font-weight: $bold;
   line-height: calc(18 / 16);
@@ -209,7 +209,7 @@
 
 .campaign-card__contact {
   margin-top: rem(7);
-  color: $c-main;
+  color: $color-main;
   text-align: center;
   font-size: rem(14);
   line-height: calc(18 / 14);

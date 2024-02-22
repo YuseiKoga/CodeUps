@@ -14,11 +14,11 @@
 .info__tab-item {
   padding: rem(10) 0.5em;
   width: calc(102 / 345 * 100%);
-  color: $c-main;
+  color: $color-main;
   text-align: center;
   font-size: rem(14);
   line-height: calc(20 / 14);
-  background: $c-sub;
+  background: $color-sub;
   box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
   transition: color 0.3s, background 0.3s;
   @include mq("md") {
@@ -37,7 +37,7 @@
 .info__tab-item:hover {
   @include mq("md") {
     color: $white;
-    background-color: $c-main;
+    background-color: $color-main;
   }
 }
 
@@ -51,7 +51,7 @@
     mask-size: contain;
     mask-repeat: no-repeat;
     mask-position: center;
-    background-color: $c-main;
+    background-color: $color-main;
     transition: color 0.3s, background 0.3s;
   }
 }
@@ -82,7 +82,7 @@
 
 .info__tab-item.is-active {
   color: $white;
-  background-color: $c-main;
+  background-color: $color-main;
 }
 .info__tab-item.is-active::before {
   @include mq("md") {
@@ -100,7 +100,7 @@
 .info__content {
   padding: rem(23);
   display: none;
-  border: 1px solid $c-main;
+  border: 1px solid $color-main;
   @include mq("md") {
     padding: rem(24);
     align-items: center;
@@ -125,7 +125,7 @@
   font-size: rem(24);
   font-weight: $bold;
   line-height: 1;
-  border-bottom: 1px solid $c-main;
+  border-bottom: 1px solid $color-main;
 }
 
 .info__text {

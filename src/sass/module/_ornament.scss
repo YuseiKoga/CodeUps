@@ -16,7 +16,7 @@
   mask-size: contain;
   mask-repeat: no-repeat;
   mask-position: center;
-  background-color: $c-main;
+  background-color: $color-main;
   z-index: -1;
   @include mq("md") {
     top: rem(-120);

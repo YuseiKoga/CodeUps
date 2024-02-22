@@ -23,7 +23,7 @@
   padding-left: rem(32);
   position: relative;
   display: block;
-  color: $c-main;
+  color: $color-main;
   font-size: rem(24);
   line-height: calc(35 / 24);
 }
@@ -38,7 +38,7 @@
   transform: translate(-50%, -50%) rotate(90deg);
   border-style: solid;
   border-width: 0 rem(10.5) rem(18.18) rem(10.5);
-  border-color: transparent transparent $c-main transparent;
+  border-color: transparent transparent $color-main transparent;
   transition: transform 0.2s;
 }
 

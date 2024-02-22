@@ -19,7 +19,7 @@
     mask-size: contain;
     mask-repeat: no-repeat;
     mask-position: center;
-    background-color: $c-main;
+    background-color: $color-main;
   }
 }
 
@@ -40,9 +40,9 @@
 
 .contact__logo {
   margin: auto;
-  width: rem(175);
+  width: rem(300);
   @include mq("md") {
-    width: rem(200);
+    width: rem(300);
   }
 }
 
@@ -56,7 +56,7 @@
   margin: rem(5.5) auto 0;
   width: rem(295);
   height: 1px;
-  background-color: $c-main;
+  background-color: $color-main;
   @include mq("md") {
     margin-top: rem(7.5);
     width: 100%;
@@ -81,7 +81,7 @@
 }
 
 .contact__item {
-  color: $c-font;
+  color: $color-font;
   font-size: rem(16);
   font-weight: $regular;
   line-height: calc(24 / 16);
@@ -149,7 +149,7 @@
     transform: translateY(-50%);
     width: rem(2);
     height: 100%;
-    background-color: $c-main;
+    background-color: $color-main;
   }
 }
 

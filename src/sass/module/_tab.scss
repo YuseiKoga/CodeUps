@@ -13,23 +13,23 @@
 .tab__item {
   padding-block: rem(9);
   width: min(calc(162 / 345 * 100%), rem(162));
-  color: $c-main;
+  color: $color-main;
   font-size: rem(14);
   line-height: 1;
   text-align: center;
   background-color: $white;
-  border: 1px solid $c-main;
+  border: 1px solid $color-main;
   transition: color 0.3s, background 0.3s;
 }
 
 .tab__item.is-active {
   color: $white;
-  background-color: $c-main;
+  background-color: $color-main;
 }
 
 .tab__item:hover {
   @include mq("md") {
     color: $white;
-    background-color: $c-main;
+    background-color: $color-main;
   }
 }

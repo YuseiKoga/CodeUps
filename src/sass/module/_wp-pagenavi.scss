@@ -13,25 +13,25 @@
   justify-content: center;
   width: rem(38);
   height: rem(38);
-  color: $c-main;
-  font-family: $third-font-family;
+  color: $color-main;
+  font-family: $second-font-family;
   font-size: rem(16);
   font-weight: $bold;
   line-height: 1;
-  border: 1px solid $c-main;
+  border: 1px solid $color-main;
   background-color: $white;
   transition: color 0.3s, background 0.3s;
 }
 
 .wp-pagenavi .current {
   color: $white;
-  background-color: $c-main;
+  background-color: $color-main;
 }
 
 .wp-pagenavi a:hover {
   @include mq("md") {
     color: $white;
-    background-color: $c-main;
+    background-color: $color-main;
   }
 }
 
@@ -48,8 +48,8 @@
   left: rem(15);
   width: rem(10);
   height: rem(10);
-  border-top: 1px solid $c-main;
-  border-left: 1px solid $c-main;
+  border-top: 1px solid $color-main;
+  border-left: 1px solid $color-main;
   transform: translateY(-50%) rotate(-45deg);
 }
 
@@ -66,8 +66,8 @@
   right: rem(15);
   width: rem(10);
   height: rem(10);
-  border-top: 1px solid $c-main;
-  border-right: 1px solid $c-main;
+  border-top: 1px solid $color-main;
+  border-right: 1px solid $color-main;
   transform: translateY(-50%) rotate(45deg);
   transition: border 0.3s;
 }

@@ -14,7 +14,7 @@
   font-size: rem(24);
   font-weight: $medium;
   line-height: calc(35 / 24);
-  border-bottom: 1px solid $c-main;
+  border-bottom: 1px solid $color-main;
   @include mq("md") {
     padding-bottom: 0;
     font-size: rem(32);
@@ -102,12 +102,12 @@
   position: relative;
   width: rem(38);
   height: rem(38);
-  border: 1px solid $c-main;
+  border: 1px solid $color-main;
   transition: background 0.3s;
 }
 
 .single-blog__pagination-link:hover {
-  background-color: $c-main;
+  background-color: $color-main;
 }
 
 .single-blog__pagination-link::before {
@@ -123,14 +123,14 @@
 
 .single-blog__pagination-link--prev::before {
   left: 40%;
-  border-bottom: 1px solid $c-main;
-  border-left: 1px solid $c-main;
+  border-bottom: 1px solid $color-main;
+  border-left: 1px solid $color-main;
 }
 
 .single-blog__pagination-link--next::before {
   right: 40%;
-  border-top: 1px solid $c-main;
-  border-right: 1px solid $c-main;
+  border-top: 1px solid $color-main;
+  border-right: 1px solid $color-main;
 }
 
 .single-blog__pagination a:hover::before {

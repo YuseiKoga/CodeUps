@@ -94,7 +94,7 @@
 }
 
 .about__lead {
-  color: $c-main;
+  color: $color-main;
   font-family: $second-font-family;
   font-size: rem(40);
   font-weight: $regular;
@@ -115,7 +115,7 @@
 
 .about__text {
   margin-top: rem(16);
-  color: $c-font;
+  color: $color-font;
   font-size: rem(16);
   font-weight: $regular;
   line-height: calc(24 / 16);

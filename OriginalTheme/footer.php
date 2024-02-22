@@ -6,15 +6,16 @@
       <div class="contact__left">
         <!-- ロゴ -->
         <div class="contact__logo">
-          <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/logo.webp" alt="CodeUps">
+          <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/logo02.svg"
+            alt="WildQuest Adventures">
         </div>
         <hr class="contact__border">
         <div class="contact__wrap">
           <!-- 情報リスト -->
           <ul class="contact__items">
-            <li class="contact__item">沖縄県那覇市1-1</li>
+            <li class="contact__item">福岡県野生動物市<br>自然区サファリ1-2</li>
             <li class="contact__item"><a href="tel:0120-000-0000">TEL:0120-000-0000</a></li>
-            <li class="contact__item">営業時間:8:30-19:00</li>
+            <li class="contact__item">営業時間:10:30-22:00</li>
             <li class="contact__item">定休日:毎週火曜日</li>
           </ul>
           <!-- Google Map -->
@@ -50,7 +51,8 @@
       <!-- ロゴ -->
       <div class="footer__logo">
         <a href="<?php echo esc_url(home_url()); ?>">
-          <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/logo.webp" alt="CodeUps">
+          <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/logo.svg"
+            alt="WildQuest Adventures">
         </a>
       </div>
       <!-- SNS -->
