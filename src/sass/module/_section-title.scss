@@ -5,7 +5,7 @@
 }
 
 .section-title__main {
-  color: $c-font;
+  color: $c-main;
   font-family: $second-font-family;
   font-size: rem(32);
   font-weight: $regular;
@@ -16,7 +16,7 @@
   }
 }
 .section-title__main::first-letter {
-  color: $c-main;
+  color: $color-accent;
 }
 
 .section-title__sub {

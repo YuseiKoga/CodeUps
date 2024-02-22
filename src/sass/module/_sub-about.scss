@@ -18,7 +18,7 @@
   left: 0;
   width: 100%;
   aspect-ratio: 345 / 228;
-  background-image: url(../images/about/img-about01.webp);
+  background-image: url(../images/common/img-about01.webp);
   background-size: cover;
   z-index: -2;
   @include mq("md") {
@@ -40,7 +40,7 @@
     left: 0;
     width: rem(400);
     aspect-ratio: 400 / 606;
-    background-image: url(../images/about/img-about02.webp);
+    background-image: url(../images/common/img-about02.webp);
     background-size: cover;
     z-index: -1;
   }
@@ -66,10 +66,10 @@
   margin-top: calc(164 / 345 * 100%);
   font-size: rem(16);
   line-height: calc(24 / 16);
-  text-shadow: 1px 1px 3px #444;
   @include mq("md") {
     margin-top: rem(26);
     margin-left: rem(41);
     color: $white;
+    text-shadow: 1px 1px 3px #444;
   }
 }
