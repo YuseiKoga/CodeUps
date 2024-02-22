@@ -3,7 +3,7 @@
 <!-- ローディング -->
 <div class="loading js-loading">
   <div class="loading__logo js-loading-logo">
-    <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/img-loading-logo.svg" alt="diving">
+    <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/logo02.svg" alt="wild quest adventures">
   </div>
 </div>
 
@@ -334,9 +334,9 @@
         <!-- 画像 -->
         <figure class="price__img js-image">
           <picture>
-            <source srcset="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/price-pc.jpg"
+            <source srcset="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/price-pc.webp"
               media="(min-width: 768px)">
-            <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/price-sp.jpg" alt="">
+            <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/top/price-sp.webp" alt="">
           </picture>
         </figure>
         <!-- 料金リスト -->

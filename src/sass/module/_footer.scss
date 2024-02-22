@@ -126,10 +126,11 @@
   left: 0;
   width: rem(18);
   height: rem(18);
-  background-image: url(../images/common/icon-hitode.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
+  mask-image: url(../images/common/icon-list.svg);
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+  background-color: $white;
 }
 .footer__nav-item a:hover {
   opacity: $opacity;
