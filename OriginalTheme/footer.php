@@ -83,7 +83,7 @@
                 <a href="<?php echo esc_url(home_url('/campaign_category/safari')); ?>">サファリツアー</a>
               </li>
               <li class="footer__sub-item">
-                <a href="<?php echo esc_url(home_url('/campaign_category/photo')); ?>">フォトワークショップ</a>
+                <a href="<?php echo esc_url(home_url('/campaign_category/photo')); ?>"><span>フォトワーク</span><span>ショップ</span></a>
               </li>
               <li class="footer__sub-item">
                 <a href="<?php echo esc_url(home_url('/campaign_category/nature')); ?>">自然保護活動体験</a>
@@ -103,7 +103,7 @@
                 <a href="<?php echo esc_url(home_url('/information#tab01')); ?>">サファリツアー</a>
               </li>
               <li class="footer__sub-item">
-                <a href="<?php echo esc_url(home_url('/information#tab02')); ?>">フォトワークショップ</a>
+                <a href="<?php echo esc_url(home_url('/information#tab02')); ?>"><span>フォトワーク</span><span>ショップ</span></a>
               </li>
               <li class="footer__sub-item">
                 <a href="<?php echo esc_url(home_url('/information#tab03')); ?>">自然保護活動体験</a>
@@ -128,7 +128,7 @@
                 <a href="<?php echo esc_url(home_url('/price#safari')); ?>">サファリツアー</a>
               </li>
               <li class="footer__sub-item">
-                <a href="<?php echo esc_url(home_url('/price#photo')); ?>">フォトワークショップ</a>
+                <a href="<?php echo esc_url(home_url('/price#photo')); ?>"><span>フォトワーク</span><span>ショップ</span></a>
               </li>
               <li class="footer__sub-item">
                 <a href="<?php echo esc_url(home_url('/price#nature')); ?>">自然保護活動体験</a>

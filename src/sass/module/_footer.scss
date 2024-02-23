@@ -141,6 +141,10 @@
   font-weight: $regular;
 }
 
+.footer__nav-item span {
+  display: inline-block;
+}
+
 .footer__copyright {
   margin-top: rem(21);
   text-align: center;
