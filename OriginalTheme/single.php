@@ -69,7 +69,9 @@ if (!is_user_logged_in() && !is_robots()) {
         </div>
 
         <!-- サイドバー -->
-        <?php get_sidebar(); ?>
+        <div class="column__side">
+          <?php get_sidebar(); ?>
+        </div>
       </div>
     </div>
   </div>

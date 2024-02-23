@@ -20,7 +20,10 @@
           </ul>
           <!-- Google Map -->
           <figure class="contact__map">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.3819035064703!2d130.35954827627143!3d33.59539417333252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3541924d02e6b64b%3A0xb79cd978d2ed54c2!2z56aP5bKhUGF5UGF544OJ44O844Og!5e0!3m2!1sja!2sjp!4v1708643566360!5m2!1sja!2sjp" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>          </figure>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.3819035064703!2d130.35954827627143!3d33.59539417333252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3541924d02e6b64b%3A0xb79cd978d2ed54c2!2z56aP5bKhUGF5UGF544OJ44O844Og!5e0!3m2!1sja!2sjp!4v1708643566360!5m2!1sja!2sjp"
+              style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </figure>
         </div>
       </div>
       <div class="contact__right">
@@ -77,13 +80,13 @@
             <!-- サブナビゲーション -->
             <ul class="footer__sub-items">
               <li class="footer__sub-item">
-                <a href="<?php echo esc_url(home_url('/campaign_category/licence')); ?>">サファリツアー</a>
+                <a href="<?php echo esc_url(home_url('/campaign_category/safari')); ?>">サファリツアー</a>
               </li>
               <li class="footer__sub-item">
-                <a href="<?php echo esc_url(home_url('/campaign_category/trial')); ?>">フォトワークショップ</a>
+                <a href="<?php echo esc_url(home_url('/campaign_category/photo')); ?>">フォトワークショップ</a>
               </li>
               <li class="footer__sub-item">
-                <a href="<?php echo esc_url(home_url('/campaign_category/fun')); ?>">自然保護活動体験</a>
+                <a href="<?php echo esc_url(home_url('/campaign_category/nature')); ?>">自然保護活動体験</a>
               </li>
             </ul>
           </li>
@@ -122,13 +125,13 @@
             <!-- サブナビゲーション -->
             <ul class="footer__sub-items">
               <li class="footer__sub-item">
-                <a href="<?php echo esc_url(home_url('/price#priceLicence')); ?>">サファリツアー</a>
+                <a href="<?php echo esc_url(home_url('/price#safari')); ?>">サファリツアー</a>
               </li>
               <li class="footer__sub-item">
-                <a href="<?php echo esc_url(home_url('/price#priceExperience')); ?>">フォトワークショップ</a>
+                <a href="<?php echo esc_url(home_url('/price#photo')); ?>">フォトワークショップ</a>
               </li>
               <li class="footer__sub-item">
-                <a href="<?php echo esc_url(home_url('/price#priceFun')); ?>">自然保護活動体験</a>
+                <a href="<?php echo esc_url(home_url('/price#nature')); ?>">自然保護活動体験</a>
               </li>
             </ul>
           </li>

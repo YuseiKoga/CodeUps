@@ -103,13 +103,13 @@
                 <!-- サブナビゲーション -->
                 <ul class="sp-nav__sub-items">
                   <li class="sp-nav__sub-item">
-                    <a href="<?php echo esc_url(home_url('/campaign_category/licence')); ?>">サファリツアー</a>
+                    <a href="<?php echo esc_url(home_url('/campaign_category/safari')); ?>">サファリツアー</a>
                   </li>
                   <li class="sp-nav__sub-item">
-                    <a href="<?php echo esc_url(home_url('/campaign_category/trial')); ?>">フォトワーク</br>ショップ</a>
+                    <a href="<?php echo esc_url(home_url('/campaign_category/photo')); ?>">フォトワーク</br>ショップ</a>
                   </li>
                   <li class="sp-nav__sub-item">
-                    <a href="<?php echo esc_url(home_url('/campaign_category/fun')); ?>">自然保護活動体験</a>
+                    <a href="<?php echo esc_url(home_url('/campaign_category/nature')); ?>">自然保護活動体験</a>
                   </li>
                 </ul>
               </li>
@@ -146,13 +146,13 @@
                 <!-- サブナビゲーション -->
                 <ul class="sp-nav__sub-items">
                   <li class="sp-nav__sub-item">
-                    <a href="<?php echo esc_url(home_url('/price#priceLicence')); ?>">サファリツアー</a>
+                    <a href="<?php echo esc_url(home_url('/price#safari')); ?>">サファリツアー</a>
                   </li>
                   <li class="sp-nav__sub-item">
-                    <a href="<?php echo esc_url(home_url('/price#priceExperience')); ?>">フォトワーク</br>ショップ</a>
+                    <a href="<?php echo esc_url(home_url('/price#photo')); ?>">フォトワーク</br>ショップ</a>
                   </li>
                   <li class="sp-nav__sub-item">
-                    <a href="<?php echo esc_url(home_url('/price#priceFun')); ?>">自然保護活動体験</a>
+                    <a href="<?php echo esc_url(home_url('/price#nature')); ?>">自然保護活動体験</a>
                   </li>
                 </ul>
               </li>

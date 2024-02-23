@@ -21,9 +21,9 @@
         }
 
         // 料金表の生成
-        function render_price_block($title, $fields, $course_key, $fee_key) {
+        function render_price_block($id, $title, $fields, $course_key, $fee_key) {
           if (!empty($fields)) {
-            echo '<div class="sub-price__block" id="price' . esc_attr($title) . '">';
+            echo '<div class="sub-price__block" id="' . esc_attr($id) . '">';
             echo '<h2 class="sub-price__title"><span>' . esc_html($title) . '</span></h2>';
             echo '<dl class="sub-price__items">';
 
@@ -43,15 +43,15 @@
         <?php
       // ライセンス講習
       $licence_fields = get_price_fields('licence');
-      render_price_block('サファリツアー', $licence_fields, 'licence_course', 'licence_fee');
+      render_price_block('safari', 'サファリツアー', $licence_fields, 'licence_course', 'licence_fee');
 
       // 体験ダイビングの料金
       $trial_fields = get_price_fields('trial');
-      render_price_block('フォトワークショップ', $trial_fields, 'trial_course', 'trial_fee');
+      render_price_block('photo', 'フォトワークショップ', $trial_fields, 'trial_course', 'trial_fee');
 
       // ファンダイビングの料金
       $fun_fields = get_price_fields('fun');
-      render_price_block('自然保護活動体験', $fun_fields, 'fun_course', 'fun_fee');
+      render_price_block('nature', '自然保護活動体験', $fun_fields, 'fun_course', 'fun_fee');
 
       ?>
       </div>

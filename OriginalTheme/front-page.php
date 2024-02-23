@@ -3,7 +3,8 @@
 <!-- ローディング -->
 <div class="loading js-loading">
   <div class="loading__logo js-loading-logo">
-    <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/logo02.svg" alt="wild quest adventures">
+    <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/logo02.svg"
+      alt="wild quest adventures">
   </div>
 </div>
 
@@ -42,9 +43,9 @@
           <div class="swiper-slide">
             <div class="mv__img">
               <picture>
-                <source srcset="<?php esc_url(get_theme_file_uri('/assets/images/top/img-mv-pc')); ?>"
+                <source srcset="<?php esc_url(get_theme_file_uri('/assets/images/top/mv-pc.webp')); ?>"
                   media="(min-width: 768px)">
-                <img src="<?php esc_url(get_theme_file_uri('/assets/images/top/img-mv-sp')); ?>" alt="">
+                <img src="<?php esc_url(get_theme_file_uri('/assets/images/top/mv-sp.webp')); ?>" alt="">
               </picture>
             </div>
           </div>

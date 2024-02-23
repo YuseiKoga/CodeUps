@@ -20,12 +20,12 @@
               <a href="<?php echo esc_url(home_url('/campaign')); ?>">キャンペーン</a>
               <ul class="sitemap__sub-items">
                 <li class="sitemap__sub-item"><a
-                    href="<?php echo esc_url(home_url('/campaign_category/licence')); ?>">サファリツアー</a></li>
+                    href="<?php echo esc_url(home_url('/campaign_category/safari')); ?>">サファリツアー</a></li>
                 <li class="sitemap__sub-item"><a
-                    href="<?php echo esc_url(home_url('/campaign_category/trial')); ?>">フォトワーク<br
+                    href="<?php echo esc_url(home_url('/campaign_category/photo')); ?>">フォトワーク<br
                       class="u-mobile">ショップ</a></li>
                 <li class="sitemap__sub-item"><a
-                    href="<?php echo esc_url(home_url('/campaign_category/fun')); ?>">自然保護活動体験</a></li>
+                    href="<?php echo esc_url(home_url('/campaign_category/nature')); ?>">自然保護活動体験</a></li>
               </ul>
             </li>
             <li class="sitemap__item"><a href="<?php echo esc_url('/about'); ?>">私たちについて</a></li>
@@ -53,12 +53,11 @@
             <li class="sitemap__item">
               <a href="<?php echo esc_url(home_url('/price')); ?>">料金一覧</a>
               <ul class="sitemap__sub-items">
-                <li class="sitemap__sub-item"><a
-                    href="<?php echo esc_url(home_url('/price#priceLicence')); ?>">サファリツアー</a></li>
-                <li class="sitemap__sub-item"><a
-                    href="<?php echo esc_url(home_url('/price#priceExperience')); ?>">フォトワーク<br
+                <li class="sitemap__sub-item"><a href="<?php echo esc_url(home_url('/price#safari')); ?>">サファリツアー</a>
+                </li>
+                <li class="sitemap__sub-item"><a href="<?php echo esc_url(home_url('/price#photo')); ?>">フォトワーク<br
                       class="u-mobile">ショップ</a></li>
-                <li class="sitemap__sub-item"><a href="<?php echo esc_url(home_url('/price#priceFun')); ?>">自然保護活動体験</a>
+                <li class="sitemap__sub-item"><a href="<?php echo esc_url(home_url('/price#nature')); ?>">自然保護活動体験</a>
                 </li>
               </ul>
             </li>
