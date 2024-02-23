@@ -41,17 +41,17 @@
       ?>
 
         <?php
-      // ライセンス講習
-      $licence_fields = get_price_fields('licence');
-      render_price_block('safari', 'サファリツアー', $licence_fields, 'licence_course', 'licence_fee');
+      // サファリツアーの料金
+      $safari_fields = get_price_fields('safari');
+      render_price_block('safari', 'サファリツアー', $safari_fields, 'safari_course', 'safari_fee');
 
       // 体験ダイビングの料金
-      $trial_fields = get_price_fields('trial');
-      render_price_block('photo', 'フォトワークショップ', $trial_fields, 'trial_course', 'trial_fee');
+      $photo_fields = get_price_fields('photo');
+      render_price_block('photo', 'フォトワークショップ', $photo_fields, 'photo_course', 'photo_fee');
 
       // ファンダイビングの料金
-      $fun_fields = get_price_fields('fun');
-      render_price_block('nature', '自然保護活動体験', $fun_fields, 'fun_course', 'fun_fee');
+      $nature_fields = get_price_fields('nature');
+      render_price_block('nature', '自然保護活動体験', $nature_fields, 'nature_course', 'nature_fee');
 
       ?>
       </div>

@@ -35,7 +35,9 @@
     <div class="campaign-card__body campaign-card__body--sub">
       <span class="campaign-card__category"><?php echo $term_name; ?></span>
       <h2 class="campaign-card__title campaign-card__title--sub"><?php the_title(); ?></h2>
+      <?php if (!empty($regular_price || $special_price)) : ?>
       <p class="campaign-card__text campaign-card__text--sub">全部コミコミ(お一人様)</p>
+      <?php endif; ?>
       <div class="campaign-card__price">
         <?php if (!empty($regular_price)) : ?>
         <p class="campaign-card__before-price">¥<?php echo esc_html($regular_price); ?></p>

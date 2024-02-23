@@ -103,8 +103,10 @@
               <span class="campaign-card__category"><?php echo $category_name; ?></span>
               <!-- 投稿タイトル -->
               <h3 class="campaign-card__title"><?php the_title(); ?></h3>
-              <p class="campaign-card__text">全部コミコミ(お一人様)</p>
               <!-- 料金 -->
+              <?php if (!empty($regular_price || $special_price)) : ?>
+              <p class="campaign-card__text">全部コミコミ(お一人様)</p>
+              <?php endif; ?>
               <div class="campaign-card__price">
                 <!-- 通常料金 -->
                 <?php if (!empty($regular_price)) : ?>
@@ -368,9 +370,9 @@
             }
           }
 
-          displayPriceItems('licence', 'サファリツアー', 'licence_course', 'licence_fee');
-          displayPriceItems('trial', 'フォトワークショップ', 'trial_course', 'trial_fee');
-          displayPriceItems('fun', '自然保護活動体験', 'fun_course', 'fun_fee');
+          displayPriceItems('safari', 'サファリツアー', 'safari_course', 'safari_fee');
+          displayPriceItems('photo', 'フォトワークショップ', 'photo_course', 'photo_fee');
+          displayPriceItems('nature', '自然保護活動体験', 'nature_course', 'nature_fee');
           ?>
         </ul>
       </div>
