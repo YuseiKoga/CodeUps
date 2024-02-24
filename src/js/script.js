@@ -109,6 +109,25 @@ jQuery(function ($) {
   const mvSwiper = new Swiper(".js-mv-swiper", mvSwiperOptions);
 
   /* ========================================
+  // Swiper（インフォメーション）
+  ======================================== */
+const informationSwiperOptions = {
+  loop: true,
+  speed: 1500,
+  slidesPerView: 1,
+  effect: 'flip',
+  autoplay: {
+    delay: 7000,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: '.js-information-pagination',
+    clickable: true,
+  },
+};
+const informationSwiper = new Swiper(".js-information-swiper", informationSwiperOptions);
+
+  /* ========================================
   // Swiper（キャンペーン）
   ======================================== */
   const campaignSwiperOptions = {

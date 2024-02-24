@@ -178,21 +178,53 @@
       <!-- セクションタイトル -->
       <hgroup class="information__title section-title">
         <p class="section-title__main">Information</p>
-        <h2 class="section-title__sub">ダイビング情報</h2>
+        <h2 class="section-title__sub">サービス情報</h2>
       </hgroup>
       <!-- コンテンツ -->
-      <div class="information__container">
-        <figure class="information__img js-image">
-          <img src="<?php echo esc_url(get_theme_file_uri("/")); ?>/assets/images/common/information01.webp" alt="">
-        </figure>
-        <div class="information__body">
-          <h3 class="information__lead">サファリツアー</h3>
-          <p class="information__text">当店はダイビングライセンス（Cカード）世界最大の教育機関PADIの「正規店」として店舗登録されています。<br>
-            正規登録店として、安心安全に初めての方でも安心安全にライセンス取得をサポート致します。</p>
-          <div class="information__button">
-            <a href="<?php echo esc_url(home_url('/information')); ?>" class="button">View more<span></span></a>
+      <div class="information__contents">
+        <div class="swiper js-information-swiper">
+          <div class="swiper-wrapper">
+            <?php
+          // 固定ページ"information"のIDを取得
+          $information_id = get_page_by_path('information')->ID;
+
+          for ($i = 1; $i <= 3; $i++) :
+            // 各フィールドの名前を定義
+            $name_field = 'plan_name0' . $i;
+            $image_field = 'plan_image0' . $i;
+            $description_field = 'plan_description0' . $i;
+            // 各フィールドのデータを取得
+            $name = get_field($name_field, $information_id);
+            $image = get_field($image_field, $information_id);
+            $description = get_field($description_field, $information_id);
+
+            // リンク先
+            $link = home_url('/information/#tab0' . $i);
+          ?>
+            <div class="swiper-slide">
+              <div class="information__container">
+                <?php if ($image) : ?>
+                <figure class="information__img">
+                  <img src="<?php echo esc_url($image); ?>" alt="">
+                </figure>
+                <?php endif; ?>
+                <div class="information__body">
+                  <?php if ($name) : ?>
+                  <h3 class="information__lead"><?php echo esc_html($name); ?></h3>
+                  <?php endif; ?>
+                  <?php if ($description) : ?>
+                  <p class="information__text"><?php echo esc_html($description); ?></p>
+                  <?php endif; ?>
+                  <div class="information__button">
+                    <a href="<?php echo esc_url($link); ?>" class="button">View more<span></span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <?php endfor; ?>
           </div>
         </div>
+        <div class="swiper-pagination information__pagination js-information-pagination"></div>
       </div>
     </div>
   </section>

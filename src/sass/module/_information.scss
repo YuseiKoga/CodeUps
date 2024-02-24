@@ -9,10 +9,17 @@
   }
 }
 
-.information__container {
+.information__contents {
   margin-top: rem(28);
+  padding-bottom: rem(64);
+  position: relative;
   @include mq("md") {
     margin-top: rem(40);
+  }
+}
+
+.information__container {
+  @include mq("md") {
     display: flex;
     align-items: center;
   }
@@ -87,4 +94,24 @@ img.is-show {
   height: 100%;
   background-color: $color-main;
   z-index: 10;
+}
+
+.information__pagination.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: 0;
+}
+
+.information__pagination.swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  margin-inline: rem(8);
+}
+
+.information__pagination .swiper-pagination-bullet {
+  width: rem(15);
+  height: rem(15);
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+}
+
+.information__pagination .swiper-pagination-bullet-active {
+  background: $color-accent;
 }

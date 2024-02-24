@@ -45,11 +45,11 @@
       $safari_fields = get_price_fields('safari');
       render_price_block('safari', 'サファリツアー', $safari_fields, 'safari_course', 'safari_fee');
 
-      // 体験ダイビングの料金
+      // フォトワークショップの料金
       $photo_fields = get_price_fields('photo');
       render_price_block('photo', 'フォトワークショップ', $photo_fields, 'photo_course', 'photo_fee');
 
-      // ファンダイビングの料金
+      // 自然保護活動体験の料金
       $nature_fields = get_price_fields('nature');
       render_price_block('nature', '自然保護活動体験', $nature_fields, 'nature_course', 'nature_fee');
 
